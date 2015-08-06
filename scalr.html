@@ -48,7 +48,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="https://appbase.io">
+    <a id="docs-appbase-logo" class="navbar-brand" href="http://docs.appbase.io">
       <img src="/images/logo.svg">
     </a>
   </div>
@@ -63,6 +63,15 @@
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
+        <a ng-href="#/scalr/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/javascript">Javascript</a>
+        <ul class="dropdown-menu">
+          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=/scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=/scalr/javascript/javascript-intro.html>Javascript Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=/scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=/scalr/javascript/nodejs-intro.html>Node.JS Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files -->
+        </ul>
+      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/rest" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/rest">REST</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
@@ -71,7 +80,7 @@
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
     </ul>
-    
+
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -92,7 +101,8 @@
       </li>
     </ul>
   </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid --></nav>
+</div><!-- /.container-fluid -->
+</nav>
 <div role="flatdoc" class="content-root ng-scope">
   <div class="menubar fixed">
     <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="api-prime-objective-scale-item" class="level-1"><a id="api-prime-objective-scale-link" href="/scalr/concepts/intro.html#api-prime-objective-scale" class="level-1" pref="#api-prime-objective-scale"> API Prime Objective: Scale</a></li><li id="git-diff-changes-human-item" class="level-1"><a id="git-diff-changes-human-link" href="/scalr/concepts/intro.html#git-diff-changes-human" class="level-1" pref="#git-diff-changes-human">git diff changes —human</a><ul class="level-2" id="git-diff-changes-human-list"><li id="git-diff-changes-human-scalr-whats-in-a-name-item" class="level-2"><a id="git-diff-changes-human-scalr-whats-in-a-name-link" href="/scalr/concepts/intro.html#git-diff-changes-human-scalr-whats-in-a-name" class="level-2" pref="#git-diff-changes-human-scalr-whats-in-a-name">SCALR - What’s in a name</a></li><li id="git-diff-changes-human-compatibility-with-elasticsearch-item" class="level-2"><a id="git-diff-changes-human-compatibility-with-elasticsearch-link" href="/scalr/concepts/intro.html#git-diff-changes-human-compatibility-with-elasticsearch" class="level-2" pref="#git-diff-changes-human-compatibility-with-elasticsearch">Compatibility with ElasticSearch</a><ul class="level-3" id="git-diff-changes-human-compatibility-with-elasticsearch-list"><li id="git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication-item" class="level-3"><a id="git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication-link" href="/scalr/concepts/intro.html#git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication" class="level-3" pref="#git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication">HTTP Basic Authentication</a></li><li id="git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible-item" class="level-3"><a id="git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible-link" href="/scalr/concepts/intro.html#git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible" class="level-3" pref="#git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible">What’s not compatible?</a></li></ul></li><li id="git-diff-changes-human-data-streams-20-item" class="level-2"><a id="git-diff-changes-human-data-streams-20-link" href="/scalr/concepts/intro.html#git-diff-changes-human-data-streams-20" class="level-2" pref="#git-diff-changes-human-data-streams-20">Data Streams 2.0</a></li><li id="git-diff-changes-human-adieu-to-graph-datamodel-item" class="level-2"><a id="git-diff-changes-human-adieu-to-graph-datamodel-link" href="/scalr/concepts/intro.html#git-diff-changes-human-adieu-to-graph-datamodel" class="level-2" pref="#git-diff-changes-human-adieu-to-graph-datamodel">Adieu to Graph datamodel</a></li></ul></li></ul></li></ul></div>
