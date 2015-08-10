@@ -6,33 +6,33 @@
   <title>Appbase Documentation</title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 
-  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="../../../bower_components/docbase/scripts/polyfill.js"></script>
+  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="../../bower_components/docbase/scripts/polyfill.js"></script>
   <!-- Flatdoc -->
-  <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="../../../bower_components/flatdoc/legacy.js"></script>
-  <script type="text/javascript" src="../../../bower_components/flatdoc/flatdoc.js"></script>
+  <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/flatdoc/legacy.js"></script>
+  <script type="text/javascript" src="../../bower_components/flatdoc/flatdoc.js"></script>
 
   <!-- Flatdoc theme -->
-  <link rel="stylesheet" type="text/css" href="../../../bower_components/flatdoc/theme-white/style.css">
-  <script type="text/javascript" src="../../../bower_components/docbase/scripts/flatdoc-theme.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../bower_components/flatdoc/theme-white/style.css">
+  <script type="text/javascript" src="../../bower_components/docbase/scripts/flatdoc-theme.js"></script>
 
   <!-- DocBase -->
-  <script type="text/javascript" src="../../../bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="../../../bower_components/angular-route/angular-route.js"></script>
-  <script type="text/javascript" src="../../../bower_components/js-schema/js-schema.min.js"></script>
+  <script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../../bower_components/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="../../bower_components/js-schema/js-schema.min.js"></script>
 
-  <script type="text/javascript" src="../../../bower_components/docbase/scripts/docbase.js"></script>
-  <script src="../../../bower_components/google-code-prettify/bin/prettify.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../../bower_components/google-code-prettify/bin/prettify.min.css">
-  <link rel="stylesheet" type="text/css" href="../../../bower_components/docbase/styles/main.css">
-  <link rel="stylesheet" type="text/css" href="../../../bower_components/components-font-awesome/css/font-awesome.min.css">
+  <script type="text/javascript" src="../../bower_components/docbase/scripts/docbase.js"></script>
+  <script src="../../bower_components/google-code-prettify/bin/prettify.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../bower_components/google-code-prettify/bin/prettify.min.css">
+  <link rel="stylesheet" type="text/css" href="../../bower_components/docbase/styles/main.css">
+  <link rel="stylesheet" type="text/css" href="../../bower_components/components-font-awesome/css/font-awesome.min.css">
   
 
   <!-- Custom -->
-  <link rel="stylesheet" type="text/css" href="../../../styles/docs.css">
+  <link rel="stylesheet" type="text/css" href="../../styles/docs.css">
 
 </head>
 <body role="flatdoc" class="no-literate">
@@ -49,7 +49,7 @@
       <span class="icon-bar"></span>
     </button>
     <a id="docs-appbase-logo" class="navbar-brand" href="http://docs.appbase.io">
-      <img src="../../../images/logo.svg">
+      <img src="../../images/logo.svg">
     </a>
   </div>
 
@@ -59,23 +59,23 @@
         <a ng-href="#/scalr/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/concepts">Concepts</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../../scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=../../../scalr/concepts/intro.html>Intro</a>
+            <a ng-href=../../scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/intro.html>Intro</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/javascript">Javascript</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../../scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=../../../scalr/javascript/javascript-intro.html>Javascript Quick Start</a>
+            <a ng-href=../../scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/javascript-intro.html>Javascript Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../../scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=../../../scalr/javascript/nodejs-intro.html>Node.JS Quick Start</a>
+            <a ng-href=../../scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/nodejs-intro.html>Node.JS Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/rest" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/rest">REST</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../../scalr/rest/intro.html ng-bind="file.label" class="ng-binding" href=../../../scalr/rest/intro.html>Quick Start</a>
+            <a ng-href=../../scalr/rest/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/rest/intro.html>Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -88,11 +88,11 @@
         </a>
         <ul class="dropdown-menu version-switcher" role="menu">
           <!-- ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../../scalr/concepts/intro.html ng-bind="version" class="ng-binding" href=../../../scalr/concepts/intro.html>scalr</a>
+            <a ng-href=../../scalr/concepts/intro.html ng-bind="version" class="ng-binding" href=../../scalr/concepts/intro.html>scalr</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../../v2.0/concepts/datamodel.html ng-bind="version" class="ng-binding" href=../../../v2.0/concepts/datamodel.html>v2.0</a>
+            <a ng-href=../../v2.0/concepts/datamodel.html ng-bind="version" class="ng-binding" href=../../v2.0/concepts/datamodel.html>v2.0</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../../v3.0/changelog/changelog.html ng-bind="version" class="ng-binding" href=../../../v3.0/changelog/changelog.html>v3.0</a>
+            <a ng-href=../../v3.0/changelog/changelog.html ng-bind="version" class="ng-binding" href=../../v3.0/changelog/changelog.html>v3.0</a>
           </li><!-- end ngRepeat: version in versions -->
         </ul>
       </li>
@@ -105,7 +105,7 @@
 </nav>
 <div role="flatdoc" class="content-root ng-scope">
   <div class="menubar fixed">
-    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="api-prime-objective-scale-item" class="level-1"><a id="api-prime-objective-scale-link" href="../../../scalr/concepts/intro.html#api-prime-objective-scale" class="level-1" pref="#api-prime-objective-scale"> API Prime Objective: Scale</a></li><li id="git-diff-changes-human-item" class="level-1"><a id="git-diff-changes-human-link" href="../../../scalr/concepts/intro.html#git-diff-changes-human" class="level-1" pref="#git-diff-changes-human">git diff changes —human</a><ul class="level-2" id="git-diff-changes-human-list"><li id="git-diff-changes-human-scalr-whats-in-a-name-item" class="level-2"><a id="git-diff-changes-human-scalr-whats-in-a-name-link" href="../../../scalr/concepts/intro.html#git-diff-changes-human-scalr-whats-in-a-name" class="level-2" pref="#git-diff-changes-human-scalr-whats-in-a-name">SCALR - What’s in a name</a></li><li id="git-diff-changes-human-compatibility-with-elasticsearch-item" class="level-2"><a id="git-diff-changes-human-compatibility-with-elasticsearch-link" href="../../../scalr/concepts/intro.html#git-diff-changes-human-compatibility-with-elasticsearch" class="level-2" pref="#git-diff-changes-human-compatibility-with-elasticsearch">Compatibility with ElasticSearch</a><ul class="level-3" id="git-diff-changes-human-compatibility-with-elasticsearch-list"><li id="git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication-item" class="level-3"><a id="git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication-link" href="../../../scalr/concepts/intro.html#git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication" class="level-3" pref="#git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication">HTTP Basic Authentication</a></li><li id="git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible-item" class="level-3"><a id="git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible-link" href="../../../scalr/concepts/intro.html#git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible" class="level-3" pref="#git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible">What’s not compatible?</a></li></ul></li><li id="git-diff-changes-human-data-streams-20-item" class="level-2"><a id="git-diff-changes-human-data-streams-20-link" href="../../../scalr/concepts/intro.html#git-diff-changes-human-data-streams-20" class="level-2" pref="#git-diff-changes-human-data-streams-20">Data Streams 2.0</a></li><li id="git-diff-changes-human-adieu-to-graph-datamodel-item" class="level-2"><a id="git-diff-changes-human-adieu-to-graph-datamodel-link" href="../../../scalr/concepts/intro.html#git-diff-changes-human-adieu-to-graph-datamodel" class="level-2" pref="#git-diff-changes-human-adieu-to-graph-datamodel">Adieu to Graph datamodel</a></li></ul></li></ul></li></ul></div>
+    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="api-prime-objective-scale-item" class="level-1"><a id="api-prime-objective-scale-link" href="../../scalr/concepts/intro.html#api-prime-objective-scale" class="level-1" pref="#api-prime-objective-scale"> API Prime Objective: Scale</a></li><li id="git-diff-changes-human-item" class="level-1"><a id="git-diff-changes-human-link" href="../../scalr/concepts/intro.html#git-diff-changes-human" class="level-1" pref="#git-diff-changes-human">git diff changes —human</a><ul class="level-2" id="git-diff-changes-human-list"><li id="git-diff-changes-human-scalr-whats-in-a-name-item" class="level-2"><a id="git-diff-changes-human-scalr-whats-in-a-name-link" href="../../scalr/concepts/intro.html#git-diff-changes-human-scalr-whats-in-a-name" class="level-2" pref="#git-diff-changes-human-scalr-whats-in-a-name">SCALR - What’s in a name</a></li><li id="git-diff-changes-human-compatibility-with-elasticsearch-item" class="level-2"><a id="git-diff-changes-human-compatibility-with-elasticsearch-link" href="../../scalr/concepts/intro.html#git-diff-changes-human-compatibility-with-elasticsearch" class="level-2" pref="#git-diff-changes-human-compatibility-with-elasticsearch">Compatibility with ElasticSearch</a><ul class="level-3" id="git-diff-changes-human-compatibility-with-elasticsearch-list"><li id="git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication-item" class="level-3"><a id="git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication-link" href="../../scalr/concepts/intro.html#git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication" class="level-3" pref="#git-diff-changes-human-compatibility-with-elasticsearch-http-basic-authentication">HTTP Basic Authentication</a></li><li id="git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible-item" class="level-3"><a id="git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible-link" href="../../scalr/concepts/intro.html#git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible" class="level-3" pref="#git-diff-changes-human-compatibility-with-elasticsearch-whats-not-compatible">What’s not compatible?</a></li></ul></li><li id="git-diff-changes-human-data-streams-20-item" class="level-2"><a id="git-diff-changes-human-data-streams-20-link" href="../../scalr/concepts/intro.html#git-diff-changes-human-data-streams-20" class="level-2" pref="#git-diff-changes-human-data-streams-20">Data Streams 2.0</a></li><li id="git-diff-changes-human-adieu-to-graph-datamodel-item" class="level-2"><a id="git-diff-changes-human-adieu-to-graph-datamodel-link" href="../../scalr/concepts/intro.html#git-diff-changes-human-adieu-to-graph-datamodel" class="level-2" pref="#git-diff-changes-human-adieu-to-graph-datamodel">Adieu to Graph datamodel</a></li></ul></li></ul></li></ul></div>
   </div>
   <div role="flatdoc-content" class="content"><h1 id="api-prime-objective-scale"><img src="http://i.imgur.com/Eppz2lz.png?1" alt="SCALR"> API Prime Objective: Scale</h1><p>As the name suggests, our prime focus with this iteration of the API has been achieving a massive scale of API operations, to the tune of <a href="http://news.appbase.io/scaling-elasticsearch-writes/">100,000 writes</a> and reads (yet to corroborate) per second. </p><p>You might wonder - why is addressing scale so important? A typical successful application would never exceed a throughput of a  few hundred requests per second and generally be okay with serving responses in time.</p><blockquote>
 <p>So much complexity in software comes from trying to make one thing do two things.<br>-Ryan Singer</p>
@@ -118,8 +118,8 @@
     <span class="fa fa-pencil"> Edit</span>
   </a>
 </div></div>
-  <script type="text/javascript" src="../../../scripts/analytics.js"></script>
-  <script type="text/javascript" src="../../../scripts/main.js"></script>
-  <script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../../scripts/analytics.js"></script>
+  <script type="text/javascript" src="../../scripts/main.js"></script>
+  <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body></html>
