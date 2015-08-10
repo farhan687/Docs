@@ -63,6 +63,20 @@
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
+        <a ng-href="#/v3.0/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/concepts">Concepts</a>
+        <ul class="dropdown-menu">
+          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v3.0/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../v3.0/concepts/datamodel.html>Datamodel</a>
+          </li><!-- end ngRepeat: file in folder.files -->
+        </ul>
+      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
+        <a ng-href="#/v3.0/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/javascript">Javascript</a>
+        <ul class="dropdown-menu">
+          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v3.0/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v3.0/javascript/api-reference.html>API Reference</a>
+          </li><!-- end ngRepeat: file in folder.files -->
+        </ul>
+      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/v3.0/rest" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/rest">REST</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
@@ -76,27 +90,6 @@
             <a ng-href=../../v3.0/search/quick-start.html ng-bind="file.label" class="ng-binding" href=../../v3.0/search/quick-start.html>Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v3.0/search/use-cases.html ng-bind="file.label" class="ng-binding" href=../../v3.0/search/use-cases.html>Use-cases</a>
-          </li><!-- end ngRepeat: file in folder.files -->
-        </ul>
-      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v3.0/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/concepts">Concepts</a>
-        <ul class="dropdown-menu">
-          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../v3.0/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../v3.0/concepts/datamodel.html>Datamodel</a>
-          </li><!-- end ngRepeat: file in folder.files -->
-        </ul>
-      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v3.0/rest" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/rest">REST</a>
-        <ul class="dropdown-menu">
-          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../v3.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v3.0/rest/api-reference.html>API Reference</a>
-          </li><!-- end ngRepeat: file in folder.files -->
-        </ul>
-      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v3.0/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/javascript">Javascript</a>
-        <ul class="dropdown-menu">
-          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../v3.0/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v3.0/javascript/api-reference.html>API Reference</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -230,7 +223,7 @@
 </li>
 </ul>
 </blockquote><p>That’s it! In less than 10 minutes, we were able to add production grade search in your app.</p><h2 id="searching-for-a-better-search-full-text-and-more">Full text and more</h2><p>Do you want to customize the ‘fuzziness’ of your search? Or perhaps apply multiple queries and filter the data at the same time. If this has whetted your appetite, check out our main article over here. <a href="http://docs.appbase.io/#/v3.0/search/use-cases">Search Usecases</a>.</p></div>
-  <a class="edit" ng-href="https://github.com/undefined/undefined/tree/gh-pages//v3.0/search/quick-start.md" target="_blank" href="https://github.com/undefined/undefined/tree/gh-pages//v3.0/search/quick-start.md">
+  <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/search/quick-start.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/search/quick-start.md">
     <span class="fa fa-pencil"> Edit</span>
   </a>
 </div></div>

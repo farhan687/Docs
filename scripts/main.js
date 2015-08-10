@@ -3,15 +3,16 @@
 	var jWindow = $(window);
 
 	Docbase.run({
-	  method: 'file',
-	  path: 'src',
+	  method: 'github',
 	  map: {
 	      file: 'map.json',
 	      path: '/'
 	  },
-	  file: {
-	      src: 'map.json',
-	      path: 'src'
+	  github: {
+	    user: 'appbaseio',
+	    repo: 'Docs',
+	    path: 'src',
+	    branch: 'master'
 	  },
 	  indexType: 'html',
 	  indexHtml: 'html/main.html',
@@ -31,7 +32,7 @@
 		                         "color": "#333"});
 		  $(this).css({"padding": "10px"});
 		});
-		
+
 		if(typeof(ga) === 'function'){
 			ga('send', 'pageview',window.location.href);
 		}

@@ -309,7 +309,6 @@
 
                     Events.parsed = false;
                     Flatdoc.file(fileURL)(function(err, markdown) {
-
                         markdown = markdown.split('\n');
                         var obj = markdown.shift();
                         obj = obj.replace(/\u201D/g, '"');
