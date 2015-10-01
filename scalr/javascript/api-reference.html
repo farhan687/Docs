@@ -35,7 +35,7 @@
   <link rel="stylesheet" type="text/css" href="../../styles/docs.css">
 
 </head>
-<body role="flatdoc" class="no-literate">
+<body role="flatdoc" class="">
   <!--[if lt IE 10]>
      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -129,7 +129,7 @@
 <li><strong>password</strong> <code>String</code> - password as displayed in the app dashboard</li>
 </ul>
 </li>
-</ul><p><strong>Returns</strong></p><p><code>Object</code> <strong>appbaseObj</strong> <em>Appbase reference object</em> - has <code>index()</code>, <code>update()</code>, <code>delete()</code>, <code>bulk()</code>, <code>search()</code>, <code>streamDocument()</code> and <code>streamSearch()</code> methods.</p><h2 id="javascript-api-reference-writing-data">WRITING DATA</h2><h3 id="javascript-api-reference-writing-data-index">index()</h3><p>Writes a new JSON data object inside the given <code>type</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">index</span><span class="pun">({</span><span class="pln">
+</ul><p><strong>Returns</strong></p><p><code>Object</code> <strong>appbaseObj</strong> <em>Appbase reference object</em> - has <code>index()</code>, <code>update()</code>, <code>delete()</code>, <code>bulk()</code>, <code>search()</code>, <code>streamDocument()</code> and <code>streamSearch()</code> methods.</p><h2 id="javascript-api-reference-writing-data">WRITING DATA</h2><h3 id="javascript-api-reference-writing-data-index">index()</h3><p>Writes (or overwrites) a JSON data object at a given <code>type</code> and <code>id</code> location.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">index</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   id</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"</span><span class="number"><span class="str">1</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
   body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -138,7 +138,19 @@
     </span><span class="string"><span class="str">"using"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="string"><span class="str">"appbase.io"</span></span><span class="pun">,</span><span class="pln"> </span><span class="string"><span class="str">"javascript"</span></span><span class="pun">,</span><span class="pln"> </span><span class="string"><span class="str">"streams"</span></span><span class="pun">],</span><span class="pln">
     </span><span class="string"><span class="str">"test"</span></span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
   </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p>``</p></div>
+</span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"successfully indexed: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"indexing error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.index(params)</code></p><ul>
+<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the type, id and the JSON data to be indexed</p>
+<ul>
+<li><strong>type</strong> <code>String</code> - The type (aka collection) under which the data will be indexed</li>
+<li><strong>body</strong> <code>Object</code> - Data to be indexed, a valid JSON object</li>
+<li><strong>*id</strong> <code>String</code> - ID for the JSON data. <code>id</code> is auto generated if not specified</li>
+</ul>
+</li>
+</ul></div>
   <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/scalr/javascript/api-reference.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/scalr/javascript/api-reference.md">
     <span class="fa fa-pencil"> Edit</span>
   </a>
