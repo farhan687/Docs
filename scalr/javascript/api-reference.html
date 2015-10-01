@@ -192,37 +192,71 @@
 </li>
 </ul><h2 id="javascript-api-reference-streaming-data">STREAMING DATA</h2><h3 id="javascript-api-reference-streaming-data-streamdocument">streamDocument()</h3><p>Continuously stream a specific JSON document.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">streamDocument</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
-  id</span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">1</span></span><span class="pln">
+  id</span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">1</span></span><span class="pun">,</span><span class="pln">
+  streamonly</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"data update: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"streaming error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.streamDocument(params)</code></p><ul>
-<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the document to be streamed</p>
+<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the document to be streamed. Optionally, it can also contain a <code>streamonly</code> field to stream only the new updates and not return the original value</p>
 <ul>
 <li><strong>type</strong> <code>String</code> - Document type</li>
 <li><strong>id</strong> <code>String</code> - Document ID</li>
+<li><strong>*streamonly</strong> <code>Boolean</code> - <code>false</code> by default. A value <code>true</code> returns only the new document updates and not the original value</li>
 </ul>
 </li>
-</ul><p><code>Note:</code> appbase.js lib uses websockets (on the browser) and http-streams (on node.js) to stream the updates.</p><h3 id="javascript-api-reference-streaming-data-streamsearch">streamSearch()</h3><p>Continuously stream results of search query on a <code>type</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">streamSearch</span><span class="pun">({</span><span class="pln">
+</ul><p><strong>Returns</strong></p><p><a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream.Readable</a> <code>Object</code> with</p><ul>
+<li><code>'data'</code> and <code>'error'</code> event handlers</li>
+<li>a <strong>stop()</strong> method to stop the stream</li>
+</ul><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> responseStream </span><span class="pun">=</span><span class="pln"> appbaseObj</span><span class="pun">.</span><span class="pln">streamDocument</span><span class="pun">({</span><span class="pln">
+  type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
+  id</span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">1</span></span><span class="pun">,</span><span class="pln">
+  streamonly</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pln">
+</span><span class="pun">})</span><span class="pln">
+
+responseStream</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"data update: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+
+responseStream</span><span class="pun">.</span><span class="pln">stop</span><span class="pun">();</span></code></pre><p><code>Note:</code> appbase.js lib uses websockets (on the browser) and http-streams (on node.js) to stream the updates.</p><h3 id="javascript-api-reference-streaming-data-streamsearch">streamSearch()</h3><p>Continuously stream results of search query on a given <code>type</code>. Search queries can be simple monitoring queries, finding an exact set of documents, full-text search queries, geolocation queries.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">streamSearch</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     query</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
       match_all</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">
     </span><span class="pun">}</span><span class="pln">
-  </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">},</span><span class="pln">
+  streamonly</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"query update: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"streaming error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.streamSearch(params)</code></p><ul>
-<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the document to be streamed</p>
+<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the query <code>type</code> and <code>body</code>, and optionally a <code>streamonly</code> field to stream only the new matching documents (without returning the existing matches)</p>
 <ul>
 <li><strong>type</strong> <code>String</code> - Document type</li>
 <li><strong>body</strong> <code>String</code> - A JSON object specifying a valid query in the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">ElasticSearch Query DSL</a> format</li>
+<li><strong>*streamonly</strong> <code>Boolean</code> - <code>false</code> by default. A value <code>true</code> returns only the new matches after the query and not the existing ones</li>
 </ul>
 </li>
-</ul><p><code>Note:</code> appbase.js lib uses websockets (on the browser) and http-streams (on node.js) to stream the updates.</p></div>
+</ul><p><strong>Returns</strong></p><p><a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream.Readable</a> <code>Object</code> with</p><ul>
+<li><code>'data'</code> and <code>'error'</code> event handlers</li>
+<li>a <strong>stop()</strong> method to stop the stream</li>
+</ul><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> responseStream </span><span class="pun">=</span><span class="pln"> appbaseObj</span><span class="pun">.</span><span class="pln">streamSearch</span><span class="pun">({</span><span class="pln">
+  type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
+  body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    query</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      match_all</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">},</span><span class="pln">
+  streamonly</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
+</span><span class="pun">})</span><span class="pln">
+
+responseStream</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"data update: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
+
+setTimeout</span><span class="pun">(</span><span class="pln">responseStream</span><span class="pun">.</span><span class="pln">stop</span><span class="pun">,</span><span class="pln"> </span><span class="number"><span class="lit">5000</span></span><span class="pun">);</span><span class="pln"> </span><span class="comment"><span class="com">// stop stream after </span><span class="number"><span class="com">5</span></span><span class="com">s</span></span></code></pre></div>
   <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/scalr/javascript/api-reference.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/scalr/javascript/api-reference.md">
     <span class="fa fa-pencil"> Edit</span>
   </a>
