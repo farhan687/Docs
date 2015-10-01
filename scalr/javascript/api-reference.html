@@ -35,7 +35,7 @@
   <link rel="stylesheet" type="text/css" href="../../styles/docs.css">
 
 </head>
-<body role="flatdoc" class="big-h3">
+<body role="flatdoc" class="">
   <!--[if lt IE 10]>
      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -115,7 +115,7 @@
 <li>Continuously stream updates to documents, queries or filters over websockets (for browsers) and http-streams.</li>
 <li>Index new documents or update / delete existing ones.</li>
 <li>Is compatible with <a href="https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/index.html">elasticsearch.js</a>, which can be used for modifying the ES configurations and for using more esoteric methods.</li>
-</ul><h2 id="javascript-api-reference-setup">SETUP</h2><h3 id="javascript-api-reference-setup-new-appbase">new Appbase()</h3><p>Returns a new Appbase object (refered to as <code>appbaseObj</code> in all the following examples) using the <code>url</code>, <code>appname</code> and <code>username</code>:<code>password</code> credentials.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> appbaseObj </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Appbase</span><span class="pun">({</span><span class="pln">
+</ul><p>You can read the <a href="http://docs.appbase.io/scalr/javascript/javascript-intro.html">Javascript</a> or <a href="http://docs.appbase.io/scalr/javascript/nodejs-intro.html">Node.JS</a> quick-start guides for installation and basic usage.</p><h2 id="javascript-api-reference-setup">SETUP</h2><h3 id="javascript-api-reference-setup-new-appbase">new Appbase()</h3><p>Returns a new Appbase object (refered to as <code>appbaseObj</code> in all the following examples) using the <code>url</code>, <code>appname</code> and <code>username</code>:<code>password</code> credentials.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> appbaseObj </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Appbase</span><span class="pun">({</span><span class="pln">
     </span><span class="string"><span class="str">"url"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"https:</span><span class="comment"><span class="str">//scalr.api.appbase.io"</span></span><span class="pun">,</span></span><span class="pln">
     </span><span class="string"><span class="str">"appname"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">YOUR_APP_NAME</span><span class="pun">&gt;,</span><span class="pln">
     </span><span class="string"><span class="str">"username"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">APP_CREDENTIAL</span><span class="pun">&gt;,</span><span class="pln">
