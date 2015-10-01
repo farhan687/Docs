@@ -35,7 +35,7 @@
   <link rel="stylesheet" type="text/css" href="../../styles/docs.css">
 
 </head>
-<body role="flatdoc" class="">
+<body role="flatdoc" class="big-h3">
   <!--[if lt IE 10]>
      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -59,20 +59,20 @@
         <a ng-href="#/scalr/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/concepts">Concepts</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/intro.html>Intro</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/javascript">Javascript</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/javascript-intro.html>Javascript Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/nodejs-intro.html>Node.JS Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -123,7 +123,7 @@
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>new Appbase(appData)</code></p><ul>
 <li><p><strong>appData</strong> <code>Object</code> - A Javascript object containing the following fields and values</p>
 <ul>
-<li><strong>url</strong> <code>String</code> - URL with the API version, always <code>https://scalr.api.appbase.io</code></li>
+<li><strong>url</strong> <code>String</code> - URL with the API version, always <em><a href="https://scalr.api.appbase.io">https://scalr.api.appbase.io</a></em></li>
 <li><strong>appname</strong> <code>String</code> - name of the app as displayed in the <a href="https://appbase.io/scalr">dashboard</a></li>
 <li><strong>username</strong> <code>String</code> - username as displayed in the app dashboard</li>
 <li><strong>password</strong> <code>String</code> - password as displayed in the app dashboard</li>
@@ -150,7 +150,7 @@
 <li><strong>*id</strong> <code>String</code> - ID for the JSON data. <code>id</code> is auto generated if not specified</li>
 </ul>
 </li>
-</ul><h3 id="javascript-api-reference-writing-data-delete">delete()</h3><p>Delete a JSON data object by <code>id</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">index</span><span class="pun">({</span><span class="pln">
+</ul><h3 id="javascript-api-reference-writing-data-delete">delete()</h3><p>Delete a JSON data object by <code>id</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   id</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"</span><span class="number"><span class="str">1</span></span><span class="str">"</span></span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
