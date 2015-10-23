@@ -56,23 +56,30 @@
   <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav">
       <!-- ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
+        <a ng-href="#/scalr/FAQs" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/FAQs">FAQs</a>
+        <ul class="dropdown-menu">
+          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/jsapi.html>JS API</a>
+          </li><!-- end ngRepeat: file in folder.files -->
+        </ul>
+      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/concepts">Concepts</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/intro.html>Intro</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/intro.html>Intro</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/javascript">Javascript</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/javascript-intro.html>JS Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/nodejs-intro.html>Node Quick Start</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -80,13 +87,6 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/rest/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/rest/intro.html>Quick Start</a>
-          </li><!-- end ngRepeat: file in folder.files -->
-        </ul>
-      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/scalr/FAQs" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/FAQs">FAQs</a>
-        <ul class="dropdown-menu">
-          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/jsapi.html>JS API</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -149,7 +149,7 @@
     console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">error</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">});</span></code></pre><p>where <code>type: 'books'</code> indicates the collection (or table) inside which the data will be stored and the<code>id: '1'</code> is an optional unique identifier.</p><p>The <code>index()</code> method (and all the other <code>appbase</code> methods) return a <a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream</a> object. A ‘data’ event handler can be used on the returned object (or in a chained fashion) for listening to all the data changes.</p><blockquote>
 <p><span class="fa fa-info-circle"></span> If you have noticed, SCALR uses the same APIs and data modeling conventions as <a href="https://www.elastic.co/products/elasticsearch">ElasticSearch</a>. A <strong>type</strong> is equivalent to a <em>collection in MongoDB</em> or a <em>table in SQL</em>, and a document is similar to the document in MongoDB and equivalent to a <em>row in SQL</em>.</p>
-</blockquote><h2 id="quick-start-to-the-nodejs-api-step-3-geting-err-streaming-data">Step 3: <s>GETing</s> err, Streaming Data</h2><p>Now that we are able to store data, let’s try to get the data back from <a href="https://appbase.io">appbase.io</a> with the <code>streamDocument()</code> method.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbase</span><span class="pun">.</span><span class="pln">streamDocument</span><span class="pun">({</span><span class="pln">
+</blockquote><h2 id="quick-start-to-the-nodejs-api-step-3-geting-err-streaming-data">Step 3: <s>GETing</s> err, Streaming Data</h2><p>Now that we are able to store data, let’s try to get the data back from <a href="https://appbase.io">appbase.io</a> with the <code>readStream()</code> method.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbase</span><span class="pun">.</span><span class="pln">readStream</span><span class="pun">({</span><span class="pln">
       type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">'books'</span></span><span class="pun">,</span><span class="pln">
       id</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">'</span><span class="number"><span class="str">1</span></span><span class="str">'</span></span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -190,7 +190,7 @@ INITIAL RESPONSE
     </span><span class="string"><span class="str">"name"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"A Fake Book on Network Routing"</span></span><span class="pun">,</span><span class="pln">
     </span><span class="string"><span class="str">"price"</span></span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">6034</span></span><span class="pln">
   </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">}</span></code></pre><p>In the new document update, we can see the price change (5595 -&gt; 6034) being reflected. Subsequent changes will be streamed as JSON objects.</p><p><code>Note:</code> Appbase always streams the final state of an object, and not the diff b/w the old state and the new state. You can compute diffs on the client side by keeping the state using the composition of (_type, _id) fields.</p><h2 id="quick-start-to-the-nodejs-api-step-4-streaming-rich-queries">Step 4: Streaming Rich Queries</h2><p>Streaming document updates are great for building messaging systems or notification feeds on individual objects. What if we were interested in continuously listening to a broader set of data? The <code>streamSearch()</code> method scratches this itch perfectly. </p><p>In the example below, we will see it in action with a <code>match_all</code> query that returns any time a new document is added to the type ‘books’ or when any of the existing documents are modified.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbase</span><span class="pun">.</span><span class="pln">streamSearch</span><span class="pun">({</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>In the new document update, we can see the price change (5595 -&gt; 6034) being reflected. Subsequent changes will be streamed as JSON objects.</p><p><code>Note:</code> Appbase always streams the final state of an object, and not the diff b/w the old state and the new state. You can compute diffs on the client side by keeping the state using the composition of (_type, _id) fields.</p><h2 id="quick-start-to-the-nodejs-api-step-4-streaming-rich-queries">Step 4: Streaming Rich Queries</h2><p>Streaming document updates are great for building messaging systems or notification feeds on individual objects. What if we were interested in continuously listening to a broader set of data? The <code>searchStream()</code> method scratches this itch perfectly. </p><p>In the example below, we will see it in action with a <code>match_all</code> query that returns any time a new document is added to the type ‘books’ or when any of the existing documents are modified.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbase</span><span class="pun">.</span><span class="pln">searchStream</span><span class="pun">({</span><span class="pln">
     type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">'books'</span></span><span class="pun">,</span><span class="pln">
     body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
         query</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
