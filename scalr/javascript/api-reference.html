@@ -56,30 +56,23 @@
   <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav">
       <!-- ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/scalr/FAQs" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/FAQs">FAQs</a>
-        <ul class="dropdown-menu">
-          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/jsapi.html>JS API</a>
-          </li><!-- end ngRepeat: file in folder.files -->
-        </ul>
-      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/concepts">Concepts</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/intro.html>Intro</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/javascript">Javascript</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/javascript-intro.html>JS Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/nodejs-intro.html>Node Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -87,6 +80,13 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/rest/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/rest/intro.html>Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files -->
+        </ul>
+      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
+        <a ng-href="#/scalr/FAQs" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/FAQs">FAQs</a>
+        <ul class="dropdown-menu">
+          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/jsapi.html>JS API</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -122,7 +122,7 @@
 <li>Continuously stream updates to documents, queries or filters over websockets (for browsers) and http-streams.</li>
 <li>Index new documents or update / delete existing ones.</li>
 <li>Is compatible with <a href="https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/index.html">elasticsearch.js</a>, which can be used for modifying the ES configurations and for using more esoteric methods.</li>
-</ul><p>You can read the <a href="http://docs.appbase.io/scalr/javascript/javascript-intro.html">Javascript</a> or <a href="http://docs.appbase.io/scalr/javascript/nodejs-intro.html">Node.JS</a> quick-start guides for installation and basic usage.</p><h2 id="javascript-api-reference-setup">SETUP</h2><h3 id="javascript-api-reference-setup-new-appbase">new Appbase()</h3><p>Returns a new Appbase object (refered to as <code>appbaseObj</code> in all the following examples) using the <code>url</code>, <code>appname</code> and <code>username</code>:<code>password</code> credentials.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> appbaseObj </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Appbase</span><span class="pun">({</span><span class="pln">
+</ul><p>You can read the <a href="http://docs.appbase.io/scalr/javascript/javascript-intro.html">Javascript</a> or <a href="http://docs.appbase.io/scalr/javascript/nodejs-intro.html">Node.JS</a> quick-start guides for installation and basic usage.</p><h2 id="javascript-api-reference-setup">SETUP</h2><h3 id="javascript-api-reference-setup-new-appbase">new Appbase()</h3><p>Returns a new Appbase object (refered to as <code>appbaseRef</code> in all the following examples) using the <code>url</code>, <code>appname</code> and <code>username</code>:<code>password</code> credentials.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> appbaseRef </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Appbase</span><span class="pun">({</span><span class="pln">
     </span><span class="string"><span class="str">"url"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"https:</span><span class="comment"><span class="str">//scalr.api.appbase.io"</span></span><span class="pun">,</span></span><span class="pln">
     </span><span class="string"><span class="str">"appname"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">YOUR_APP_NAME</span><span class="pun">&gt;,</span><span class="pln">
     </span><span class="string"><span class="str">"username"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">APP_CREDENTIAL</span><span class="pun">&gt;,</span><span class="pln">
@@ -136,7 +136,7 @@
 <li><strong>password</strong> <code>String</code> - password as displayed in the app dashboard</li>
 </ul>
 </li>
-</ul><p><strong>Returns</strong></p><p><code>Object</code> <strong>appbaseObj</strong> <em>Appbase reference object</em> - has <code>index()</code>, <code>delete()</code>, <code>bulk()</code>, <code>search()</code>, <code>readStream()</code> and <code>searchStream()</code> methods.</p><h2 id="javascript-api-reference-writing-data">WRITING DATA</h2><h3 id="javascript-api-reference-writing-data-index">index()</h3><p>Writes a JSON data object at a given <code>type</code> and <code>id</code> location, or updates if an object already exists.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">index</span><span class="pun">({</span><span class="pln">
+</ul><p><strong>Returns</strong></p><p><code>Object</code> <strong>appbaseRef</strong> <em>Appbase reference object</em> - has <code>index()</code>, <code>delete()</code>, <code>bulk()</code>, <code>search()</code>, <code>readStream()</code> and <code>searchStream()</code> methods.</p><h2 id="javascript-api-reference-writing-data">WRITING DATA</h2><h3 id="javascript-api-reference-writing-data-index">index()</h3><p>Writes a JSON data object at a given <code>type</code> and <code>id</code> location, or updates if an object already exists.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pun">.</span><span class="pln">index</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   id</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"</span><span class="number"><span class="str">1</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
   body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -149,7 +149,7 @@
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"successfully indexed: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"indexing error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.index(params)</code></p><ul>
+</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.index(params)</code></p><ul>
 <li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the type, id and the JSON data to be indexed</p>
 <ul>
 <li><strong>type</strong> <code>String</code> - The type (aka collection) under which the data will be indexed</li>
@@ -157,21 +157,21 @@
 <li><strong>*id</strong> <code>String</code> - ID for the JSON data. <code>id</code> is auto generated if not specified</li>
 </ul>
 </li>
-</ul><h3 id="javascript-api-reference-writing-data-delete">delete()</h3><p>Delete a JSON data object by <code>id</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">({</span><span class="pln">
+</ul><h3 id="javascript-api-reference-writing-data-delete">delete()</h3><p>Delete a JSON data object by <code>id</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   id</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"</span><span class="number"><span class="str">1</span></span><span class="str">"</span></span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"successfully deleted: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"deletion error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.delete(params)</code></p><ul>
+</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.delete(params)</code></p><ul>
 <li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the JSON object to be deleted</p>
 <ul>
 <li><strong>type</strong> <code>String</code> - The type (aka collection) of the object to be deleted</li>
 <li><strong>id</strong> <code>String</code> - ID for the JSON data</li>
 </ul>
 </li>
-</ul><h3 id="javascript-api-reference-writing-data-bulk">bulk()</h3><p>Apply many index / delete operations together, useful when importing data for the first time.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">bulk</span><span class="pun">({</span><span class="pln">
+</ul><h3 id="javascript-api-reference-writing-data-bulk">bulk()</h3><p>Apply many index / delete operations together, useful when importing data for the first time.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="pln">bulk</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
     </span><span class="comment"><span class="com">// action#</span><span class="number"><span class="com">1</span></span><span class="com"> description</span></span><span class="pln">
@@ -190,18 +190,18 @@
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"successful bulk: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'</span></span><span class="str">error'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"bulk failed: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.bulk(params)</code></p><ul>
+</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.bulk(params)</code></p><ul>
 <li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>body</code> and optionally a default <code>type</code> to be used for actions</p>
 <ul>
 <li><strong>body</strong> <code>String</code> - A Javascript array of actions to be performed written as a sequence of action#1, data#1, action#2, data#2, … action#n, data#n</li>
 <li><strong>*type</strong> <code>String</code> - Default document type for actions that don’t provide one</li>
 </ul>
 </li>
-</ul><h2 id="javascript-api-reference-getting-data">GETTING DATA</h2><h3 id="javascript-api-reference-getting-data-gettypes">getTypes()</h3><p>Get all the <code>types</code> of an appname.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">getTypes</span><span class="pun">().</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+</ul><h2 id="javascript-api-reference-getting-data">GETTING DATA</h2><h3 id="javascript-api-reference-getting-data-gettypes">getTypes()</h3><p>Get all the <code>types</code> of an appname.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="pln">getTypes</span><span class="pun">().</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"All app types: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"getTypes() failed: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.getTypes()</code></p><p>Returns all the <code>types</code> as an array.</p><h3 id="javascript-api-reference-getting-data-search">search()</h3><p>Search for matching documents in a type. It’s a convenience method for ElasticSearch’s <code>/_search</code> endpoint.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">search</span><span class="pun">({</span><span class="pln">
+</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.getTypes()</code></p><p>Returns all the <code>types</code> as an array.</p><h3 id="javascript-api-reference-getting-data-search">search()</h3><p>Search for matching documents in a type. It’s a convenience method for ElasticSearch’s <code>/_search</code> endpoint.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="pln">search</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     query</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -212,7 +212,7 @@
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"query result: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"search error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.search(params)</code></p><ul>
+</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.search(params)</code></p><ul>
 <li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the query <code>type</code> and <code>body</code>.</p>
 <ul>
 <li><strong>type</strong> <code>String</code> - Document type</li>
@@ -221,7 +221,7 @@
 </li>
 </ul><p><strong>Returns</strong></p><p><a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream.Readable</a> <code>Object</code> with</p><ul>
 <li><code>'data'</code> and <code>'error'</code> event handlers to return the results and any errors.</li>
-</ul><h2 id="javascript-api-reference-streaming-data">STREAMING DATA</h2><h3 id="javascript-api-reference-streaming-data-readstream">readStream()</h3><p>Continuously stream a specific JSON document.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">readStream</span><span class="pun">({</span><span class="pln">
+</ul><h2 id="javascript-api-reference-streaming-data">STREAMING DATA</h2><h3 id="javascript-api-reference-streaming-data-readstream">readStream()</h3><p>Continuously stream a specific JSON document.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="pln">readStream</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   id</span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">1</span></span><span class="pun">,</span><span class="pln">
   streamonly</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pln">
@@ -229,7 +229,7 @@
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"data update: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"streaming error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.readStream(params)</code></p><ul>
+</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.readStream(params)</code></p><ul>
 <li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the document to be streamed. Optionally, it can also contain a <code>streamonly</code> field to stream only the new updates and not return the original value</p>
 <ul>
 <li><strong>type</strong> <code>String</code> - Document type</li>
@@ -240,7 +240,7 @@
 </ul><p><strong>Returns</strong></p><p><a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream.Readable</a> <code>Object</code> with</p><ul>
 <li><code>'data'</code> and <code>'error'</code> event handlers</li>
 <li>a <strong>stop()</strong> method to stop the stream</li>
-</ul><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> responseStream </span><span class="pun">=</span><span class="pln"> appbaseObj</span><span class="pun">.</span><span class="pln">readStream</span><span class="pun">({</span><span class="pln">
+</ul><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> responseStream </span><span class="pun">=</span><span class="pln"> appbaseRef</span><span class="pun">.</span><span class="pln">readStream</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   id</span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">1</span></span><span class="pun">,</span><span class="pln">
   streamonly</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pln">
@@ -250,7 +250,7 @@ responseStream</span><span class="pun">.</span><span class="pln">on</span><span 
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"data update: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">});</span><span class="pln">
 
-responseStream</span><span class="pun">.</span><span class="pln">stop</span><span class="pun">();</span></code></pre><p><code>Note:</code> appbase.js lib uses websockets (on the browser) and http-streams (on node.js) to stream the updates.</p><h3 id="javascript-api-reference-streaming-data-streamsearch">streamSearch()</h3><p>Continuously stream results of search query on a given <code>type</code>. Search queries can be simple monitoring queries, finding an exact set of documents, full-text search queries, geolocation queries.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseObj</span><span class="pun">.</span><span class="pln">searchStream</span><span class="pun">({</span><span class="pln">
+responseStream</span><span class="pun">.</span><span class="pln">stop</span><span class="pun">();</span></code></pre><p><code>Note:</code> appbase.js lib uses websockets (on the browser) and http-streams (on node.js) to stream the updates.</p><h3 id="javascript-api-reference-streaming-data-streamsearch">streamSearch()</h3><p>Continuously stream results of search query on a given <code>type</code>. Search queries can be simple monitoring queries, finding an exact set of documents, full-text search queries, geolocation queries.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="pln">searchStream</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     query</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -262,7 +262,7 @@ responseStream</span><span class="pun">.</span><span class="pln">stop</span><spa
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"query update: "</span></span><span class="pun">,</span><span class="pln"> res</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"streaming error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseObj.searchStream(params)</code></p><ul>
+</span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.searchStream(params)</code></p><ul>
 <li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the query <code>type</code> and <code>body</code>, and optionally a <code>streamonly</code> field to stream only the new matching documents (without returning the existing matches)</p>
 <ul>
 <li><strong>type</strong> <code>String</code> - Document type</li>
@@ -273,7 +273,7 @@ responseStream</span><span class="pun">.</span><span class="pln">stop</span><spa
 </ul><p><strong>Returns</strong></p><p><a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream.Readable</a> <code>Object</code> with</p><ul>
 <li><code>'data'</code> and <code>'error'</code> event handlers</li>
 <li>a <strong>stop()</strong> method to stop the stream</li>
-</ul><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> responseStream </span><span class="pun">=</span><span class="pln"> appbaseObj</span><span class="pun">.</span><span class="pln">searchStream</span><span class="pun">({</span><span class="pln">
+</ul><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> responseStream </span><span class="pun">=</span><span class="pln"> appbaseRef</span><span class="pun">.</span><span class="pln">searchStream</span><span class="pun">({</span><span class="pln">
   type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
   body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     query</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
