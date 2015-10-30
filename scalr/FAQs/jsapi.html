@@ -56,32 +56,23 @@
   <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav">
       <!-- ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/scalr/FAQs" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/FAQs">FAQs</a>
-        <ul class="dropdown-menu">
-          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/jsapi.html>JS API</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/FAQs/rest.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/rest.html>REST</a>
-          </li><!-- end ngRepeat: file in folder.files -->
-        </ul>
-      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/concepts">Concepts</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/intro.html>Intro</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/javascript">Javascript</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/javascript-intro.html>JS Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/nodejs-intro.html>Node Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -89,6 +80,15 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/rest/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/rest/intro.html>Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files -->
+        </ul>
+      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
+        <a ng-href="#/scalr/FAQs" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/FAQs">FAQs</a>
+        <ul class="dropdown-menu">
+          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/jsapi.html>JS API</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/FAQs/rest.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/rest.html>REST</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -142,6 +142,7 @@ responseStream</span><span class="pun">.</span><span class="pln">on</span><span 
 <p><span class="fa fa-info-circle"></span> The same is true for all other methods (like <code>index()</code>, <code>readStream()</code>) as well, data is returned asynchronously via the ‘data’ event handler.</p>
 </blockquote><h2 id="how-to-pause-a-streaming-query">Pause a streaming query</h2><p><a href="https://nodejs.org/api/stream.html#stream_readable_pause">Pausing a response stream object</a> prevents new data responses from emitting. The stream can be resumed again via conveniently named <code>responseStream.resume()</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">responseStream</span><span class="pun">.</span><span class="pln">pause</span><span class="pun">();</span></code></pre><blockquote>
 <p><span class="fa fa-info-circle"></span> <strong>pause()</strong> vs <strong>stop()</strong> - pause() merely prevents emitting new ‘data’ event handlers, the response stream object still continues to capture the new events emitted by the searchStream() method. In contrast, stop() unsubscribes from the query and kills the response stream object.</p>
+<p><span class="fa fa-star"></span> Check out more things you can do with streams here -  <a href="http://www.sitepoint.com/basics-node-js-streams/">http://www.sitepoint.com/basics-node-js-streams/</a>.</p>
 </blockquote><h2 id="how-to-stream-results-of-a-range-query">Stream results of a range query</h2><p>Appbase.io implements a streaming interface for the entire <a href="https://www.elastic.co/guide/en/elasticsearch/reference/1.7/query-dsl.html">Query DSL</a> supported by ElasticSearch. So if we can compose a range query, making it return continuous results is easy.</p><p>Let’s say we have a <strong>type</strong> called <em>items</em> which contains items with their corresponding value. An example document inside the <em>items</em> type looks like:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
     </span><span class="string"><span class="str">"item"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"socks"</span></span><span class="pun">,</span><span class="pln">
     </span><span class="string"><span class="str">"value"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"</span><span class="number"><span class="str">255</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
