@@ -56,32 +56,23 @@
   <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav">
       <!-- ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/scalr/FAQs" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/FAQs">FAQs</a>
-        <ul class="dropdown-menu">
-          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/jsapi.html>JS API</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/FAQs/rest.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/rest.html>REST</a>
-          </li><!-- end ngRepeat: file in folder.files -->
-        </ul>
-      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/concepts">Concepts</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/intro.html>Intro</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
         <a ng-href="#/scalr/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/javascript">Javascript</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
-            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
-          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/javascript-intro.html>JS Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/nodejs-intro.html>Node Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>JS API Reference</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -89,6 +80,15 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../scalr/rest/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/rest/intro.html>Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files -->
+        </ul>
+      </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
+        <a ng-href="#/scalr/FAQs" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/FAQs">FAQs</a>
+        <ul class="dropdown-menu">
+          <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/jsapi.html>JS API</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../scalr/FAQs/rest.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/rest.html>REST</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -120,7 +120,7 @@
   <div class="menubar fixed">
     <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="appbase-data-model-item" class="level-1"><a id="appbase-data-model-link" href="../../scalr/concepts/datamodel.html#appbase-data-model" class="level-1" pref="#appbase-data-model">Appbase Data Model</a><ul class="level-2" id="appbase-data-model-list"><li id="appbase-data-model-what-is-appbaseio-item" class="level-2"><a id="appbase-data-model-what-is-appbaseio-link" href="../../scalr/concepts/datamodel.html#appbase-data-model-what-is-appbaseio" class="level-2" pref="#appbase-data-model-what-is-appbaseio">What is appbase.io</a></li></ul></li><li id="appbase-data-schema-item" class="level-1"><a id="appbase-data-schema-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema" class="level-1" pref="#appbase-data-schema">Appbase Data Schema</a><ul class="level-2" id="appbase-data-schema-list"><li id="appbase-data-schema-app-aka-index-item" class="level-2"><a id="appbase-data-schema-app-aka-index-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema-app-aka-index" class="level-2" pref="#appbase-data-schema-app-aka-index">App aka Index</a></li><li id="appbase-data-schema-type-item" class="level-2"><a id="appbase-data-schema-type-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema-type" class="level-2" pref="#appbase-data-schema-type">Type</a></li><li id="appbase-data-schema-document-item" class="level-2"><a id="appbase-data-schema-document-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema-document" class="level-2" pref="#appbase-data-schema-document">Document</a></li><li id="appbase-data-schema-visualizing-the-data-model-item" class="level-2"><a id="appbase-data-schema-visualizing-the-data-model-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema-visualizing-the-data-model" class="level-2" pref="#appbase-data-schema-visualizing-the-data-model">Visualizing the Data Model</a></li></ul></li></ul></li></ul></div>
   </div>
-  <div role="flatdoc-content" class="content"><h1 id="appbase-data-model">Appbase Data Model</h1><h2 id="appbase-data-model-what-is-appbaseio">What is appbase.io</h2><p><a href="https://appbase.io">Appbase.io</a> is a data streams API service for continuous search and aggregation queries. You can build reactive apps with Appbase.io, where views update in conjunction with the data changes.</p><p>It enables you to:  </p><ul>
+  <div role="flatdoc-content" class="content"><div class="extra_container"><div class="contributors_header">Contributors<span class="pull-right modified-date">Last Modified On : <a href="https://github.com/appbaseio/Docs/commit/9683e5f074953e97618dcc5acc576b785d93a286">Sep 18, 2015</a></span></div><div class="contributor-container"><a class="contributor" href="https://github.com/siddharthlatest" title="siddharthlatest" target="_blank"><img class="contributor_img img-rounded" src="https://avatars.githubusercontent.com/u/630042?v=3" alt="siddharthlatest"></a></div></div><div class="clearFix"></div><h1 id="appbase-data-model">Appbase Data Model</h1><h2 id="appbase-data-model-what-is-appbaseio">What is appbase.io</h2><p><a href="https://appbase.io">Appbase.io</a> is a data streams API service for continuous search and aggregation queries. You can build reactive apps with Appbase.io, where views update in conjunction with the data changes.</p><p>It enables you to:  </p><ul>
 <li>Build a blazing fast text search, messaging systems, or implement a mix of esoteric filters (fuzzy, geo, terms, range, multiple items),</li>
 <li>Stream JSON results directly as new data is added or the original data is updated,  </li>
 <li>Scale seamlessly upto 10,000 updates per second and store at terbyte scale.</li>
