@@ -314,17 +314,17 @@ Removes the provided References from the Document with the provided key.
  - references: Array&lt;String&gt; - Names of References to be removed from the object.</span></code></pre><pre><code class="lang-javascript prettyprint prettyprinted" style=""><span class="pln">    userCollection</span><span class="pun">.</span><span class="pln">unsetRefs</span><span class="pun">(</span><span class="string"><span class="str">'</span><span class="number"><span class="str">12345</span></span><span class="str">'</span></span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="string"><span class="str">'friend'</span></span><span class="pun">]).</span><span class="pln">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="comment"><span class="com">// Returns a promise</span></span><span class="pln">
         console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
     </span><span class="pun">});</span></code></pre><p><strong>collection.delete(key)</strong>
-Removes the Document with the provided key from the collection.</p><p>Parameters:  </p><pre><code class="prettyprint prettyprinted" style=""><span class="pln"> </span><span class="pun">-</span><span class="pln"> key</span><span class="pun">:</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="typ">Document</span><span class="str">'s unique key.</span></code></pre><pre><code class="lang-javascript prettyprint prettyprinted" style=""><span class="pln">    userCollection</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">(</span><span class="string"><span class="str">'</span><span class="number"><span class="str">12345</span></span><span class="str">'</span></span><span class="pun">).</span><span class="pln">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="comment"><span class="com">// Returns a promise</span></span><span class="pln">
-        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
-        </span><span class="com">/*
+Removes the Document with the provided key from the collection.</p><p>Parameters:  </p><pre><code class="prettyprint"> - key: String - Document's unique key.</code></pre><pre><code class="lang-javascript prettyprint">    userCollection.delete(<span class="string">'<span class="number">12345</span>'</span>).then(function(response) { <span class="comment">// Returns a promise</span>
+        console.log(response);
+        /*
         {
-            </span><span class="string"><span class="com">"_collection"</span></span><span class="com">: </span><span class="string"><span class="com">"user"</span></span><span class="com">,
-            </span><span class="string"><span class="com">"_id"</span></span><span class="com">: </span><span class="string"><span class="com">"</span><span class="number"><span class="com">4</span></span><span class="com">fcaaab</span><span class="number"><span class="com">1636</span></span><span class="com">e</span><span class="number"><span class="com">48</span></span><span class="com">ca</span><span class="number"><span class="com">988</span></span><span class="com">ffe</span><span class="number"><span class="com">075</span></span><span class="com">ec</span><span class="number"><span class="com">820</span></span><span class="com">b</span><span class="number"><span class="com">5</span></span><span class="com">"</span></span><span class="com">,
-            </span><span class="string"><span class="com">"_timestamp"</span></span><span class="com">: </span><span class="number"><span class="com">1431042743261</span></span><span class="com">,
-            </span><span class="string"><span class="com">"_deleted"</span></span><span class="com">: true
+            <span class="string">"_collection"</span>: <span class="string">"user"</span>,
+            <span class="string">"_id"</span>: <span class="string">"<span class="number">4</span>fcaaab<span class="number">1636</span>e<span class="number">48</span>ca<span class="number">988</span>ffe<span class="number">075</span>ec<span class="number">820</span>b<span class="number">5</span>"</span>,
+            <span class="string">"_timestamp"</span>: <span class="number">1431042743261</span>,
+            <span class="string">"_deleted"</span>: true
         }
-        */</span><span class="pln">
-    </span><span class="pun">});</span></code></pre></div>
+        */
+    });</code></pre></div>
   <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/javascript/api-reference.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/javascript/api-reference.md">
     <span class="fa fa-pencil"> Edit</span>
   </a>
