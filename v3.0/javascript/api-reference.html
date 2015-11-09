@@ -251,80 +251,80 @@ Listen to changes on the Document with the provided key.</p><p>Parameters:  </p>
         console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln"> </span><span class="comment"><span class="com">// Will log the object every time it has a change</span></span><span class="pln">
     </span><span class="pun">});</span></code></pre><p><strong>collection.onDocuments(callback[, errorCallback])</strong>
 Listen to the creation or changes on any Document in the collection.</p><p>Parameters:  </p><pre><code class="prettyprint prettyprinted" style=""><span class="pln"> </span><span class="pun">-</span><span class="pln"> callback</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Function</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> A </span><span class="kwd">function</span><span class="pln"> to be called whenever a </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Document</span><span class="pln"> </span><span class="kwd">is</span><span class="pln"> created </span><span class="kwd">or</span><span class="pln"> a change occurs to a </span><span class="typ">Document</span><span class="pun">.</span><span class="pln">
- </span><span class="pun">-</span><span class="pln"> errorCallback</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Function</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> A </span><span class="kwd">function</span><span class="pln"> to be called whenever a error occurs </span><span class="kwd">in</span><span class="pln"> the call</span><span class="pun">,</span><span class="pln"> may be called more than once</span><span class="pun">.</span></code></pre><pre><code class="lang-javascript prettyprint prettyprinted" style=""><span class="pln">    userCollection</span><span class="pun">.</span><span class="pln">onDocuments</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln"> </span><span class="comment"><span class="com">// Will log the object every time it has a new or changed Document</span></span><span class="pln">
-    </span><span class="pun">});</span></code></pre><p><strong>collection.onRef(key, callback[, errorCallback])</strong>
-Listen to the creation or changes of References on the Document that has the provided key.</p><p>Parameters:  </p><pre><code class="prettyprint prettyprinted" style=""><span class="pln"> </span><span class="pun">-</span><span class="pln"> key</span><span class="pun">:</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="typ">Document</span><span class="str">'s unique key.
+ </span><span class="pun">-</span><span class="pln"> errorCallback</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Function</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> A </span><span class="kwd">function</span><span class="pln"> to be called whenever a error occurs </span><span class="kwd">in</span><span class="pln"> the call</span><span class="pun">,</span><span class="pln"> may be called more than once</span><span class="pun">.</span></code></pre><pre><code class="lang-javascript prettyprint">    userCollection.onDocuments(function(response) {
+        console.log(response); <span class="comment">// Will log the object every time it has a new or changed Document</span>
+    });</code></pre><p><strong>collection.onRef(key, callback[, errorCallback])</strong>
+Listen to the creation or changes of References on the Document that has the provided key.</p><p>Parameters:  </p><pre><code class="prettyprint"> - key: String - Document's unique key.
  - callback: Function - A function to be called whenever a new Reference is created or a changes in a Document.
- - errorCallback: Function - A function to be called whenever a error occurs in the call, may be called more than once.</span></code></pre><pre><code class="lang-javascript prettyprint prettyprinted" style=""><span class="pln">    userCollection</span><span class="pun">.</span><span class="pln">onRef</span><span class="pun">(</span><span class="string"><span class="str">'</span><span class="number"><span class="str">12345</span></span><span class="str">'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln"> </span><span class="comment"><span class="com">// Will log the object every time it has a new or changed Ref in the Document</span></span><span class="pln">
-        </span><span class="com">/*
+ - errorCallback: Function - A function to be called whenever a error occurs in the call, may be called more than once.</code></pre><pre><code class="lang-javascript prettyprint">    userCollection.onRef(<span class="string">'<span class="number">12345</span>'</span>, function(response) {
+        console.log(response); <span class="comment">// Will log the object every time it has a new or changed Ref in the Document</span>
+        /*
         {
-            </span><span class="string"><span class="com">"friend"</span></span><span class="com">: {
-                </span><span class="string"><span class="com">"_timestamp"</span></span><span class="com">: </span><span class="number"><span class="com">1431040446952</span></span><span class="com">,
-                </span><span class="string"><span class="com">"_json"</span></span><span class="com">: {
-                    </span><span class="string"><span class="com">"_id"</span></span><span class="com">: </span><span class="string"><span class="com">"sagar"</span></span><span class="com">,
-                    </span><span class="string"><span class="com">"name</span><span class="number"><span class="com">1</span></span><span class="com">"</span></span><span class="com">: </span><span class="string"><span class="com">"sagar"</span></span><span class="com">,
-                    </span><span class="string"><span class="com">"name"</span></span><span class="com">: </span><span class="string"><span class="com">"</span><span class="number"><span class="com">1123</span></span><span class="com">"</span></span><span class="com">,
-                    </span><span class="string"><span class="com">"_collection"</span></span><span class="com">: </span><span class="string"><span class="com">"user"</span></span><span class="com">,
-                    </span><span class="string"><span class="com">"_timestamp"</span></span><span class="com">: </span><span class="number"><span class="com">1429562388858</span></span><span class="com">
+            <span class="string">"friend"</span>: {
+                <span class="string">"_timestamp"</span>: <span class="number">1431040446952</span>,
+                <span class="string">"_json"</span>: {
+                    <span class="string">"_id"</span>: <span class="string">"sagar"</span>,
+                    <span class="string">"name<span class="number">1</span>"</span>: <span class="string">"sagar"</span>,
+                    <span class="string">"name"</span>: <span class="string">"<span class="number">1123</span>"</span>,
+                    <span class="string">"_collection"</span>: <span class="string">"user"</span>,
+                    <span class="string">"_timestamp"</span>: <span class="number">1429562388858</span>
                 }
             }
-        } */</span><span class="pln">
-    </span><span class="pun">});</span></code></pre><p><strong>collection.setRef(key, ref, path[, priority])</strong>
+        } */
+    });</code></pre><p><strong>collection.setRef(key, ref, path[, priority])</strong>
 Listen to the creation or changes of References on the Document that has the provided key.
-<a href="http://docs.appbase.io//v3.0/rest/api-reference.html#api-reference-document-references-create-update-document-references">View in the REST API Docs</a></p><p>Parameters:  </p><pre><code class="prettyprint prettyprinted" style=""><span class="pln"> </span><span class="pun">-</span><span class="pln"> key</span><span class="pun">:</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="typ">Document</span><span class="str">'s unique key.
+<a href="http://docs.appbase.io//v3.0/rest/api-reference.html#api-reference-document-references-create-update-document-references">View in the REST API Docs</a></p><p>Parameters:  </p><pre><code class="prettyprint"> - key: String - Document's unique key.
  - callback: Function - A function to be called whenever a new Reference is created or a changes in a Document.
- - errorCallback: Function - A function to be called whenever a error occurs in the call, may be called more than once.</span></code></pre><pre><code class="lang-javascript prettyprint prettyprinted" style=""><span class="pln">    userCollection</span><span class="pun">.</span><span class="pln">setRef</span><span class="pun">(</span><span class="string"><span class="str">'</span><span class="number"><span class="str">12345</span></span><span class="str">'</span></span><span class="pun">,</span><span class="pln"> </span><span class="string"><span class="str">'friend'</span></span><span class="pun">,</span><span class="pln"> </span><span class="string"><span class="str">'user/sagar'</span></span><span class="pun">).</span><span class="pln">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="comment"><span class="com">// Returns a promise</span></span><span class="pln">
-        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
-        </span><span class="com">/*
+ - errorCallback: Function - A function to be called whenever a error occurs in the call, may be called more than once.</code></pre><pre><code class="lang-javascript prettyprint">    userCollection.setRef(<span class="string">'<span class="number">12345</span>'</span>, <span class="string">'friend'</span>, <span class="string">'user/sagar'</span>).then(function(response) { <span class="comment">// Returns a promise</span>
+        console.log(response);
+        /*
         {
-            </span><span class="string"><span class="com">"friend"</span></span><span class="com">: {
-                </span><span class="string"><span class="com">"timestamp"</span></span><span class="com">: </span><span class="number"><span class="com">1431040446952</span></span><span class="com">
+            <span class="string">"friend"</span>: {
+                <span class="string">"timestamp"</span>: <span class="number">1431040446952</span>
             }
         }
-        */</span><span class="pln">
-    </span><span class="pun">});</span></code></pre><p><strong>collection.getRefs(key[, filters])</strong>
+        */
+    });</code></pre><p><strong>collection.getRefs(key[, filters])</strong>
 Get all the References of the Document with the provided key.
-<a href="http://docs.appbase.io//v3.0/rest/api-reference.html#api-reference-document-references-read-references">View in the REST API Docs</a></p><p>Parameters:  </p><pre><code class="prettyprint prettyprinted" style=""><span class="pln"> </span><span class="pun">-</span><span class="pln"> key</span><span class="pun">:</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="typ">Document</span><span class="str">'s unique key.
- - filters: Object - Optional Object to paginate the documents'</span><span class="pln">s </span><span class="typ">References</span><span class="pun">,</span><span class="pln"> you may specify limit </span><span class="kwd">and</span><span class="pln"> skip</span><span class="pun">.</span></code></pre><pre><code class="lang-javascript prettyprint prettyprinted" style=""><span class="pln">    userCollection</span><span class="pun">.</span><span class="pln">getRefs</span><span class="pun">(</span><span class="string"><span class="str">'</span><span class="number"><span class="str">12345</span></span><span class="str">'</span></span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="comment"><span class="com">// Returns a promise</span></span><span class="pln">
-        limit </span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">3</span></span><span class="pun">,</span><span class="pln"> </span><span class="comment"><span class="com">// Get </span><span class="number"><span class="com">3</span></span><span class="com"> objects</span></span><span class="pln">
-        skip </span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">2</span></span><span class="pln">   </span><span class="comment"><span class="com">// Start by the second</span></span><span class="pln">
-    </span><span class="pun">}).</span><span class="pln">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
-        </span><span class="com">/*
+<a href="http://docs.appbase.io//v3.0/rest/api-reference.html#api-reference-document-references-read-references">View in the REST API Docs</a></p><p>Parameters:  </p><pre><code class="prettyprint"> - key: String - Document's unique key.
+ - filters: Object - Optional Object to paginate the documents's References, you may specify limit and skip.</code></pre><pre><code class="lang-javascript prettyprint">    userCollection.getRefs(<span class="string">'<span class="number">12345</span>'</span>, { <span class="comment">// Returns a promise</span>
+        limit : <span class="number">3</span>, <span class="comment">// Get <span class="number">3</span> objects</span>
+        skip : <span class="number">2</span>   <span class="comment">// Start by the second</span>
+    }).then(function(response) {
+        console.log(response);
+        /*
         [
             {
-                </span><span class="string"><span class="com">"friend"</span></span><span class="com">: {
-                    </span><span class="string"><span class="com">"_timestamp"</span></span><span class="com">: </span><span class="number"><span class="com">1431040446952</span></span><span class="com">,
-                    </span><span class="string"><span class="com">"_json"</span></span><span class="com">: {
-                        </span><span class="string"><span class="com">"_id"</span></span><span class="com">: </span><span class="string"><span class="com">"sagar"</span></span><span class="com">,
-                        </span><span class="string"><span class="com">"name</span><span class="number"><span class="com">1</span></span><span class="com">"</span></span><span class="com">: </span><span class="string"><span class="com">"sagar"</span></span><span class="com">,
-                        </span><span class="string"><span class="com">"name"</span></span><span class="com">: </span><span class="string"><span class="com">"</span><span class="number"><span class="com">1123</span></span><span class="com">"</span></span><span class="com">,
-                        </span><span class="string"><span class="com">"_collection"</span></span><span class="com">: </span><span class="string"><span class="com">"user"</span></span><span class="com">,
-                        </span><span class="string"><span class="com">"_timestamp"</span></span><span class="com">: </span><span class="number"><span class="com">1429562388858</span></span><span class="com">
+                <span class="string">"friend"</span>: {
+                    <span class="string">"_timestamp"</span>: <span class="number">1431040446952</span>,
+                    <span class="string">"_json"</span>: {
+                        <span class="string">"_id"</span>: <span class="string">"sagar"</span>,
+                        <span class="string">"name<span class="number">1</span>"</span>: <span class="string">"sagar"</span>,
+                        <span class="string">"name"</span>: <span class="string">"<span class="number">1123</span>"</span>,
+                        <span class="string">"_collection"</span>: <span class="string">"user"</span>,
+                        <span class="string">"_timestamp"</span>: <span class="number">1429562388858</span>
                     }
                 }
             }
         ]
-        */</span><span class="pln">
-    </span><span class="pun">});</span></code></pre><p><strong>collection.unsetRefs(key, references)</strong>
+        */
+    });</code></pre><p><strong>collection.unsetRefs(key, references)</strong>
 Removes the provided References from the Document with the provided key.
-<a href="http://docs.appbase.io//v3.0/rest/api-reference.html#api-reference-document-references-delete-references">View in the REST API Docs</a></p><p>Parameters:  </p><pre><code class="prettyprint prettyprinted" style=""><span class="pln"> </span><span class="pun">-</span><span class="pln"> key</span><span class="pun">:</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="typ">Document</span><span class="str">'s unique key.
- - references: Array&lt;String&gt; - Names of References to be removed from the object.</span></code></pre><pre><code class="lang-javascript prettyprint prettyprinted" style=""><span class="pln">    userCollection</span><span class="pun">.</span><span class="pln">unsetRefs</span><span class="pun">(</span><span class="string"><span class="str">'</span><span class="number"><span class="str">12345</span></span><span class="str">'</span></span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="string"><span class="str">'friend'</span></span><span class="pun">]).</span><span class="pln">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="comment"><span class="com">// Returns a promise</span></span><span class="pln">
-        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
-    </span><span class="pun">});</span></code></pre><p><strong>collection.delete(key)</strong>
-Removes the Document with the provided key from the collection.</p><p>Parameters:  </p><pre><code class="prettyprint prettyprinted" style=""><span class="pln"> </span><span class="pun">-</span><span class="pln"> key</span><span class="pun">:</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="typ">Document</span><span class="str">'s unique key.</span></code></pre><pre><code class="lang-javascript prettyprint prettyprinted" style=""><span class="pln">    userCollection</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">(</span><span class="string"><span class="str">'</span><span class="number"><span class="str">12345</span></span><span class="str">'</span></span><span class="pun">).</span><span class="pln">then</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">(</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="comment"><span class="com">// Returns a promise</span></span><span class="pln">
-        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">response</span><span class="pun">);</span><span class="pln">
-        </span><span class="com">/*
+<a href="http://docs.appbase.io//v3.0/rest/api-reference.html#api-reference-document-references-delete-references">View in the REST API Docs</a></p><p>Parameters:  </p><pre><code class="prettyprint"> - key: String - Document's unique key.
+ - references: Array&lt;String&gt; - Names of References to be removed from the object.</code></pre><pre><code class="lang-javascript prettyprint">    userCollection.unsetRefs(<span class="string">'<span class="number">12345</span>'</span>, [<span class="string">'friend'</span>]).then(function(response) { <span class="comment">// Returns a promise</span>
+        console.log(response);
+    });</code></pre><p><strong>collection.delete(key)</strong>
+Removes the Document with the provided key from the collection.</p><p>Parameters:  </p><pre><code class="prettyprint"> - key: String - Document's unique key.</code></pre><pre><code class="lang-javascript prettyprint">    userCollection.delete(<span class="string">'<span class="number">12345</span>'</span>).then(function(response) { <span class="comment">// Returns a promise</span>
+        console.log(response);
+        /*
         {
-            </span><span class="string"><span class="com">"_collection"</span></span><span class="com">: </span><span class="string"><span class="com">"user"</span></span><span class="com">,
-            </span><span class="string"><span class="com">"_id"</span></span><span class="com">: </span><span class="string"><span class="com">"</span><span class="number"><span class="com">4</span></span><span class="com">fcaaab</span><span class="number"><span class="com">1636</span></span><span class="com">e</span><span class="number"><span class="com">48</span></span><span class="com">ca</span><span class="number"><span class="com">988</span></span><span class="com">ffe</span><span class="number"><span class="com">075</span></span><span class="com">ec</span><span class="number"><span class="com">820</span></span><span class="com">b</span><span class="number"><span class="com">5</span></span><span class="com">"</span></span><span class="com">,
-            </span><span class="string"><span class="com">"_timestamp"</span></span><span class="com">: </span><span class="number"><span class="com">1431042743261</span></span><span class="com">,
-            </span><span class="string"><span class="com">"_deleted"</span></span><span class="com">: true
+            <span class="string">"_collection"</span>: <span class="string">"user"</span>,
+            <span class="string">"_id"</span>: <span class="string">"<span class="number">4</span>fcaaab<span class="number">1636</span>e<span class="number">48</span>ca<span class="number">988</span>ffe<span class="number">075</span>ec<span class="number">820</span>b<span class="number">5</span>"</span>,
+            <span class="string">"_timestamp"</span>: <span class="number">1431042743261</span>,
+            <span class="string">"_deleted"</span>: true
         }
-        */</span><span class="pln">
-    </span><span class="pun">});</span></code></pre></div>
+        */
+    });</code></pre></div>
   <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/javascript/api-reference.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/javascript/api-reference.md">
     <span class="fa fa-pencil"> Edit</span>
   </a>
