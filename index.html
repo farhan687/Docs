@@ -94,7 +94,15 @@
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
     </ul>
 
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">      
+       <li class="dropdown search-dropdown">
+        <div class="form-group search-form" data-ng-class="{'open-in':search.length &gt; 0}">
+          <input data-ng-model="search" type="text" class="search form-control dropdown-toggle ng-pristine ng-untouched ng-valid" data-toggle="dropdown" aria-expanded="false" placeholder="search..">
+          <ul class="dropdown-menu search-box ng-hide" role="menu" data-ng-show="search.length &gt; 0">
+            <!-- ngRepeat: doc in doc_content | filter:search -->
+          </ul>
+        </div>
+      </li>
       <li class="dropdown">
         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
            <span ng-bind="currentVersion" class="ng-binding">scalr</span> <span class="caret"></span>
