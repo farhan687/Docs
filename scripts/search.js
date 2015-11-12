@@ -8,6 +8,10 @@
     	
 		function onSuccessData(searchData){
 			searchData = JSON.parse(searchData);
+			for(var i=0; i< searchData.length; i++){
+				searchSingle = searchData[i];
+				searchSingle.content = searchSingle.content.replace(/<\/?[^>]+(>|$)/g, " ");
+			};
 			var posts = new Bloodhound({
 			    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title', 'content'),
 			    queryTokenizer: Bloodhound.tokenizers.whitespace,
