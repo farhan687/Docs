@@ -1,0 +1,16 @@
+.result_record a{
+    background: #fff;
+    display: block;
+    padding: 7px 10px;
+    font-size: 0.9em;
+    line-height: 1.1em;
+}
+.result_record a:hover,
+.result_record.tt-cursor a{
+	text-decoration: none;
+	background: #eee;
+}
+.result_record,
+.appbase-search{
+    border-bottom: 1px solid #ccc;	
+}
