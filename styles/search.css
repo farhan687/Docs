@@ -22,13 +22,15 @@
 	z-index: 2;
 	top: 40px !important;
 	width: 100%;
+	max-height: 230px;
+	overflow:auto; 
 }
 .search-form.open{
 	position: absolute !important;
     display: inline-block;
     width: 200px;
     right: 0;
-    height: 250px;
+    height: 280px;
     padding: 5px;
     top: 8px;
     background: #fff;
