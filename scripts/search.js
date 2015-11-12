@@ -35,6 +35,12 @@
 	    	$search.bind('typeahead:select', function(ev, suggestion) {
 			  window.location.href = suggestion.link;
 			});
+			$search.bind('typeahead:open', function(ev, suggestion) {
+			  $search.parents('.search-form').addClass('open');
+			});
+			$search.bind('typeahead:close', function(ev, suggestion) {
+			  $search.parents('.search-form').removeClass('open');
+			});
 
 	    }
 

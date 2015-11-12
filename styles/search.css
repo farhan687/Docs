@@ -1,3 +1,7 @@
+.appbase-search{
+	/*border-radius: 0;
+	border: 0;*/
+}
 .result_record a{
     background: #fff;
     display: block;
@@ -13,4 +17,20 @@
 .result_record,
 .appbase-search{
     border-bottom: 1px solid #ccc;	
+}
+.tt-menu{
+	z-index: 2;
+	top: 40px !important;
+	width: 100%;
+}
+.search-form.open{
+	position: absolute !important;
+    display: inline-block;
+    width: 200px;
+    right: 0;
+    height: 250px;
+    padding: 5px;
+    top: 8px;
+    background: #fff;
+    border: 1px solid #ccc;
 }
