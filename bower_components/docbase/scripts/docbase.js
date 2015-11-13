@@ -261,10 +261,12 @@
 
         $rootScope.$on("$includeContentLoaded", function(event, templateName) {
             var options = Docbase.options;
-             var gh = Docbase.options.github;
-            var defaultUrl = 'gh-pages/search-index.json';
-            searchIndexUrl = 'https://raw.githubusercontent.com/' + gh.user + '/' + gh.repo + '/' + defaultUrl;
-            $('.search').searchAppbase(searchIndexUrl);
+            if (options.search) {
+                var gh = Docbase.options.github;
+                var defaultUrl = 'gh-pages/search-index.json';
+                searchIndexUrl = 'https://raw.githubusercontent.com/' + gh.user + '/' + gh.repo + '/' + defaultUrl;
+                $('.search').searchAppbase(searchIndexUrl);
+            }
         });
 
         /**
