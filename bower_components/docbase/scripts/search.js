@@ -2,6 +2,7 @@
 	$.fn.searchAppbase = function(searchIndexUrl) {
 		var $search = this;
 		$search.addClass('appbase-search');
+		$search.parents('.search-form').show();
 
 		function searchTag(data) {
 			var result_a = $('<a>').addClass('result_record_a').attr('href', data.link).text(data.title);
