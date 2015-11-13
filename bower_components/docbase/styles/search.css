@@ -1,7 +1,3 @@
-.appbase-search{
-	/*border-radius: 0;
-	border: 0;*/
-}
 .result_record a{
     background: #fff;
     display: block;
@@ -25,11 +21,15 @@
 	max-height: 230px;
 	overflow:auto; 
 }
-.search-form.open{
-	position: absolute !important;
+.search-form{
     display: inline-block;
+    top: 8px;    
+    position: absolute !important;
     width: 200px;
-    right: 0;
+    right: 0; 
+}
+.search-form.open{
+	display: inline-block;
     height: 280px;
     padding: 5px;
     top: 8px;
