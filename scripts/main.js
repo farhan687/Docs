@@ -6,7 +6,7 @@
 	  method: 'file',
 	  map: {
 	      file: 'map.json',
-	      path: './'
+	      path: '/'
 	  },
 	  "file" : {
 	  	'path': 'src'
