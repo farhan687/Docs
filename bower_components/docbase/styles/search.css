@@ -14,25 +14,55 @@
 .appbase-search{
     border-bottom: 1px solid #ccc;	
 }
+.tt-menu .result_record:last-child{
+    border: none;
+}
 .tt-menu{
-	z-index: 2;
-	top: 40px !important;
-	width: 100%;
-	max-height: 230px;
-	overflow:auto; 
+    overflow: auto;
+    position: relative !important;
+    top: 8px;
+}
+.tt-menu .tt-dataset{
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 21px;
+}
+.tt-menu:before{
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 81px;
+    width: 28px;
+    height: 28px;
+    display: block;
+    border: 14px solid #50BAEF;
+    border-color: transparent transparent #50BAEF transparent;
+}
+.tt-menu:after{
+   content: "";
+    position: absolute;
+    top: -5px;
+    left: 82px;
+    width: 26px;
+    height: 27px;
+    display: block;
+    border: 13px solid #000;
+    border-color: transparent transparent #fff transparent;
 }
 .search-form{
     display: none;
-    top: 8px;    
+    top: 8px !important;    
     position: absolute !important;
     width: 200px;
     right: 0; 
 }
-.search-form.open{
+/*.search-form.open{
 	display: inline-block;
     height: 280px;
     padding: 5px;
     top: 8px;
     background: #fff;
     border: 1px solid #ccc;
-}
+}*/
