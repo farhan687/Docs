@@ -31,6 +31,7 @@
     Docbase.run = function(options) {
         var defaults = {
             method: 'github',
+            searchIndexUrl: 'search-index.json',
             map: {
                 file: 'map.json',
                 path: ''
@@ -81,7 +82,7 @@
         angApp = angular
             .module(options.angularAppName, ['ngRoute'])
             .factory('FlatdocService', ['$q', '$route', '$location', '$anchorScroll', '$http', Route.fetch])
-            .controller('URLCtrl', ['$scope', '$location', '$filter', 'data', 'commits', 'searchIndex', Route.URLCtrl])
+            .controller('URLCtrl', ['$scope', '$location', '$filter', 'data', 'commits', Route.URLCtrl])
             .controller('MainCtrl', ['$scope', '$location', '$timeout', Route.mainCtrl])
             .config(['$routeProvider', '$locationProvider', Route.config])
             .run(
@@ -200,9 +201,6 @@
             },
             commits: function(FlatdocService) {
                 return FlatdocService.getCommits();
-            },
-            searchIndex: function(FlatdocService) {
-                return FlatdocService.searchIndex();
             }
         };
 
@@ -262,6 +260,12 @@
             }
         });
 
+        $rootScope.$on("$includeContentLoaded", function(event, templateName) {
+            if($.fn.searchAppbase){
+                $('.search_field').searchAppbase(Docbase.options.searchIndexUrl);
+            }
+        });
+
         /**
          * Initial scroll to hash on page load.
          */
@@ -314,7 +318,6 @@
                     retObj.github = url;
 
                     Events.parsed = false;
-                    console.log(fileURL);
                     Flatdoc.file(fileURL)(function(err, markdown) {
                         markdown = markdown.split('\n');
                         var obj = markdown.shift();
@@ -368,75 +371,70 @@
                 return new fetcher();
             },
             getCommits: function() {
+                var resultPromise = null;
                 var options = Docbase.options;
                 var file_path = $route.current.params;
-                var full_path = options.github.path + '/' + file_path.version + '/' + file_path.folder + '/' + file_path.file;
-                return $http.get('https://api.github.com/repos/' + options.github.user + '/' + options.github.repo + '/commits?path=' + full_path + '.md' + '&client_id=2189c9f3da189f760f69&client_secret=5385328f8910540ae0e5fde1df78fba6686651cd');
-            },
-            searchIndex: function() {
-                return $http.get('https://raw.githubusercontent.com/appbaseio/Docs/gh-pages/search-index.json');
+                if (options.github.path) {
+                    var full_path = options.github.path + '/' + file_path.version + '/' + file_path.folder + '/' + file_path.file;
+                    resultPromise = $http.get('https://api.github.com/repos/' + options.github.user + '/' + options.github.repo + '/commits?path=' + full_path + '.md&client_id=2189c9f3da189f760f69&client_secret=5385328f8910540ae0e5fde1df78fba6686651cd');
+                } else {
+                    deferred = $q.defer();
+                    resultPromise = deferred.promise;
+                    deferred.resolve([]);
+                }
+                return resultPromise;
             }
         };
     };
 
-    Route.URLCtrl = function($scope, $location, $filter, data, commits, searchIndex) {
+    Route.URLCtrl = function($scope, $location, $filter, data, commits) {
         $location.path(data.locationPath);
-
+        var contribut_array = [];
         if (!data.fail) {
             $scope.versions = data.versions;
             $scope.currentVersion = data.currentVersion;
             $scope.map = data.map;
             $scope.github = data.github;
-            var content = data.markdown;
-            var contribut_array = [];
-            var menu_view = Flatdoc.menuView(content.menu);
-            $('[role="flatdoc-content"]').html(content.content.find('>*'));
-            $('[role="flatdoc-menu"]').html(menu_view);
-            jWindow.trigger('flatdoc:ready');
-        }
 
-        if (searchIndex.status == 200) {
-            $scope.doc_content = searchIndex.data;
-            $scope.doc_content.forEach(function(val) {
-                val.content = val.content.replace(/<\/?[^>]+(>|$)/g, "");
-            });
+            var content = data.markdown;
+            $('[role="flatdoc-content"]').html(content.content.find('>*'));
+            $('[role="flatdoc-menu"]').html(Flatdoc.menuView(content.menu));
+
+            jWindow.trigger('flatdoc:ready');
         }
 
         var extra_container = $("<div>").addClass('extra_container');
         if (commits.status == 200) {
             var commits_data = commits.data;
-            if (commits.data[0]) {
-                var commiter_data = $filter('date')(commits.data[0].commit.committer.date, 'mediumDate');
-                var last_date = $('<span>').addClass('pull-right modified-date').html('Last Modified On : <a href="' + commits.data[0].html_url + '">' + commiter_data + '</a>');
-                var contributors_data = commits_data || [];
-                var contributors = $('<div>').addClass('contributor-container');
-                for (var i = 0; i < contributors_data.length; i++) {
-                    var contributor_d = contributors_data[i].committer;
-                    if (contributor_d && jQuery.inArray(contributor_d.login, contribut_array) == -1) {
-                        contribut_array.push(contributor_d.login);
-                        var contributor_img = $('<img>').addClass('contributor_img img-rounded').attr({
-                            'src': contributor_d.avatar_url,
-                            'alt': contributor_d.login
-                        });
-                        var contributor = $('<a>').addClass('contributor').attr({
-                            'href': contributor_d.html_url,
-                            'title': contributor_d.login,
-                            'target': '_blank'
-                        }).append(contributor_img);
-                        contributors.append(contributor);
-                    }
-                }
-                var contributors_header = $('<div>').addClass('contributors_header').append('<strong>Contributors<strong>').append(last_date);
-                $(extra_container).prepend(contributors).prepend(contributors_header);
-            }
+            var commiter_data = $filter('date')(commits.data[0].commit.committer.date, 'mediumDate');
+            var last_date = $('<span>').addClass('pull-right modified-date').html('Last Modified On : <a href="' + commits.data[0].html_url + '">' + commiter_data + '</a>');
 
+            var contributors_data = commits_data;
+            var contributors = $('<div>').addClass('contributor-container');
+            for (var i = 0; i < contributors_data.length; i++) {
+                var contributor_d = contributors_data[i].committer;
+                if (contributor_d && jQuery.inArray(contributor_d.login, contribut_array) == -1) {
+                    contribut_array.push(contributor_d.login);
+                    var contributor_img = $('<img>').addClass('contributor_img img-rounded').attr({
+                        'src': contributor_d.avatar_url,
+                        'alt': contributor_d.login
+                    });
+                    var contributor = $('<a>').addClass('contributor').attr({
+                        'href': contributor_d.html_url,
+                        'title': contributor_d.login,
+                        'target': '_blank'
+                    }).append(contributor_img);
+                    contributors.append(contributor);
+                }
+            }
+            var contributors_header = $('<div>').addClass('contributors_header').append('Contributors').append(last_date);
+            $(extra_container).prepend(contributors).prepend(contributors_header);
 
 
         }
 
         var div2 = $('<div>').addClass('clearFix');
         $('[role="flatdoc-content"]').prepend(div2).prepend(extra_container);
-
 
     };
 
@@ -563,62 +561,65 @@
                 ref: options.branch
             })
             .success(function(data) {
-                var sha = data.filter(function(each) {
+
+                var commitData = data.filter(function(each) {
                     return each.name === deleted;
-                })[0].sha;
+                });
+                if (commitData[0]) {
+                    var sha = commitData[0].sha;
+                    $.get(baseurl + 'git/trees/' + sha + '?recursive=1')
+                        .success(function(tree) {
+                            tree = tree.tree.filter(function(each) {
+                                return endsWith(each.path, '.md');
+                            });
 
-                $.get(baseurl + 'git/trees/' + sha + '?recursive=1')
-                    .success(function(tree) {
-                        tree = tree.tree.filter(function(each) {
-                            return endsWith(each.path, '.md');
-                        });
+                            var map = {};
 
-                        var map = {};
+                            tree.forEach(function(each) {
+                                var sub_path = each.path.split('/');
+                                /* assuming sub_path[0] is the version,
+                                 * sub_path[1] is the folder,
+                                 * and sub_path[2] is the file.
+                                 */
+                                if (sub_path.length >= 3) {
+                                    var version = sub_path[0];
+                                    var folder = sub_path[1];
+                                    var file = sub_path[2].substring(0, sub_path[2].length - 3);
 
-                        tree.forEach(function(each) {
-                            var sub_path = each.path.split('/');
-                            /* assuming sub_path[0] is the version,
-                             * sub_path[1] is the folder,
-                             * and sub_path[2] is the file.
-                             */
-                            if (sub_path.length >= 3) {
-                                var version = sub_path[0];
-                                var folder = sub_path[1];
-                                var file = sub_path[2].substring(0, sub_path[2].length - 3);
+                                    // Version is new
+                                    if (!map[version]) {
+                                        map[version] = [];
+                                    }
 
-                                // Version is new
-                                if (!map[version]) {
-                                    map[version] = [];
-                                }
+                                    // Folder is new
+                                    if (!map[version].filter(function(a) {
+                                            return a.name === folder;
+                                        }).length) {
+                                        map[version].push({
+                                            label: folder,
+                                            name: folder,
+                                            files: []
+                                        });
+                                    }
 
-                                // Folder is new
-                                if (!map[version].filter(function(a) {
-                                        return a.name === folder;
-                                    }).length) {
-                                    map[version].push({
-                                        label: folder,
-                                        name: folder,
-                                        files: []
+                                    // Add file
+                                    map[version].forEach(function(each) {
+                                        if (each.name === folder)
+                                            each.files.push({
+                                                name: file,
+                                                label: file
+                                            });
                                     });
                                 }
+                            });
 
-                                // Add file
-                                map[version].forEach(function(each) {
-                                    if (each.name === folder)
-                                        each.files.push({
-                                            name: file,
-                                            label: file
-                                        });
-                                });
-                            }
+                            callback(null, map);
+
+                        })
+                        .error(function(error) {
+                            callback(error);
                         });
-
-                        callback(null, map);
-
-                    })
-                    .error(function(error) {
-                        callback(error);
-                    });
+                }
             })
             .error(function(error) {
                 callback(error);
