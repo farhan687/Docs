@@ -98,7 +98,7 @@
     <ul class="nav navbar-nav navbar-right">      
        <li class="dropdown search-dropdown">
         <div class="form-group search-form" data-ng-class="{'open-in':search.length &gt; 0}">
-          <input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search" data-toggle="dropdown" aria-expanded="false" placeholder="search..">
+          <span class="twitter-typeahead" style="position: relative; display: inline-block; "><input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search tt-hint" data-toggle="dropdown" aria-expanded="false" style="position: absolute; top: 0px; left: 0px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; box-shadow: none; opacity: 1; background-attachment: scroll; background-clip: border-box; background-color: rgb(255, 255, 255); background-image: none; background-origin: padding-box; background-size:  ; background-position: 0% 0%; background-repeat: repeat repeat; " readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr"><input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search tt-input" data-toggle="dropdown" aria-expanded="false" placeholder="search.." autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; "><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none; "></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; "><div class="tt-dataset tt-dataset-titles"></div></div></span>
           <ul class="dropdown-menu search-box ng-hide" role="menu" data-ng-show="search.length &gt; 0">
             <!-- ngRepeat: doc in doc_content | filter:search -->
           </ul>
@@ -670,14 +670,14 @@ connection</span><span class="pun">:</span><span class="pln"> keep</span><span c
 </span><span class="pun">}</span></code>
 </pre><h3 id="api-reference-vertex-edge-delete-vertex-edges">Delete vertex edges</h3><p>Delete specific (or all) edges of a vertex.</p><blockquote style="float: left; width: 510px; margin-left: 20px; margin-right: 20px; color: rgb(51, 51, 51); ">
 <p><strong>Example Request</strong></p>
-<pre style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; "><code class="lang-curl prettyprint">curl --include \
-     --request DELETE \
-     --header <span class="string">"Content-Type: application/json"</span> \
-     --header <span class="string">"Appbase-Secret: <span class="number">193</span>dc<span class="number">4</span>d<span class="number">2440146082</span>ea<span class="number">734</span>f<span class="number">36</span>f<span class="number">4</span>f<span class="number">2638</span>"</span> \
-     --data-binary <span class="string">'{
-        <span class="string">"data"</span>: [<span class="string">"edge<span class="number">1</span>"</span>, <span class="string">"edgen"</span>]
-    }'</span> \
-<span class="string">'https:<span class="comment">//api.appbase.io/rest_test/v<span class="number">2</span>/Materials/Ice/~edges'</span></span></code></pre>
+<pre style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; "><code class="lang-curl prettyprint prettyprinted" style=""><span class="pln">curl </span><span class="pun">--</span><span class="pln">include \
+     </span><span class="pun">--</span><span class="pln">request DELETE \
+     </span><span class="pun">--</span><span class="pln">header </span><span class="string"><span class="str">"Content-Type: application/json"</span></span><span class="pln"> \
+     </span><span class="pun">--</span><span class="pln">header </span><span class="string"><span class="str">"Appbase-Secret: </span><span class="number"><span class="str">193</span></span><span class="str">dc</span><span class="number"><span class="str">4</span></span><span class="str">d</span><span class="number"><span class="str">2440146082</span></span><span class="str">ea</span><span class="number"><span class="str">734</span></span><span class="str">f</span><span class="number"><span class="str">36</span></span><span class="str">f</span><span class="number"><span class="str">4</span></span><span class="str">f</span><span class="number"><span class="str">2638</span></span><span class="str">"</span></span><span class="pln"> \
+     </span><span class="pun">--</span><span class="pln">data</span><span class="pun">-</span><span class="pln">binary </span><span class="string"><span class="str">'{
+        </span><span class="string"><span class="str">"data"</span></span><span class="str">: [</span><span class="string"><span class="str">"edge</span><span class="number"><span class="str">1</span></span><span class="str">"</span></span><span class="str">, </span><span class="string"><span class="str">"edgen"</span></span><span class="str">]
+    }'</span></span><span class="pln"> \
+</span><span class="string"><span class="str">'https:</span><span class="comment"><span class="str">//api.appbase.io/rest_test/v</span><span class="number"><span class="str">2</span></span><span class="str">/Materials/Ice/~edges'</span></span></span></code></pre>
 <p><strong>Usage</strong>:</p>
 <ul>
 <li><span class="inline-heading">URL VARIABLES</span>
@@ -711,45 +711,44 @@ connection</span><span class="pun">:</span><span class="pln"> keep</span><span c
 </li>
 </ul>
 
-</blockquote><pre><code class="prettyprint">
-<b>Request</b>
-<span class="inline-heading">URL</span>
-<span class="request-type">DELETE</span> https://api.appbase.io/<span class="path-var">appname</span>/v2/<span class="path-var">namespace</span>/<span class="path-var">vertex</span>/~edges
-<span class="inline-heading">HEADERS</span>
-Content-Type: application/json
-Appbase-Secret: 193dc4d2440146082ea734f36f4f2638
-<span class="inline-heading">BODY</span>
-{
-    "data": ["edge1", "edgen"]
-}
+</blockquote><pre><code class="prettyprint prettyprinted" style=""><span class="pln">
+</span><b><span class="typ">Request</span></b><span class="pln">
+</span><span class="inline-heading"><span class="pln">URL</span></span><span class="pln">
+</span><span class="request-type"><span class="pln">DELETE</span></span><span class="pln"> https</span><span class="pun">:</span><span class="com">//api.appbase.io/</span><span class="path-var"><span class="com">appname</span></span><span class="com">/v2/</span><span class="path-var"><span class="com">namespace</span></span><span class="com">/</span><span class="path-var"><span class="com">vertex</span></span><span class="com">/~edges</span><span class="pln">
+</span><span class="inline-heading"><span class="pln">HEADERS</span></span><span class="pln">
+</span><span class="typ">Content</span><span class="pun">-</span><span class="typ">Type</span><span class="pun">:</span><span class="pln"> application</span><span class="pun">/</span><span class="pln">json
+</span><span class="typ">Appbase</span><span class="pun">-</span><span class="typ">Secret</span><span class="pun">:</span><span class="pln"> </span><span class="lit">193dc4d2440146082ea734f36f4f2638</span><span class="pln">
+</span><span class="inline-heading"><span class="pln">BODY</span></span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="str">"data"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">"edge1"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"edgen"</span><span class="pun">]</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
 
-<b>Response</b>
-<span class="inline-heading">STATUS</span>
-204
-<span class="inline-heading">HEADERS</span>
-Content-Type: application/json
-access-control-allow-credentials: true
-cache-control: no-cache
-date: Wed, 15 Oct 2014 20:08:58 GMT
-content-length: 112
-connection: keep-alive
-</code>
-</pre><h1 id="socketio-api-endpoints">Socket.io API Endpoints</h1><p>Socket.io is a powerful realtime engine, and we are using it in the backend to provide realtime streams of data. Socket.io has client libraries for almost popular languages and platforms, and you can follow the API endpoints given below to fetch the data as realtime streams. Examples here use Javascript Language, but you can use the same methods on any other platform.</p><h2 id="socketio-api-endpoints-creating-the-client">Creating the Client</h2><p>The API server can be reached form <code>http://api.appbase.io:80</code> or <code>https://api.appbase.io:443</code>. Make sure that the ports are properly defined in the server URL itself.</p><pre><code class="lang-js prettyprint">ioClient = io(<span class="string">"http:<span class="comment">//api.appbase.io:<span class="number">80</span>"</span>);</span></code></pre><h2 id="socketio-api-endpoints-requesting-for-data">Requesting for data</h2><p>As vertices and namespace are represented using paths, you request for data on a path. Vertices and Namespaces are fundamentally different, and they also differ in terms of what resources you can listen to. But, they share the same Request format, with minor changes for special cases.</p><h3 id="socketio-api-endpoints-requesting-for-data-request-format">Request Format</h3><p>The request object looks something like this:</p><pre><code class="lang-json prettyprint">{
-    <span class="string">"appname"</span>: &lt;string&gt;,
-    <span class="string">"secret"</span>: &lt;string&gt;,
-    <span class="string">"token"</span>: &lt;string&gt;,
-    <span class="string">"namespace"</span>: &lt;string&gt;,
-    <span class="string">"key"</span>: &lt;string&gt;,
-    <span class="string">"obj_path"</span>: &lt;string&gt;,
-    <span class="string">"filters"</span>: {
-        <span class="string">"limit"</span>: &lt;natural number&gt;,
-        <span class="string">"skip"</span>: &lt;natural number&gt;,
-        <span class="string">"startAt"</span>: &lt;natural number&gt;,
-        <span class="string">"endAt"</span>: &lt;natural number&gt;
-    },
-    <span class="string">"listener_id"</span>: &lt;string&gt;,
-    <span class="string">"timestamp"</span>: &lt;natural number&gt;
-}</code></pre><ul>
+</span><b><span class="typ">Response</span></b><span class="pln">
+</span><span class="inline-heading"><span class="pln">STATUS</span></span><span class="pln">
+</span><span class="lit">204</span><span class="pln">
+</span><span class="inline-heading"><span class="pln">HEADERS</span></span><span class="pln">
+</span><span class="typ">Content</span><span class="pun">-</span><span class="typ">Type</span><span class="pun">:</span><span class="pln"> application</span><span class="pun">/</span><span class="pln">json
+access</span><span class="pun">-</span><span class="pln">control</span><span class="pun">-</span><span class="pln">allow</span><span class="pun">-</span><span class="pln">credentials</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
+cache</span><span class="pun">-</span><span class="pln">control</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">no</span><span class="pun">-</span><span class="pln">cache
+date</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Wed</span><span class="pun">,</span><span class="pln"> </span><span class="lit">15</span><span class="pln"> </span><span class="typ">Oct</span><span class="pln"> </span><span class="lit">2014</span><span class="pln"> </span><span class="lit">20</span><span class="pun">:</span><span class="lit">08</span><span class="pun">:</span><span class="lit">58</span><span class="pln"> GMT
+content</span><span class="pun">-</span><span class="pln">length</span><span class="pun">:</span><span class="pln"> </span><span class="lit">112</span><span class="pln">
+connection</span><span class="pun">:</span><span class="pln"> keep</span><span class="pun">-</span><span class="pln">alive</span></code>
+</pre><h1 id="socketio-api-endpoints">Socket.io API Endpoints</h1><p>Socket.io is a powerful realtime engine, and we are using it in the backend to provide realtime streams of data. Socket.io has client libraries for almost popular languages and platforms, and you can follow the API endpoints given below to fetch the data as realtime streams. Examples here use Javascript Language, but you can use the same methods on any other platform.</p><h2 id="socketio-api-endpoints-creating-the-client">Creating the Client</h2><p>The API server can be reached form <code>http://api.appbase.io:80</code> or <code>https://api.appbase.io:443</code>. Make sure that the ports are properly defined in the server URL itself.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">ioClient </span><span class="pun">=</span><span class="pln"> io</span><span class="pun">(</span><span class="string"><span class="str">"http:</span><span class="comment"><span class="str">//api.appbase.io:</span><span class="number"><span class="str">80</span></span><span class="str">"</span></span><span class="pun">);</span></span></code></pre><h2 id="socketio-api-endpoints-requesting-for-data">Requesting for data</h2><p>As vertices and namespace are represented using paths, you request for data on a path. Vertices and Namespaces are fundamentally different, and they also differ in terms of what resources you can listen to. But, they share the same Request format, with minor changes for special cases.</p><h3 id="socketio-api-endpoints-requesting-for-data-request-format">Request Format</h3><p>The request object looks something like this:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"appname"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">string</span><span class="pun">&gt;,</span><span class="pln">
+    </span><span class="string"><span class="str">"secret"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">string</span><span class="pun">&gt;,</span><span class="pln">
+    </span><span class="string"><span class="str">"token"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">string</span><span class="pun">&gt;,</span><span class="pln">
+    </span><span class="string"><span class="str">"namespace"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">string</span><span class="pun">&gt;,</span><span class="pln">
+    </span><span class="string"><span class="str">"key"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">string</span><span class="pun">&gt;,</span><span class="pln">
+    </span><span class="string"><span class="str">"obj_path"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">string</span><span class="pun">&gt;,</span><span class="pln">
+    </span><span class="string"><span class="str">"filters"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="string"><span class="str">"limit"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">natural number</span><span class="pun">&gt;,</span><span class="pln">
+        </span><span class="string"><span class="str">"skip"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">natural number</span><span class="pun">&gt;,</span><span class="pln">
+        </span><span class="string"><span class="str">"startAt"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">natural number</span><span class="pun">&gt;,</span><span class="pln">
+        </span><span class="string"><span class="str">"endAt"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">natural number</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+    </span><span class="string"><span class="str">"listener_id"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">string</span><span class="pun">&gt;,</span><span class="pln">
+    </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">natural number</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">}</span></code></pre><ul>
 <li><strong>appname</strong> - The name of the application</li>
 <li><strong>secret</strong> - Application secret</li>
 <li><strong>token</strong> - Appbase Auth Token returned using the OAuth flow
@@ -768,140 +767,140 @@ When there’s a reconnection with the server, due to network connectivity probl
 <li><strong>listener_id</strong> - a unique string that will be used in your application to distuinguish Socket.IO listeners</li>
 </ul><h3 id="socketio-api-endpoints-requesting-for-data-vertex">Vertex</h3><p>When the path you are pointing to is a vertex, you can listen to:
 - Properties of the Vertex. I.e. fetch existing properties of the vertx, and get updates when they change.
-- Edges of the Vertex. I.e. fetch existing edges, and get updates when edges are added, removed or replaced.</p><p>Sample request object, pointing to the path: <em>user/andy/bhenchod/machod</em>, for application <em>chat_app</em>.</p><pre><code class="lang-json prettyprint">{
-    <span class="string">"appname"</span>: <span class="string">"chat_app"</span>,
-    <span class="string">"secret"</span>: <span class="string">"dskfhyr<span class="number">987</span>r<span class="number">09</span>g<span class="number">8</span>w<span class="number">00309309</span>"</span>,
-    <span class="string">"namespace"</span>: <span class="string">"user"</span>,
-    <span class="string">"key"</span>: <span class="string">"andy"</span>,
-    <span class="string">"obj_path"</span>: <span class="string">"bhenchod/machod"</span>,
-    <span class="string">"listener_id"</span>: <span class="string">"sdfkgjohabioahdfk"</span>
-}</code></pre><h4>Properties</h4><p>To turn on the listening:</p><pre><code class="lang-js prettyprint">ioClient.emit(<span class="string">'properties'</span>, requestObj);</code></pre><p>To turn the listening off:</p><pre><code class="lang-js prettyprint">ioClient.emit(<span class="string">'properties off'</span>, requestObj);</code></pre><h4>Edges</h4><p>Turn it on:</p><pre><code class="lang-js prettyprint">ioClient.emit(<span class="string">'edges'</span>, requestObj);</code></pre><p>Turn off:</p><pre><code class="lang-js prettyprint">ioClient.emit(<span class="string">'edges off'</span>, requestObj);</code></pre><h3 id="socketio-api-endpoints-requesting-for-data-namespace">Namespace</h3><p>When your path points to a namespace, you can listen to the Vertices in the Namespace. It means that you will be able to fetch existing vertices, and get updates like addition and removal of vertices.</p><p>To listen on the vertices in namespace the namespace <em>user</em>, the sample request would be:</p><pre><code class="lang-json prettyprint">{
-    <span class="string">"appname"</span>: <span class="string">"chat_app"</span>,
-    <span class="string">"secret"</span>: <span class="string">"dskfhyr<span class="number">987</span>r<span class="number">09</span>g<span class="number">8</span>w<span class="number">00309309</span>"</span>,
-    <span class="string">"namespace"</span>: <span class="string">"user"</span>,
-    <span class="string">"listener_id"</span>: <span class="string">"asasasfasaef<span class="number">324</span>"</span>
-}</code></pre><p>Turn it on:</p><pre><code class="lang-js prettyprint">ioClient.emit(<span class="string">'new vertices'</span>, requestObj);</code></pre><p>Turn off:</p><pre><code class="lang-js prettyprint">ioClient.emit(<span class="string">'new vertices off'</span>, requestObj);</code></pre><h2 id="socketio-api-endpoints-attachingremoving-data-listeners">Attaching/Removing Data Listeners</h2><p>Socket.io allows you to attach callbacks to events, and these callbacks are called everytime the event it fired, i.e. when some data is arrived. The data starts arriving on these callbacks once you request for some data as described above, and it stops when you do an ‘off’ request.</p><p>You should <em>always</em> attach the listeners first and then request for data, otherwise you will miss the initial data that arrives.</p><p><code>ioClient.on()</code> is the method we will use to attach listeners.</p><p>It is possible to listen to <em>connection status</em> events as well, as in, when a disconnection or reconnectio happens. See <em>Handling Disconnection and Reconnection</em> in this doc.</p><h3 id="socketio-api-endpoints-attachingremoving-data-listeners-format">Format</h3><p>We saw that we build a specific <em>requestObject</em> to do a data request. We will use the same object to attach lieteners.</p><pre><code class="lang-js prettyprint">delete requestObject.timestamp;
-var event = JSON.stringify(requestObject), callback;
-ioClient.on(event, callback = function(data) {
-    <span class="comment">// do something with the data</span>
-});</code></pre><p>The event on which we are listening to is just the stringified version of the <em>requestObject</em> we used, while requesting for data. This way you can listen to all the resources on which you request the data.</p><p>Notice that we deleted the <code>timestamp</code> from request object. This is necessary and it is kept that way on purpose. We will see how and why, in <em>Handling Disconnection and Reconnection</em> section of this documentation.</p><p>The following code will remove the callback.</p><pre><code class="lang-js prettyprint">ioClient.removeListener(event, callback);</code></pre><h2 id="socketio-api-endpoints-parsing-the-data">Parsing the Data</h2><p>The data that arrives on listener callbacks is different for different resources. It is even different for the same resource, when different events happen. Let’s see how the data looks like on all these cases.</p><pre><code class="lang-js prettyprint">ioClient.on(event, function(data) {
-    <span class="comment">// what this `data` looks like?</span>
-});</code></pre><h3 id="socketio-api-endpoints-parsing-the-data-vertex">Vertex</h3><p>As we saw earlier, on a vertex you can listen to two kinds of resources: properties and edges.</p><h4>Properties</h4><p>Suppose you are listening to the properties of the vertex at <em>user/andy</em>. We will try to understand what are the cases when data will arrive and how it would look like.</p><p>Start listening:</p><pre><code class="lang-js prettyprint">var request = {
-    <span class="string">"appname"</span>: <span class="string">"chat_app"</span>,
-    <span class="string">"secret"</span>: <span class="string">"dskfhyr<span class="number">987</span>r<span class="number">09</span>g<span class="number">8</span>w<span class="number">00309309</span>"</span>,
-    <span class="string">"namespace"</span>: <span class="string">"user"</span>,
-    <span class="string">"key"</span>: <span class="string">"andy"</span>,
-    <span class="string">"listener_id"</span>: <span class="string">"asasjhsd<span class="number">335</span>f<span class="number">324</span>"</span>
-};
+- Edges of the Vertex. I.e. fetch existing edges, and get updates when edges are added, removed or replaced.</p><p>Sample request object, pointing to the path: <em>user/andy/bhenchod/machod</em>, for application <em>chat_app</em>.</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"appname"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"chat_app"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"secret"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"dskfhyr</span><span class="number"><span class="str">987</span></span><span class="str">r</span><span class="number"><span class="str">09</span></span><span class="str">g</span><span class="number"><span class="str">8</span></span><span class="str">w</span><span class="number"><span class="str">00309309</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"namespace"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"user"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"key"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"andy"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"obj_path"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"bhenchod/machod"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"listener_id"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"sdfkgjohabioahdfk"</span></span><span class="pln">
+</span><span class="pun">}</span></code></pre><h4>Properties</h4><p>To turn on the listening:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">ioClient</span><span class="pun">.</span><span class="pln">emit</span><span class="pun">(</span><span class="string"><span class="str">'properties'</span></span><span class="pun">,</span><span class="pln"> requestObj</span><span class="pun">);</span></code></pre><p>To turn the listening off:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">ioClient</span><span class="pun">.</span><span class="pln">emit</span><span class="pun">(</span><span class="string"><span class="str">'properties off'</span></span><span class="pun">,</span><span class="pln"> requestObj</span><span class="pun">);</span></code></pre><h4>Edges</h4><p>Turn it on:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">ioClient</span><span class="pun">.</span><span class="pln">emit</span><span class="pun">(</span><span class="string"><span class="str">'edges'</span></span><span class="pun">,</span><span class="pln"> requestObj</span><span class="pun">);</span></code></pre><p>Turn off:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">ioClient</span><span class="pun">.</span><span class="pln">emit</span><span class="pun">(</span><span class="string"><span class="str">'edges off'</span></span><span class="pun">,</span><span class="pln"> requestObj</span><span class="pun">);</span></code></pre><h3 id="socketio-api-endpoints-requesting-for-data-namespace">Namespace</h3><p>When your path points to a namespace, you can listen to the Vertices in the Namespace. It means that you will be able to fetch existing vertices, and get updates like addition and removal of vertices.</p><p>To listen on the vertices in namespace the namespace <em>user</em>, the sample request would be:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"appname"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"chat_app"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"secret"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"dskfhyr</span><span class="number"><span class="str">987</span></span><span class="str">r</span><span class="number"><span class="str">09</span></span><span class="str">g</span><span class="number"><span class="str">8</span></span><span class="str">w</span><span class="number"><span class="str">00309309</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"namespace"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"user"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"listener_id"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"asasasfasaef</span><span class="number"><span class="str">324</span></span><span class="str">"</span></span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>Turn it on:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">ioClient</span><span class="pun">.</span><span class="pln">emit</span><span class="pun">(</span><span class="string"><span class="str">'new vertices'</span></span><span class="pun">,</span><span class="pln"> requestObj</span><span class="pun">);</span></code></pre><p>Turn off:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">ioClient</span><span class="pun">.</span><span class="pln">emit</span><span class="pun">(</span><span class="string"><span class="str">'new vertices off'</span></span><span class="pun">,</span><span class="pln"> requestObj</span><span class="pun">);</span></code></pre><h2 id="socketio-api-endpoints-attachingremoving-data-listeners">Attaching/Removing Data Listeners</h2><p>Socket.io allows you to attach callbacks to events, and these callbacks are called everytime the event it fired, i.e. when some data is arrived. The data starts arriving on these callbacks once you request for some data as described above, and it stops when you do an ‘off’ request.</p><p>You should <em>always</em> attach the listeners first and then request for data, otherwise you will miss the initial data that arrives.</p><p><code>ioClient.on()</code> is the method we will use to attach listeners.</p><p>It is possible to listen to <em>connection status</em> events as well, as in, when a disconnection or reconnectio happens. See <em>Handling Disconnection and Reconnection</em> in this doc.</p><h3 id="socketio-api-endpoints-attachingremoving-data-listeners-format">Format</h3><p>We saw that we build a specific <em>requestObject</em> to do a data request. We will use the same object to attach lieteners.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">delete</span><span class="pln"> requestObject</span><span class="pun">.</span><span class="pln">timestamp</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> event </span><span class="pun">=</span><span class="pln"> JSON</span><span class="pun">.</span><span class="pln">stringify</span><span class="pun">(</span><span class="pln">requestObject</span><span class="pun">),</span><span class="pln"> callback</span><span class="pun">;</span><span class="pln">
+ioClient</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="pln">event</span><span class="pun">,</span><span class="pln"> callback </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="comment"><span class="com">// do something with the data</span></span><span class="pln">
+</span><span class="pun">});</span></code></pre><p>The event on which we are listening to is just the stringified version of the <em>requestObject</em> we used, while requesting for data. This way you can listen to all the resources on which you request the data.</p><p>Notice that we deleted the <code>timestamp</code> from request object. This is necessary and it is kept that way on purpose. We will see how and why, in <em>Handling Disconnection and Reconnection</em> section of this documentation.</p><p>The following code will remove the callback.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">ioClient</span><span class="pun">.</span><span class="pln">removeListener</span><span class="pun">(</span><span class="pln">event</span><span class="pun">,</span><span class="pln"> callback</span><span class="pun">);</span></code></pre><h2 id="socketio-api-endpoints-parsing-the-data">Parsing the Data</h2><p>The data that arrives on listener callbacks is different for different resources. It is even different for the same resource, when different events happen. Let’s see how the data looks like on all these cases.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">ioClient</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="pln">event</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="comment"><span class="com">// what this `data` looks like?</span></span><span class="pln">
+</span><span class="pun">});</span></code></pre><h3 id="socketio-api-endpoints-parsing-the-data-vertex">Vertex</h3><p>As we saw earlier, on a vertex you can listen to two kinds of resources: properties and edges.</p><h4>Properties</h4><p>Suppose you are listening to the properties of the vertex at <em>user/andy</em>. We will try to understand what are the cases when data will arrive and how it would look like.</p><p>Start listening:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> request </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"appname"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"chat_app"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"secret"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"dskfhyr</span><span class="number"><span class="str">987</span></span><span class="str">r</span><span class="number"><span class="str">09</span></span><span class="str">g</span><span class="number"><span class="str">8</span></span><span class="str">w</span><span class="number"><span class="str">00309309</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"namespace"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"user"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"key"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"andy"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"listener_id"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"asasjhsd</span><span class="number"><span class="str">335</span></span><span class="str">f</span><span class="number"><span class="str">324</span></span><span class="str">"</span></span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
 
-ioClient.on(JSON.stringify(request), function(data) {
-    <span class="comment">// ...</span>
-});
+ioClient</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="pln">JSON</span><span class="pun">.</span><span class="pln">stringify</span><span class="pun">(</span><span class="pln">request</span><span class="pun">),</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="comment"><span class="com">// ...</span></span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
 
-ioClient.emit(<span class="string">'properties'</span>, request);</code></pre><h5>1. Retrieval</h5><p>When you request for data for the first time, all the existing properties are retrieved. The data looks like this:</p><pre><code class="lang-json prettyprint">{
-    <span class="string">"optype"</span>:<span class="string">"RETR"</span>,
-    <span class="string">"vertex"</span>: {
-        <span class="string">"_id"</span>:<span class="string">"user`<span class="number">542094995</span>fd<span class="number">2217414</span>d<span class="number">7</span>cec<span class="number">4</span>"</span>,
-        <span class="string">"timestamp"</span>:<span class="number">1419000935812</span>,
-        <span class="string">"name"</span>: <span class="string">"Andy Dufresne"</span>,
-        <span class="string">"height_m"</span>: <span class="number"><span class="number">1</span>.<span class="number">96</span></span>
-    }
-}</code></pre><p>Notice that the <code>data.optype</code> of the data is <em>“RETR”</em> - retrieval. You get all the properties inside <code>data.vertex</code>, additionally the timestamp when the vertex was changed and the internal <em>_id</em> of the vertex.</p><h5>2. Property change</h5><p>Whenever a new property is added or an existing property is replaced, the data would be:</p><pre><code class="lang-json prettyprint">{
-    <span class="string">"optype"</span>:<span class="string">"UPDATE"</span>,
-    <span class="string">"vertex"</span>: {
-        <span class="string">"_id"</span>:<span class="string">"user`<span class="number">542094995</span>fd<span class="number">2217414</span>d<span class="number">7</span>cec<span class="number">4</span>"</span>,
-        <span class="string">"timestamp"</span>:<span class="number">1419001116911</span>,
-        <span class="string">"cast"</span>: <span class="string">"Tim Robbins"</span>
-    }
-}</code></pre><p>The <code>data.optype</code> is <em>“UPDATE”</em>, and you will get only the changed properties inside <code>data.vertex</code> and the updated timestamp of the vertex.</p><h5>3. Property removal</h5><p>A property removal causes arrivel of the following object:</p><pre><code class="lang-json prettyprint">{
-    <span class="string">"optype"</span>:<span class="string">"REMOVE"</span>,
-    <span class="string">"vertex"</span>: {
-        <span class="string">"_id"</span>:<span class="string">"user`<span class="number">542094995</span>fd<span class="number">2217414</span>d<span class="number">7</span>cec<span class="number">4</span>"</span>,
-        <span class="string">"timestamp"</span>:<span class="number">1419001116911</span>,
-        <span class="string">"cast"</span>: <span class="string">""</span>
-    }
-}</code></pre><p><code>data.optype</code> is <em>“REMOVE”</em> and <code>data.vertex</code> includes empty property <code>cast</code>. It means that the property <code>cast</code> has been removed.</p><h5>4. Do an “Off” request</h5><p>When you do a <code>ioClient.emit('properties off', requestObj)</code> to turn off the data listening, you receive a string as data. The value of this string is <code>"STOPPED"</code>. It simply tells you that the callback will never be called again, unless you request for the data again.</p><h5>5. Error</h5><p>Whenever an error occurs, the data will be a string, containing the error message.</p><h4>Edges</h4><p>Suppose you want to listen to edges of the vertex <em>user/andy</em>. Here’s the code:</p><pre><code class="lang-js prettyprint">var request = {
-    <span class="string">"appname"</span>: <span class="string">"chat_app"</span>,
-    <span class="string">"secret"</span>: <span class="string">"dskfhyr<span class="number">987</span>r<span class="number">09</span>g<span class="number">8</span>w<span class="number">00309309</span>"</span>,
-    <span class="string">"namespace"</span>: <span class="string">"user"</span>,
-    <span class="string">"key"</span>: <span class="string">"andy"</span>,
-    <span class="string">"listener_id"</span>: <span class="string">"asasasfasaef<span class="number">324</span>"</span>
-};
+ioClient</span><span class="pun">.</span><span class="pln">emit</span><span class="pun">(</span><span class="string"><span class="str">'properties'</span></span><span class="pun">,</span><span class="pln"> request</span><span class="pun">);</span></code></pre><h5>1. Retrieval</h5><p>When you request for data for the first time, all the existing properties are retrieved. The data looks like this:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"optype"</span></span><span class="pun">:</span><span class="string"><span class="str">"RETR"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"vertex"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="string"><span class="str">"_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"user`</span><span class="number"><span class="str">542094995</span></span><span class="str">fd</span><span class="number"><span class="str">2217414</span></span><span class="str">d</span><span class="number"><span class="str">7</span></span><span class="str">cec</span><span class="number"><span class="str">4</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1419000935812</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"name"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Andy Dufresne"</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"height_m"</span></span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="number"><span class="lit">1</span></span><span class="lit">.</span><span class="number"><span class="lit">96</span></span></span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>Notice that the <code>data.optype</code> of the data is <em>“RETR”</em> - retrieval. You get all the properties inside <code>data.vertex</code>, additionally the timestamp when the vertex was changed and the internal <em>_id</em> of the vertex.</p><h5>2. Property change</h5><p>Whenever a new property is added or an existing property is replaced, the data would be:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"optype"</span></span><span class="pun">:</span><span class="string"><span class="str">"UPDATE"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"vertex"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="string"><span class="str">"_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"user`</span><span class="number"><span class="str">542094995</span></span><span class="str">fd</span><span class="number"><span class="str">2217414</span></span><span class="str">d</span><span class="number"><span class="str">7</span></span><span class="str">cec</span><span class="number"><span class="str">4</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1419001116911</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"cast"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Tim Robbins"</span></span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>The <code>data.optype</code> is <em>“UPDATE”</em>, and you will get only the changed properties inside <code>data.vertex</code> and the updated timestamp of the vertex.</p><h5>3. Property removal</h5><p>A property removal causes arrivel of the following object:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"optype"</span></span><span class="pun">:</span><span class="string"><span class="str">"REMOVE"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"vertex"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="string"><span class="str">"_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"user`</span><span class="number"><span class="str">542094995</span></span><span class="str">fd</span><span class="number"><span class="str">2217414</span></span><span class="str">d</span><span class="number"><span class="str">7</span></span><span class="str">cec</span><span class="number"><span class="str">4</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1419001116911</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"cast"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">""</span></span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p><code>data.optype</code> is <em>“REMOVE”</em> and <code>data.vertex</code> includes empty property <code>cast</code>. It means that the property <code>cast</code> has been removed.</p><h5>4. Do an “Off” request</h5><p>When you do a <code>ioClient.emit('properties off', requestObj)</code> to turn off the data listening, you receive a string as data. The value of this string is <code>"STOPPED"</code>. It simply tells you that the callback will never be called again, unless you request for the data again.</p><h5>5. Error</h5><p>Whenever an error occurs, the data will be a string, containing the error message.</p><h4>Edges</h4><p>Suppose you want to listen to edges of the vertex <em>user/andy</em>. Here’s the code:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> request </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"appname"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"chat_app"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"secret"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"dskfhyr</span><span class="number"><span class="str">987</span></span><span class="str">r</span><span class="number"><span class="str">09</span></span><span class="str">g</span><span class="number"><span class="str">8</span></span><span class="str">w</span><span class="number"><span class="str">00309309</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"namespace"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"user"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"key"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"andy"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"listener_id"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"asasasfasaef</span><span class="number"><span class="str">324</span></span><span class="str">"</span></span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
 
-ioClient.on(JSON.stringify(request), function(data) {
-    <span class="comment">// ...</span>
-});
+ioClient</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="pln">JSON</span><span class="pun">.</span><span class="pln">stringify</span><span class="pun">(</span><span class="pln">request</span><span class="pun">),</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="comment"><span class="com">// ...</span></span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
 
-ioClient.emit(<span class="string">'edges'</span>, request);</code></pre><p>Whenever you listen for edges of a vertex, you first get all the existing edges and later on you keep getting the updates.</p><p>If you apply filters, you only get the edges which match the filters, and you NEVER get any further changes in edges.</p><h5>1. Retrieval</h5><pre><code class="lang-json prettyprint">{
-    <span class="string">"optype"</span>:<span class="string">"RETR"</span>,
-    <span class="string">"_id"</span>:<span class="string">"user`<span class="number">54943</span>c<span class="number">863</span>b<span class="number">87</span>a<span class="number">791550</span>d<span class="number">835</span>a"</span>,
-    <span class="string">"edges"</span>:{
-        <span class="string">"abcd"</span>:{
-            <span class="string">"t_id"</span>:<span class="string">"misc`<span class="number">54943</span>c<span class="number">893</span>b<span class="number">87</span>a<span class="number">791550</span>d<span class="number">835</span>e"</span>,
-            <span class="string">"timestamp"</span>:<span class="number">1419000969730</span>,
-            <span class="string">"order"</span>:<span class="number">1</span>
-        },
-        <span class="string">"pqrs"</span>:{
-            <span class="string">"t_id"</span>:<span class="string">"misc`<span class="number">54943</span>c<span class="number">883</span>b<span class="number">87</span>a<span class="number">791550</span>d<span class="number">835</span>d"</span>,
-            <span class="string">"timestamp"</span>:<span class="number">1419000968929</span>,
-            <span class="string">"order"</span>:<span class="number">234245</span>
-        }
-    }
-}</code></pre><p><code>data.optype</code> is <em>“RETR”</em>. <code>data.edges</code> are all the existing edges of the vertex. Each edge has a <code>timestamp</code> which describes when the timestamp was last changed, and <code>order</code> is the priority of the edge. <code>t_id</code> of each edge displays the internal id of the vertex it points to.</p><h5>Edge addition or replacement</h5><p>The data that arrives is:</p><pre><code class="lang-json prettyprint">{
-    <span class="string">"optype"</span>:<span class="string">"RETR"</span>,
-    <span class="string">"_id"</span>:<span class="string">"user`<span class="number">54943</span>c<span class="number">863</span>b<span class="number">87</span>a<span class="number">791550</span>d<span class="number">835</span>a"</span>,
-    <span class="string">"edges"</span>:{
-        <span class="string">"pqrs"</span>:{
-            <span class="string">"t_id"</span>:<span class="string">"misc`<span class="number">5</span>w<span class="number">5</span>rgfhfrtu<span class="number">5835</span>"</span>,
-            <span class="string">"timestamp"</span>:<span class="number">1419000999913</span>,
-            <span class="string">"order"</span>:<span class="number">23341</span>
-        }
-    }
-}</code></pre><p><code>data.optype</code> is <em>“UPDATE”</em> and only the edges which are replaced or added, are present here.</p><h5>3. Edge removal</h5><pre><code class="lang-json prettyprint">{
-    <span class="string">"optype"</span>:<span class="string">"REMOVE"</span>,
-    <span class="string">"edges"</span>: {
-        <span class="string">"pqrs"</span>: {
-            <span class="string">"t_id"</span>: <span class="string">""</span>,
-            <span class="string">"timestamp"</span>:<span class="number">1419001116911</span>
-        }
-    }
-}</code></pre><p><code>data.optype</code> is <em>“REMOVE”</em> and <code>data.edges</code> includes edges which are deleted. Notice that <code>t_id</code> of the edge is empty and now it doesn’t point to any vertex.</p><h5>4. Do an “Off” request</h5><p>When you do a <code>ioClient.emit('edges off', requestObj)</code> to turn off the data listening, you receive a string as data. The value of this string is <code>"STOPPED"</code>. It simply tells you that the callback will never be called again, unless you request for the data again.</p><h5>5. Error</h5><p>Whenever an error occurs, the data will be a string, containing the error message.</p><h3 id="socketio-api-endpoints-parsing-the-data-namespace">Namespace</h3><p>Suppose that you are listening on the namespace <em>user</em>, so you build a <em>requestObject</em>, attached a callback and you requested for the data.</p><pre><code class="lang-js prettyprint">var request = {
-    <span class="string">"appname"</span>: <span class="string">"chat_app"</span>,
-    <span class="string">"secret"</span>: <span class="string">"dskfhyr<span class="number">987</span>r<span class="number">09</span>g<span class="number">8</span>w<span class="number">00309309</span>"</span>,
-    <span class="string">"namespace"</span>: <span class="string">"user"</span>,
-    <span class="string">"listener_id"</span>: <span class="string">"asasasfasaef<span class="number">324</span>"</span>
-};
+ioClient</span><span class="pun">.</span><span class="pln">emit</span><span class="pun">(</span><span class="string"><span class="str">'edges'</span></span><span class="pun">,</span><span class="pln"> request</span><span class="pun">);</span></code></pre><p>Whenever you listen for edges of a vertex, you first get all the existing edges and later on you keep getting the updates.</p><p>If you apply filters, you only get the edges which match the filters, and you NEVER get any further changes in edges.</p><h5>1. Retrieval</h5><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"optype"</span></span><span class="pun">:</span><span class="string"><span class="str">"RETR"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"user`</span><span class="number"><span class="str">54943</span></span><span class="str">c</span><span class="number"><span class="str">863</span></span><span class="str">b</span><span class="number"><span class="str">87</span></span><span class="str">a</span><span class="number"><span class="str">791550</span></span><span class="str">d</span><span class="number"><span class="str">835</span></span><span class="str">a"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"edges"</span></span><span class="pun">:{</span><span class="pln">
+        </span><span class="string"><span class="str">"abcd"</span></span><span class="pun">:{</span><span class="pln">
+            </span><span class="string"><span class="str">"t_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"misc`</span><span class="number"><span class="str">54943</span></span><span class="str">c</span><span class="number"><span class="str">893</span></span><span class="str">b</span><span class="number"><span class="str">87</span></span><span class="str">a</span><span class="number"><span class="str">791550</span></span><span class="str">d</span><span class="number"><span class="str">835</span></span><span class="str">e"</span></span><span class="pun">,</span><span class="pln">
+            </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1419000969730</span></span><span class="pun">,</span><span class="pln">
+            </span><span class="string"><span class="str">"order"</span></span><span class="pun">:</span><span class="number"><span class="lit">1</span></span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="string"><span class="str">"pqrs"</span></span><span class="pun">:{</span><span class="pln">
+            </span><span class="string"><span class="str">"t_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"misc`</span><span class="number"><span class="str">54943</span></span><span class="str">c</span><span class="number"><span class="str">883</span></span><span class="str">b</span><span class="number"><span class="str">87</span></span><span class="str">a</span><span class="number"><span class="str">791550</span></span><span class="str">d</span><span class="number"><span class="str">835</span></span><span class="str">d"</span></span><span class="pun">,</span><span class="pln">
+            </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1419000968929</span></span><span class="pun">,</span><span class="pln">
+            </span><span class="string"><span class="str">"order"</span></span><span class="pun">:</span><span class="number"><span class="lit">234245</span></span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p><code>data.optype</code> is <em>“RETR”</em>. <code>data.edges</code> are all the existing edges of the vertex. Each edge has a <code>timestamp</code> which describes when the timestamp was last changed, and <code>order</code> is the priority of the edge. <code>t_id</code> of each edge displays the internal id of the vertex it points to.</p><h5>Edge addition or replacement</h5><p>The data that arrives is:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"optype"</span></span><span class="pun">:</span><span class="string"><span class="str">"RETR"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"user`</span><span class="number"><span class="str">54943</span></span><span class="str">c</span><span class="number"><span class="str">863</span></span><span class="str">b</span><span class="number"><span class="str">87</span></span><span class="str">a</span><span class="number"><span class="str">791550</span></span><span class="str">d</span><span class="number"><span class="str">835</span></span><span class="str">a"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"edges"</span></span><span class="pun">:{</span><span class="pln">
+        </span><span class="string"><span class="str">"pqrs"</span></span><span class="pun">:{</span><span class="pln">
+            </span><span class="string"><span class="str">"t_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"misc`</span><span class="number"><span class="str">5</span></span><span class="str">w</span><span class="number"><span class="str">5</span></span><span class="str">rgfhfrtu</span><span class="number"><span class="str">5835</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
+            </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1419000999913</span></span><span class="pun">,</span><span class="pln">
+            </span><span class="string"><span class="str">"order"</span></span><span class="pun">:</span><span class="number"><span class="lit">23341</span></span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p><code>data.optype</code> is <em>“UPDATE”</em> and only the edges which are replaced or added, are present here.</p><h5>3. Edge removal</h5><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"optype"</span></span><span class="pun">:</span><span class="string"><span class="str">"REMOVE"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"edges"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="string"><span class="str">"pqrs"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"t_id"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">""</span></span><span class="pun">,</span><span class="pln">
+            </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1419001116911</span></span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p><code>data.optype</code> is <em>“REMOVE”</em> and <code>data.edges</code> includes edges which are deleted. Notice that <code>t_id</code> of the edge is empty and now it doesn’t point to any vertex.</p><h5>4. Do an “Off” request</h5><p>When you do a <code>ioClient.emit('edges off', requestObj)</code> to turn off the data listening, you receive a string as data. The value of this string is <code>"STOPPED"</code>. It simply tells you that the callback will never be called again, unless you request for the data again.</p><h5>5. Error</h5><p>Whenever an error occurs, the data will be a string, containing the error message.</p><h3 id="socketio-api-endpoints-parsing-the-data-namespace">Namespace</h3><p>Suppose that you are listening on the namespace <em>user</em>, so you build a <em>requestObject</em>, attached a callback and you requested for the data.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> request </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"appname"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"chat_app"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"secret"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"dskfhyr</span><span class="number"><span class="str">987</span></span><span class="str">r</span><span class="number"><span class="str">09</span></span><span class="str">g</span><span class="number"><span class="str">8</span></span><span class="str">w</span><span class="number"><span class="str">00309309</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"namespace"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"user"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"listener_id"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"asasasfasaef</span><span class="number"><span class="str">324</span></span><span class="str">"</span></span><span class="pln">
+</span><span class="pun">};</span><span class="pln">
 
-ioClient.on(JSON.stringify(request), function(data) {
-    <span class="comment">// ...</span>
-});
+ioClient</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="pln">JSON</span><span class="pun">.</span><span class="pln">stringify</span><span class="pun">(</span><span class="pln">request</span><span class="pun">),</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="comment"><span class="com">// ...</span></span><span class="pln">
+</span><span class="pun">});</span><span class="pln">
 
-ioClient.emit(<span class="string">'new vertices'</span>, request);</code></pre><p>When you listen on a namespace, you first get all the existing vertices, and then as vertices are added or removed, you get the changes.</p><h5>1. Retrieval</h5><p>Intially, all the vertices are retrieved as an array,</p><pre><code class="lang-json prettyprint">[
-    {
-        <span class="string">"_id"</span>:<span class="string">"<span class="number">53</span>f<span class="number">7785324</span>ebdb<span class="number">4878</span>cb<span class="number">677</span>b"</span>,
-        <span class="string">"rootPath"</span>:<span class="string">"user/andy"</span>,
-        <span class="string">"timestamp"</span>:<span class="number">1408727123813</span>
-    },
-    {
-        <span class="string">"_id"</span>:<span class="string">"<span class="number">549454913</span>b<span class="number">87</span>a<span class="number">791550</span>d<span class="number">836</span>e"</span>,
-        <span class="string">"timestamp"</span>:<span class="number">1419007121579</span>,
-        <span class="string">"rootPath"</span>:<span class="string">"user/red"</span>
-    }
-]</code></pre><p>You do NOT get the properties of the vertices, you just get thier timestaps, internal ids, and root-paths. Using the root-path, you can again listen on their properties if you want.</p><h5>2. Addition</h5><pre><code class="prettyprint">{
-    "optype":"UPDATE",
-    "vertex":{
-        "timestamp":1419007153037,
-        "rootPath":"user/blue",
-        "_id":"user`549454b13b87a791550d836f"
-    }
-}</code></pre><p><code>data.optype</code> is <em>“UPDATE”</em>, and <code>data.vertex</code> is the newly added vertex in the namespace.</p><h5>3. Removal (Destruction)</h5><pre><code class="lang-json prettyprint">{
-    <span class="string">"optype"</span>:<span class="string">"DESTROY"</span>,
-    <span class="string">"vertex"</span>: {
-        <span class="string">"_id"</span>:<span class="string">"user`<span class="number">549454</span>b<span class="number">13</span>b<span class="number">87</span>a<span class="number">791550</span>d<span class="number">836</span>f"</span>,
-        <span class="string">"timestamp"</span>:<span class="number">1419007160898</span>,
-        <span class="string">"rootPath"</span>:<span class="string">"user/red"</span>
-    }
-}</code></pre><p><code>data.optype</code> is <em>“REMOVE”</em>, and <code>data.vertex</code> is the vertex which got destroyed.</p></div>
+ioClient</span><span class="pun">.</span><span class="pln">emit</span><span class="pun">(</span><span class="string"><span class="str">'new vertices'</span></span><span class="pun">,</span><span class="pln"> request</span><span class="pun">);</span></code></pre><p>When you listen on a namespace, you first get all the existing vertices, and then as vertices are added or removed, you get the changes.</p><h5>1. Retrieval</h5><p>Intially, all the vertices are retrieved as an array,</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">[</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="string"><span class="str">"_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"</span><span class="number"><span class="str">53</span></span><span class="str">f</span><span class="number"><span class="str">7785324</span></span><span class="str">ebdb</span><span class="number"><span class="str">4878</span></span><span class="str">cb</span><span class="number"><span class="str">677</span></span><span class="str">b"</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"rootPath"</span></span><span class="pun">:</span><span class="string"><span class="str">"user/andy"</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1408727123813</span></span><span class="pln">
+    </span><span class="pun">},</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="string"><span class="str">"_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"</span><span class="number"><span class="str">549454913</span></span><span class="str">b</span><span class="number"><span class="str">87</span></span><span class="str">a</span><span class="number"><span class="str">791550</span></span><span class="str">d</span><span class="number"><span class="str">836</span></span><span class="str">e"</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1419007121579</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"rootPath"</span></span><span class="pun">:</span><span class="string"><span class="str">"user/red"</span></span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">]</span></code></pre><p>You do NOT get the properties of the vertices, you just get thier timestaps, internal ids, and root-paths. Using the root-path, you can again listen on their properties if you want.</p><h5>2. Addition</h5><pre><code class="prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="str">"optype"</span><span class="pun">:</span><span class="str">"UPDATE"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"vertex"</span><span class="pun">:{</span><span class="pln">
+        </span><span class="str">"timestamp"</span><span class="pun">:</span><span class="lit">1419007153037</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">"rootPath"</span><span class="pun">:</span><span class="str">"user/blue"</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">"_id"</span><span class="pun">:</span><span class="str">"user`549454b13b87a791550d836f"</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p><code>data.optype</code> is <em>“UPDATE”</em>, and <code>data.vertex</code> is the newly added vertex in the namespace.</p><h5>3. Removal (Destruction)</h5><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"optype"</span></span><span class="pun">:</span><span class="string"><span class="str">"DESTROY"</span></span><span class="pun">,</span><span class="pln">
+    </span><span class="string"><span class="str">"vertex"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="string"><span class="str">"_id"</span></span><span class="pun">:</span><span class="string"><span class="str">"user`</span><span class="number"><span class="str">549454</span></span><span class="str">b</span><span class="number"><span class="str">13</span></span><span class="str">b</span><span class="number"><span class="str">87</span></span><span class="str">a</span><span class="number"><span class="str">791550</span></span><span class="str">d</span><span class="number"><span class="str">836</span></span><span class="str">f"</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="number"><span class="lit">1419007160898</span></span><span class="pun">,</span><span class="pln">
+        </span><span class="string"><span class="str">"rootPath"</span></span><span class="pun">:</span><span class="string"><span class="str">"user/red"</span></span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p><code>data.optype</code> is <em>“REMOVE”</em>, and <code>data.vertex</code> is the vertex which got destroyed.</p></div>
   <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/rest/api-reference.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/rest/api-reference.md">
     <span class="fa fa-pencil"> Edit</span>
   </a>
