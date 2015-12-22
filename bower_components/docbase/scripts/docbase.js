@@ -31,6 +31,7 @@
     Docbase.run = function(options) {
         var defaults = {
             method: 'github',
+            searchIndexUrl: 'search-index.json',
             map: {
                 file: 'map.json',
                 path: ''
@@ -266,6 +267,8 @@
                 var defaultUrl = 'gh-pages/search-index.json';
                 searchIndexUrl = 'https://raw.githubusercontent.com/' + gh.user + '/' + gh.repo + '/' + defaultUrl;
                 $('.search').searchAppbase(searchIndexUrl);
+            if($.fn.searchAppbase){
+                $('.search_field').searchAppbase(Docbase.options.searchIndexUrl);
             }
         });
 
@@ -321,7 +324,6 @@
                     retObj.github = url;
 
                     Events.parsed = false;
-                    console.log(fileURL);
                     Flatdoc.file(fileURL)(function(err, markdown) {
                         markdown = markdown.split('\n');
                         var obj = markdown.shift();
@@ -375,16 +377,26 @@
                 return new fetcher();
             },
             getCommits: function() {
+
+                var resultPromise = null;
                 var options = Docbase.options;
                 var file_path = $route.current.params;
-                var full_path = options.github.path + '/' + file_path.version + '/' + file_path.folder + '/' + file_path.file;
-                return $http.get('https://api.github.com/repos/' + options.github.user + '/' + options.github.repo + '/commits?path=' + full_path + '.md');
+                if (options.github.path) {
+                    var full_path = options.github.path + '/' + file_path.version + '/' + file_path.folder + '/' + file_path.file;
+                    resultPromise = $http.get('https://api.github.com/repos/' + options.github.user + '/' + options.github.repo + '/commits?path=' + full_path + '.md&client_id=2189c9f3da189f760f69&client_secret=5385328f8910540ae0e5fde1df78fba6686651cd');
+                } else {
+                    deferred = $q.defer();
+                    resultPromise = deferred.promise;
+                    deferred.resolve([]);
+                }
+                return resultPromise;
             }
         };
     };
 
     Route.URLCtrl = function($scope, $location, $filter, data, commits) {
         $location.path(data.locationPath);
+        var contribut_array = [];
         if (!data.fail) {
             $scope.versions = data.versions;
             $scope.currentVersion = data.currentVersion;
@@ -392,7 +404,6 @@
             $scope.github = data.github;
 
             var content = data.markdown;
-            var contribut_array = [];
             $('[role="flatdoc-content"]').html(content.content.find('>*'));
             $('[role="flatdoc-menu"]').html(Flatdoc.menuView(content.menu));
 
@@ -425,6 +436,7 @@
             }
             var contributors_header = $('<div>').addClass('contributors_header').append('Contributors').append(last_date);
             $(extra_container).prepend(contributors).prepend(contributors_header);
+
         }
         var div2 = $('<div>').addClass('clearFix');
         $('[role="flatdoc-content"]').prepend(div2).prepend(extra_container);
@@ -554,62 +566,65 @@
                 ref: options.branch
             })
             .success(function(data) {
-                var sha = data.filter(function(each) {
+
+                var commitData = data.filter(function(each) {
                     return each.name === deleted;
-                })[0].sha;
+                });
+                if (commitData[0]) {
+                    var sha = commitData[0].sha;
+                    $.get(baseurl + 'git/trees/' + sha + '?recursive=1')
+                        .success(function(tree) {
+                            tree = tree.tree.filter(function(each) {
+                                return endsWith(each.path, '.md');
+                            });
 
-                $.get(baseurl + 'git/trees/' + sha + '?recursive=1')
-                    .success(function(tree) {
-                        tree = tree.tree.filter(function(each) {
-                            return endsWith(each.path, '.md');
-                        });
+                            var map = {};
 
-                        var map = {};
+                            tree.forEach(function(each) {
+                                var sub_path = each.path.split('/');
+                                /* assuming sub_path[0] is the version,
+                                 * sub_path[1] is the folder,
+                                 * and sub_path[2] is the file.
+                                 */
+                                if (sub_path.length >= 3) {
+                                    var version = sub_path[0];
+                                    var folder = sub_path[1];
+                                    var file = sub_path[2].substring(0, sub_path[2].length - 3);
 
-                        tree.forEach(function(each) {
-                            var sub_path = each.path.split('/');
-                            /* assuming sub_path[0] is the version,
-                             * sub_path[1] is the folder,
-                             * and sub_path[2] is the file.
-                             */
-                            if (sub_path.length >= 3) {
-                                var version = sub_path[0];
-                                var folder = sub_path[1];
-                                var file = sub_path[2].substring(0, sub_path[2].length - 3);
+                                    // Version is new
+                                    if (!map[version]) {
+                                        map[version] = [];
+                                    }
 
-                                // Version is new
-                                if (!map[version]) {
-                                    map[version] = [];
-                                }
+                                    // Folder is new
+                                    if (!map[version].filter(function(a) {
+                                            return a.name === folder;
+                                        }).length) {
+                                        map[version].push({
+                                            label: folder,
+                                            name: folder,
+                                            files: []
+                                        });
+                                    }
 
-                                // Folder is new
-                                if (!map[version].filter(function(a) {
-                                        return a.name === folder;
-                                    }).length) {
-                                    map[version].push({
-                                        label: folder,
-                                        name: folder,
-                                        files: []
+                                    // Add file
+                                    map[version].forEach(function(each) {
+                                        if (each.name === folder)
+                                            each.files.push({
+                                                name: file,
+                                                label: file
+                                            });
                                     });
                                 }
+                            });
 
-                                // Add file
-                                map[version].forEach(function(each) {
-                                    if (each.name === folder)
-                                        each.files.push({
-                                            name: file,
-                                            label: file
-                                        });
-                                });
-                            }
+                            callback(null, map);
+
+                        })
+                        .error(function(error) {
+                            callback(error);
                         });
-
-                        callback(null, map);
-
-                    })
-                    .error(function(error) {
-                        callback(error);
-                    });
+                }
             })
             .error(function(error) {
                 callback(error);
@@ -628,7 +643,6 @@
         var lastIndex = subjectString.indexOf(searchString, position);
         return lastIndex !== -1 && lastIndex === position;
     }
-
 
     NavbarController = function() {
         alert(20);

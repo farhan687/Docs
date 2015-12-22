@@ -3,11 +3,13 @@ module.exports = function(grunt) {
 		docbase: {
 			def: {
 				options: {
+					urlToAccess: "http://localhost:9001/",
 					generatePath: "docs_html/",
 					generateSearchIndex : true,
 					baseUrl: "/",
 					assets: ['bower_components', 'styles', 'scripts', 'images', 'CNAME', 'map.json'],
 					checkLoadedSelector : '#navbar-collapse',
+					endDocument: "<script>$(function(){  $('.search_field').searchAppbase('/search-index.json'); })</script></html>"
 				}
 			}
 		},
