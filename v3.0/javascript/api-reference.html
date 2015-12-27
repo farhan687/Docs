@@ -2,45 +2,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width">
-
-  <title>Appbase Documentation</title>
-
-  <!-- Bootstrap -->
+  <base href="../../">
+  <title>Documentation</title>
   <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-
-  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="../../bower_components/docbase/scripts/polyfill.js"></script>
-  <!-- Flatdoc -->
-  <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="../../bower_components/flatdoc/legacy.js"></script>
-  <script type="text/javascript" src="../../bower_components/flatdoc/flatdoc.js"></script>
-
   <!-- Flatdoc theme -->
-  <link rel="stylesheet" type="text/css" href="../../bower_components/flatdoc/theme-white/style.css">
-  <script type="text/javascript" src="../../bower_components/docbase/scripts/flatdoc-theme.js"></script>
-
+  <link href="../../bower_components/flatdoc/theme-white/style.css" rel="stylesheet">
   <!-- DocBase -->
-  <script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="../../bower_components/angular-route/angular-route.js"></script>
-  <script type="text/javascript" src="../../bower_components/js-schema/js-schema.min.js"></script>
-<script type="text/javascript" src="../../bower_components/docbase/scripts/docbase-html-mode.js"></script>
-  <script type="text/javascript" src="../../bower_components/docbase/scripts/searchAppbase.js"></script>
-  <script type="text/javascript" src="../../bower_components/docbase/scripts/docbase.js"></script>
-  <script src="../../bower_components/google-code-prettify/bin/prettify.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../bower_components/google-code-prettify/bin/prettify.min.css">
   <link rel="stylesheet" type="text/css" href="../../bower_components/docbase/styles/main.css">
-  <link rel="stylesheet" type="text/css" href="../../bower_components/components-font-awesome/css/font-awesome.min.css">
-  
-
-  <!-- Custom -->
+  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="../../bower_components/google-code-prettify/bin/prettify.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../bower_components/google-code-prettify/bin/prettify.min.css">
+  <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../../styles/docs.css">
-
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate">
-  <!--[if lt IE 10]>
-     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -106,7 +81,7 @@
     <ul class="nav navbar-nav navbar-right">      
        <li class="dropdown search-dropdown">
         <div class="form-group search-form" data-ng-class="{'open-in':search.length &gt; 0}">
-          <input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search" data-toggle="dropdown" aria-expanded="false" placeholder="search..">
+          <span class="twitter-typeahead" style="position: relative; display: inline-block; "><input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search tt-hint" data-toggle="dropdown" aria-expanded="false" style="position: absolute; top: 0px; left: 0px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; box-shadow: none; opacity: 1; background-attachment: scroll; background-clip: border-box; background-color: rgb(255, 255, 255); background-image: none; background-origin: padding-box; background-size:  ; background-position: 0% 0%; background-repeat: repeat repeat; " readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr"><input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search tt-input" data-toggle="dropdown" aria-expanded="false" placeholder="search.." autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; "><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none; "></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; "><div class="tt-dataset tt-dataset-titles"></div></div></span>
           <ul class="dropdown-menu search-box ng-hide" role="menu" data-ng-show="search.length &gt; 0">
             <!-- ngRepeat: doc in doc_content | filter:search -->
           </ul>
@@ -337,8 +312,10 @@ Removes the Document with the provided key from the collection.</p><p>Parameters
     <span class="fa fa-pencil"> Edit</span>
   </a>
 </div></div>
+  <script type="text/javascript" src="../../docbase-config.js"></script>
+  <script type="text/javascript" src="../../bower_components/docbase/dist/main.unique.js"></script>
   <script type="text/javascript" src="../../scripts/analytics.js"></script>
   <script type="text/javascript" src="../../scripts/main.js"></script>
-  <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 
 </body><script>$(function(){  $('.search_field').searchAppbase('/search-index.json'); })</script></html>
