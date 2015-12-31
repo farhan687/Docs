@@ -657,8 +657,8 @@
 </span><span class="pun">}</span></code>
 </pre><h3 id="api-reference-document-references-read-references">Read References</h3><p>Fetch the document references.</p><blockquote style="float: left; width: 510px; margin-left: 20px; margin-right: 20px; color: rgb(51, 51, 51); ">
 <p><strong>Example Request</strong></p>
-<pre style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; "><code class="lang-curl prettyprint prettyprinted" style=""><span class="pln">curl </span><span class="pun">-</span><span class="pln">H </span><span class="string"><span class="str">"Appbase-Secret: </span><span class="number"><span class="str">193</span></span><span class="str">dc</span><span class="number"><span class="str">4</span></span><span class="str">d</span><span class="number"><span class="str">2440146082</span></span><span class="str">ea</span><span class="number"><span class="str">734</span></span><span class="str">f</span><span class="number"><span class="str">36</span></span><span class="str">f</span><span class="number"><span class="str">4</span></span><span class="str">f</span><span class="number"><span class="str">2638</span></span><span class="str">"</span></span><span class="pln"> \
-</span><span class="string"><span class="str">'https:</span><span class="comment"><span class="str">//v</span><span class="number"><span class="str">3</span></span><span class="str">.api.appbase.io/rest_test/Materials/Ice/~references'</span></span></span></code></pre>
+<pre style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; "><code class="lang-curl prettyprint">curl -H <span class="string">"Appbase-Secret: <span class="number">193</span>dc<span class="number">4</span>d<span class="number">2440146082</span>ea<span class="number">734</span>f<span class="number">36</span>f<span class="number">4</span>f<span class="number">2638</span>"</span> \
+<span class="string">'https:<span class="comment">//v<span class="number">3</span>.api.appbase.io/rest_test/Materials/Ice/~references'</span></span></code></pre>
 <p><strong>Usage</strong>:</p>
 <ul>
 <li><span class="inline-heading">URL VARIABLES</span>
@@ -687,46 +687,47 @@
 </li>
 </ul>
 
-</blockquote><pre><code class="prettyprint prettyprinted" style=""><span class="pln">
-</span><b><span class="typ">Request</span></b><span class="pln">
-</span><span class="inline-heading"><span class="pln">URL</span></span><span class="pln">
-</span><span class="request-type"><span class="pln">GET</span></span><span class="pln"> https</span><span class="pun">:</span><span class="com">//v3.api.appbase.io/</span><span class="path-var"><span class="com">appname</span></span><span class="com">/</span><span class="path-var"><span class="com">collection</span></span><span class="com">/</span><span class="path-var"><span class="com">document</span></span><span class="com">/~references</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">HEADERS</span></span><span class="pln">
-</span><span class="typ">Appbase</span><span class="pun">-</span><span class="typ">Secret</span><span class="pun">:</span><span class="pln"> </span><span class="lit">193dc4d2440146082ea734f36f4f2638</span><span class="pln">
+</blockquote><pre><code class="prettyprint">
+<b>Request</b>
+<span class="inline-heading">URL</span>
+<span class="request-type">GET</span> https://v3.api.appbase.io/<span class="path-var">appname</span>/<span class="path-var">collection</span>/<span class="path-var">document</span>/~references
+<span class="inline-heading">HEADERS</span>
+Appbase-Secret: 193dc4d2440146082ea734f36f4f2638
 
-</span><b><span class="typ">Response</span></b><span class="pln">
-</span><span class="inline-heading"><span class="pln">STATUS</span></span><span class="pln">
-</span><span class="lit">200</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">BODY</span></span><span class="pln">
-</span><span class="pun">[</span><span class="pln">
-    </span><span class="pun">{</span><span class="pln">
-        </span><span class="str">"anotherReference"</span><span class="pun">:</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-            </span><span class="str">"_timestamp"</span><span class="pun">:</span><span class="lit">1427746003602</span><span class="pun">,</span><span class="pln">
-            </span><span class="str">"_json"</span><span class="pun">:</span><span class="pln"> 
-            </span><span class="pun">{</span><span class="pln">
-                </span><span class="str">"_id"</span><span class="pun">:</span><span class="str">"Ice"</span><span class="pun">,</span><span class="pln">
-                </span><span class="str">"foo"</span><span class="pun">:</span><span class="str">"bar"</span><span class="pun">,</span><span class="pln">
-                </span><span class="str">"_collection"</span><span class="pun">:</span><span class="str">"Materials"</span><span class="pun">,</span><span class="pln">
-                </span><span class="str">"_timestamp"</span><span class="pun">:</span><span class="lit">1427745945520</span><span class="pln">
-            </span><span class="pun">},</span><span class="pln">
-            </span><span class="str">"priority"</span><span class="pun">:</span><span class="lit">500.6</span><span class="pln">
-        </span><span class="pun">}</span><span class="pln">
-    </span><span class="pun">},</span><span class="pln">
-    </span><span class="pun">{</span><span class="pln">
-        </span><span class="str">"aReference"</span><span class="pun">:</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-             </span><span class="str">"_timestamp"</span><span class="pun">:</span><span class="lit">1427746003602</span><span class="pun">,</span><span class="pln">
-             </span><span class="str">"_json"</span><span class="pun">:</span><span class="pln">
-             </span><span class="pun">{</span><span class="pln">
-                 </span><span class="str">"_id"</span><span class="pun">:</span><span class="str">"Iron"</span><span class="pun">,</span><span class="pln">
-                 </span><span class="str">"density"</span><span class="pun">:</span><span class="str">"2.0"</span><span class="pun">,</span><span class="pln">
-                 </span><span class="str">"_collection"</span><span class="pun">:</span><span class="str">"Materials"</span><span class="pun">,</span><span class="pln">
-                 </span><span class="str">"_timestamp"</span><span class="pun">:</span><span class="lit">1427745992545</span><span class="pln">
-             </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">}</span><span class="pln">
-    </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">]</span></code>
+<b>Response</b>
+<span class="inline-heading">STATUS</span>
+200
+<span class="inline-heading">BODY</span>
+[
+    {
+        "anotherReference":
+        {
+            "_timestamp":1427746003602,
+            "_json": 
+            {
+                "_id":"Ice",
+                "foo":"bar",
+                "_collection":"Materials",
+                "_timestamp":1427745945520
+            },
+            "priority":500.6
+        }
+    },
+    {
+        "aReference":
+        {
+             "_timestamp":1427746003602,
+             "_json":
+             {
+                 "_id":"Iron",
+                 "density":"2.0",
+                 "_collection":"Materials",
+                 "_timestamp":1427745992545
+             }
+        }
+    }
+]
+</code>
 </pre><h3 id="api-reference-document-references-delete-references">Delete References</h3><p>Delete specific (or all) document references.</p><blockquote style="float: left; width: 510px; margin-left: 20px; margin-right: 20px; color: rgb(51, 51, 51); ">
 <p><strong>Example Request</strong></p>
 <pre style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; "><code class="lang-curl prettyprint">curl -X DELETE -H <span class="string">"Appbase-Secret: <span class="number">193</span>dc<span class="number">4</span>d<span class="number">2440146082</span>ea<span class="number">734</span>f<span class="number">36</span>f<span class="number">4</span>f<span class="number">2638</span>"</span> \
