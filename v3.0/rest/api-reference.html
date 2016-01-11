@@ -81,7 +81,7 @@
     <ul class="nav navbar-nav navbar-right">      
        <li class="dropdown search-dropdown">
         <div class="form-group search-form" data-ng-class="{'open-in':search.length &gt; 0}">
-          <input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search" data-toggle="dropdown" aria-expanded="false" placeholder="search..">
+          <span class="twitter-typeahead" style="position: relative; display: inline-block; "><input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search tt-hint" data-toggle="dropdown" aria-expanded="false" style="position: absolute; top: 0px; left: 0px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; box-shadow: none; opacity: 1; background-attachment: scroll; background-clip: border-box; background-color: rgb(255, 255, 255); background-image: none; background-origin: padding-box; background-size:  ; background-position: 0% 0%; background-repeat: repeat repeat; " readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr"><input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search tt-input" data-toggle="dropdown" aria-expanded="false" placeholder="search.." autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; "><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none; "></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; "><div class="tt-dataset tt-dataset-titles"></div></div></span>
           <ul class="dropdown-menu search-box ng-hide" role="menu" data-ng-show="search.length &gt; 0">
             <!-- ngRepeat: doc in doc_content | filter:search -->
           </ul>
@@ -561,40 +561,41 @@
 </li>
 </ul>
 
-</blockquote><pre><code class="prettyprint prettyprinted" style=""><span class="pln">
-</span><b><span class="typ">Request</span></b><span class="pln">
-</span><span class="inline-heading"><span class="pln">URL</span></span><span class="pln">
-</span><span class="request-type"><span class="pln">DELETE</span></span><span class="pln"> https</span><span class="pun">:</span><span class="com">//v3.api.appbase.io/</span><span class="path-var"><span class="com">appname</span></span><span class="com">/</span><span class="path-var"><span class="com">collection</span></span><span class="com">/</span><span class="path-var"><span class="com">document</span></span><span class="com">/~properties</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">HEADERS</span></span><span class="pln">
-</span><span class="typ">Appbase</span><span class="pun">-</span><span class="typ">Secret</span><span class="pun">:</span><span class="pln"> </span><span class="lit">193dc4d2440146082ea734f36f4f2638</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">BODY</span></span><span class="pln">
-</span><span class="pun">{</span><span class="pln">
-    </span><span class="str">"properties"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="str">"foo"</span><span class="pun">]</span><span class="pln">
-</span><span class="pun">}</span><span class="pln">
+</blockquote><pre><code class="prettyprint">
+<b>Request</b>
+<span class="inline-heading">URL</span>
+<span class="request-type">DELETE</span> https://v3.api.appbase.io/<span class="path-var">appname</span>/<span class="path-var">collection</span>/<span class="path-var">document</span>/~properties
+<span class="inline-heading">HEADERS</span>
+Appbase-Secret: 193dc4d2440146082ea734f36f4f2638
+<span class="inline-heading">BODY</span>
+{
+    "properties": ["foo"]
+}
 
-</span><b><span class="typ">Response</span></b><span class="pln">
-</span><span class="inline-heading"><span class="pln">STATUS</span></span><span class="pln">
-</span><span class="lit">200</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">BODY</span></span><span class="pln">
-</span><span class="pun">{</span><span class="pln">
-  </span><span class="str">"foo"</span><span class="pun">:</span><span class="pln"> </span><span class="str">""</span><span class="pun">,</span><span class="pln">
-  </span><span class="str">"_timestamp"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1418486072705</span><span class="pun">,</span><span class="pln">
-  </span><span class="str">"_id"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Ice"</span><span class="pun">,</span><span class="pln">
-  </span><span class="str">"_collection"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Materials"</span><span class="pln">
-</span><span class="pun">}</span></code>
+<b>Response</b>
+<span class="inline-heading">STATUS</span>
+200
+<span class="inline-heading">BODY</span>
+{
+  "foo": "",
+  "_timestamp": 1418486072705,
+  "_id": "Ice",
+  "_collection": "Materials"
+}
+</code>
 </pre><h2 id="api-reference-document-references">Document References</h2><h3 id="api-reference-document-references-create-update-document-references">Create / Update Document References</h3><p>Create a new reference or update the existing reference(s). A <strong>priority</strong>, which acts as an index can optionally be set on the reference.</p><blockquote style="float: left; width: 510px; margin-left: 20px; margin-right: 20px; color: rgb(51, 51, 51); ">
 <p><strong>Example Request</strong>  </p>
-<pre style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; "><code class="lang-curl prettyprint prettyprinted" style=""><span class="pln">curl </span><span class="pun">-</span><span class="pln">X PATCH </span><span class="pun">-</span><span class="pln">H </span><span class="string"><span class="str">"Appbase-Secret:</span><span class="number"><span class="str">193</span></span><span class="str">dc</span><span class="number"><span class="str">4</span></span><span class="str">d</span><span class="number"><span class="str">2440146082</span></span><span class="str">ea</span><span class="number"><span class="str">734</span></span><span class="str">f</span><span class="number"><span class="str">36</span></span><span class="str">f</span><span class="number"><span class="str">4</span></span><span class="str">f</span><span class="number"><span class="str">2638</span></span><span class="str">"</span></span><span class="pln"> \
-     </span><span class="pun">-</span><span class="pln">d </span><span class="string"><span class="str">'{
-             </span><span class="string"><span class="str">"aReference"</span></span><span class="str">: {
-                 </span><span class="string"><span class="str">"path"</span></span><span class="str">: </span><span class="string"><span class="str">"Materials/Iron"</span></span><span class="str">
+<pre style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; "><code class="lang-curl prettyprint">curl -X PATCH -H <span class="string">"Appbase-Secret:<span class="number">193</span>dc<span class="number">4</span>d<span class="number">2440146082</span>ea<span class="number">734</span>f<span class="number">36</span>f<span class="number">4</span>f<span class="number">2638</span>"</span> \
+     -d <span class="string">'{
+             <span class="string">"aReference"</span>: {
+                 <span class="string">"path"</span>: <span class="string">"Materials/Iron"</span>
              },
-             </span><span class="string"><span class="str">"anotherReference"</span></span><span class="str">: {
-                 </span><span class="string"><span class="str">"path"</span></span><span class="str">: </span><span class="string"><span class="str">"Materials/Ice"</span></span><span class="str">,
-                 </span><span class="string"><span class="str">"priority"</span></span><span class="str">: </span><span class="number"><span class="number"><span class="str">500</span></span><span class="str">.</span><span class="number"><span class="str">6</span></span></span><span class="str">
+             <span class="string">"anotherReference"</span>: {
+                 <span class="string">"path"</span>: <span class="string">"Materials/Ice"</span>,
+                 <span class="string">"priority"</span>: <span class="number"><span class="number">500</span>.<span class="number">6</span></span>
              }
-     }'</span></span><span class="pln"> \
-</span><span class="string"><span class="str">'https:</span><span class="comment"><span class="str">//v</span><span class="number"><span class="str">3</span></span><span class="str">.api.appbase.io/rest_test/Materials/Ice/~references'</span></span></span></code></pre>
+     }'</span> \
+<span class="string">'https:<span class="comment">//v<span class="number">3</span>.api.appbase.io/rest_test/Materials/Ice/~references'</span></span></code></pre>
 <p><strong>Usage</strong>:</p>
 <ul>
 <li><span class="inline-heading">URL VARIABLES</span>
@@ -623,38 +624,39 @@
 </li>
 </ul>
 
-</blockquote><pre><code class="prettyprint prettyprinted" style=""><span class="pln">
-</span><b><span class="typ">Request</span></b><span class="pln">
-</span><span class="inline-heading"><span class="pln">URL</span></span><span class="pln">
-</span><span class="request-type"><span class="pln">PATCH</span></span><span class="pln"> https</span><span class="pun">:</span><span class="com">//v3.api.appbase.io/</span><span class="path-var"><span class="com">appname</span></span><span class="com">/</span><span class="path-var"><span class="com">collection</span></span><span class="com">/</span><span class="path-var"><span class="com">document</span></span><span class="com">/~references</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">HEADERS</span></span><span class="pln">
-</span><span class="typ">Appbase</span><span class="pun">-</span><span class="typ">Secret</span><span class="pun">:</span><span class="pln"> </span><span class="lit">193dc4d2440146082ea734f36f4f2638</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">BODY</span></span><span class="pln">
-</span><span class="pun">{</span><span class="pln">
-    </span><span class="str">"aReference"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      </span><span class="str">"path"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Materials/Iron"</span><span class="pln">
-    </span><span class="pun">},</span><span class="pln">
-    </span><span class="str">"anotherReference"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      </span><span class="str">"path"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Materials/Ice"</span><span class="pun">,</span><span class="pln">
-      </span><span class="str">"priority"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">500.6</span><span class="pln">
-    </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">}</span><span class="pln">
+</blockquote><pre><code class="prettyprint">
+<b>Request</b>
+<span class="inline-heading">URL</span>
+<span class="request-type">PATCH</span> https://v3.api.appbase.io/<span class="path-var">appname</span>/<span class="path-var">collection</span>/<span class="path-var">document</span>/~references
+<span class="inline-heading">HEADERS</span>
+Appbase-Secret: 193dc4d2440146082ea734f36f4f2638
+<span class="inline-heading">BODY</span>
+{
+    "aReference": {
+      "path": "Materials/Iron"
+    },
+    "anotherReference": {
+      "path": "Materials/Ice",
+      "priority": 500.6
+    }
+}
 
-</span><b><span class="typ">Response</span></b><span class="pln">
-</span><span class="inline-heading"><span class="pln">STATUS</span></span><span class="pln">
-</span><span class="lit">200</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">BODY</span></span><span class="pln">
-</span><span class="pun">{</span><span class="pln">
-    </span><span class="str">"aReference"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      </span><span class="str">"t_id"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Materials`5488ccab3b87a791550d81b7"</span><span class="pun">,</span><span class="pln">
-      </span><span class="str">"_timestamp"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1418261314605</span><span class="pln">
-    </span><span class="pun">},</span><span class="pln">
-    </span><span class="str">"anotherReference"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      </span><span class="str">"t_id"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Materials`547059ce69528db30aa7ae90"</span><span class="pun">,</span><span class="pln">
-      </span><span class="str">"priority"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">500.6</span><span class="pun">,</span><span class="pln">
-      </span><span class="str">"_timestamp"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1418261314605</span><span class="pln">
-    </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">}</span></code>
+<b>Response</b>
+<span class="inline-heading">STATUS</span>
+200
+<span class="inline-heading">BODY</span>
+{
+    "aReference": {
+      "t_id": "Materials`5488ccab3b87a791550d81b7",
+      "_timestamp": 1418261314605
+    },
+    "anotherReference": {
+      "t_id": "Materials`547059ce69528db30aa7ae90",
+      "priority": 500.6,
+      "_timestamp": 1418261314605
+    }
+}
+</code>
 </pre><h3 id="api-reference-document-references-read-references">Read References</h3><p>Fetch the document references.</p><blockquote style="float: left; width: 510px; margin-left: 20px; margin-right: 20px; color: rgb(51, 51, 51); ">
 <p><strong>Example Request</strong></p>
 <pre style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; "><code class="lang-curl prettyprint">curl -H <span class="string">"Appbase-Secret: <span class="number">193</span>dc<span class="number">4</span>d<span class="number">2440146082</span>ea<span class="number">734</span>f<span class="number">36</span>f<span class="number">4</span>f<span class="number">2638</span>"</span> \
