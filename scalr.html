@@ -65,6 +65,8 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=scalr/golang/golang-intro.html ng-bind="file.label" class="ng-binding" href=scalr/golang/golang-intro.html>Quick Start</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=scalr/golang/api-reference.html ng-bind="file.label" class="ng-binding" href=scalr/golang/api-reference.html>API Reference</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
