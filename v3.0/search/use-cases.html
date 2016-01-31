@@ -81,7 +81,7 @@
     <ul class="nav navbar-nav navbar-right">      
        <li class="dropdown search-dropdown">
         <div class="form-group search-form" data-ng-class="{'open-in':search.length &gt; 0}">
-          <input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search" data-toggle="dropdown" aria-expanded="false" placeholder="search..">
+          <span class="twitter-typeahead" style="position: relative; display: inline-block; "><input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search tt-hint" data-toggle="dropdown" aria-expanded="false" style="position: absolute; top: 0px; left: 0px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; box-shadow: none; opacity: 1; background-attachment: scroll; background-clip: border-box; background-color: rgb(255, 255, 255); background-image: none; background-origin: padding-box; background-size:  ; background-position: 0% 0%; background-repeat: repeat repeat; " readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr"><input data-ng-model="search" type="text" class="search_field form-control dropdown-toggle ng-pristine ng-untouched ng-valid appbase-search tt-input" data-toggle="dropdown" aria-expanded="false" placeholder="search.." autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; "><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none; "></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; "><div class="tt-dataset tt-dataset-titles"></div></div></span>
           <ul class="dropdown-menu search-box ng-hide" role="menu" data-ng-show="search.length &gt; 0">
             <!-- ngRepeat: doc in doc_content | filter:search -->
           </ul>
@@ -505,124 +505,124 @@ product</span><span class="pun">.</span><span class="pln">brand </span><span cla
 <li><code>must</code> - all the conditions (query/filter) defined inside this clause must appear in matching documents.</li>
 <li><code>must_not</code> - the conditions must not appear in the matching documents.</li>
 <li><code>should</code> - any one of the conditions must appear in the matching documents.</li>
-</ul><p>Lets write the request to search the mobile phones we described above.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="comment"><span class="com">//For case </span><span class="number"><span class="com">1</span></span><span class="com">: </span><span class="string"><span class="com">"Apple"</span></span><span class="com"> OR </span><span class="string"><span class="com">"Samsung"</span></span></span><span class="pln">
-</span><span class="pun">{</span><span class="pln">
-  </span><span class="string"><span class="str">"query"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      </span><span class="string"><span class="str">"should"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Apple"</span></span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">},</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Samsung"</span></span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">}</span><span class="pln">
-      </span><span class="pun">]</span><span class="pln">
-    </span><span class="pun">}</span><span class="pln">
-  </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">}</span></code></pre><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="comment"><span class="com">//For case </span><span class="number"><span class="com">2</span></span><span class="com">: </span><span class="string"><span class="com">"Apple"</span></span><span class="com"> AND </span><span class="string"><span class="com">"Samsung"</span></span></span><span class="pln">
-</span><span class="pun">{</span><span class="pln">
-  </span><span class="string"><span class="str">"query"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Apple"</span></span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">},</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Samsung"</span></span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">}</span><span class="pln">
-      </span><span class="pun">]</span><span class="pln">
-    </span><span class="pun">}</span><span class="pln">
-  </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">}</span></code></pre><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
-  </span><span class="string"><span class="str">"query"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      </span><span class="string"><span class="str">"should"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"first_name"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"John"</span></span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">},</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"last_name"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"John"</span></span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">}</span><span class="pln">
-      </span><span class="pun">]</span><span class="pln">
-    </span><span class="pun">}</span><span class="pln">
-  </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">}</span></code></pre><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="comment"><span class="com">// For case </span><span class="number"><span class="com">3</span></span></span><span class="pln">
-</span><span class="pun">{</span><span class="pln">
-  </span><span class="string"><span class="str">"filter"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-      </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"type"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"mobile"</span></span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">},</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"range"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"price"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-              </span><span class="string"><span class="str">"lt"</span></span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">800</span></span><span class="pln">
-            </span><span class="pun">}</span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">}</span><span class="pln">
-       </span><span class="pun">],</span><span class="pln">
-      </span><span class="string"><span class="str">"must_not"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[{</span><span class="pln">
-        </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Apple"</span></span><span class="pln">
-        </span><span class="pun">}</span><span class="pln">
-       </span><span class="pun">}],</span><span class="pln">
-      </span><span class="string"><span class="str">"should"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"color"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"metal"</span></span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">},</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
-              </span><span class="pun">{</span><span class="pln">
-                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-                  </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Samsung"</span></span><span class="pln">
-                </span><span class="pun">}</span><span class="pln">
-           </span><span class="pun">},</span><span class="pln">
-              </span><span class="pun">{</span><span class="pln">
-                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-                  </span><span class="string"><span class="str">"color"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"white"</span></span><span class="pln">
-                </span><span class="pun">}</span><span class="pln">
-           </span><span class="pun">}</span><span class="pln">
-          </span><span class="pun">]</span><span class="pln">
-          </span><span class="pun">},</span><span class="pln">
-        </span><span class="pun">},</span><span class="pln">
-        </span><span class="pun">{</span><span class="pln">
-          </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
-              </span><span class="pun">{</span><span class="pln">
-                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-                  </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Sony"</span></span><span class="pln">
-                </span><span class="pun">}</span><span class="pln">
-           </span><span class="pun">},</span><span class="pln">
-              </span><span class="pun">{</span><span class="pln">
-                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-                  </span><span class="string"><span class="str">"color"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"black"</span></span><span class="pln">
-                </span><span class="pun">}</span><span class="pln">
-           </span><span class="pun">}</span><span class="pln">
-          </span><span class="pun">]</span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-        </span><span class="pun">}</span><span class="pln">
-       </span><span class="pun">]</span><span class="pln">
-    </span><span class="pun">}</span><span class="pln">
-  </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">}</span></code></pre><blockquote>
+</ul><p>Lets write the request to search the mobile phones we described above.</p><pre><code class="lang-js prettyprint"><span class="comment">//For case <span class="number">1</span>: <span class="string">"Apple"</span> OR <span class="string">"Samsung"</span></span>
+{
+  <span class="string">"query"</span>: {
+    <span class="string">"bool"</span>: {
+      <span class="string">"should"</span>: [
+        {
+          <span class="string">"match"</span>: {
+            <span class="string">"brand"</span>: <span class="string">"Apple"</span>
+          }
+        },
+        {
+          <span class="string">"match"</span>: {
+            <span class="string">"brand"</span>: <span class="string">"Samsung"</span>
+          }
+        }
+      ]
+    }
+  }
+}</code></pre><pre><code class="lang-js prettyprint"><span class="comment">//For case <span class="number">2</span>: <span class="string">"Apple"</span> AND <span class="string">"Samsung"</span></span>
+{
+  <span class="string">"query"</span>: {
+    <span class="string">"bool"</span>: {
+      <span class="string">"must"</span>: [
+        {
+          <span class="string">"match"</span>: {
+            <span class="string">"brand"</span>: <span class="string">"Apple"</span>
+          }
+        },
+        {
+          <span class="string">"match"</span>: {
+            <span class="string">"brand"</span>: <span class="string">"Samsung"</span>
+          }
+        }
+      ]
+    }
+  }
+}</code></pre><pre><code class="lang-js prettyprint">{
+  <span class="string">"query"</span>: {
+    <span class="string">"bool"</span>: {
+      <span class="string">"should"</span>: [
+        {
+          <span class="string">"match"</span>: {
+            <span class="string">"first_name"</span>: <span class="string">"John"</span>
+          }
+        },
+        {
+          <span class="string">"match"</span>: {
+            <span class="string">"last_name"</span>: <span class="string">"John"</span>
+          }
+        }
+      ]
+    }
+  }
+}</code></pre><pre><code class="lang-js prettyprint"><span class="comment">// For case <span class="number">3</span></span>
+{
+  <span class="string">"filter"</span>: {
+    <span class="string">"bool"</span>: {
+      <span class="string">"must"</span>: [
+        {
+          <span class="string">"term"</span>: {
+            <span class="string">"type"</span>: <span class="string">"mobile"</span>
+          }
+        },
+        {
+          <span class="string">"range"</span>: {
+            <span class="string">"price"</span>: {
+              <span class="string">"lt"</span>: <span class="number">800</span>
+            }
+          }
+        }
+       ],
+      <span class="string">"must_not"</span>: [{
+        <span class="string">"term"</span>: {
+          <span class="string">"brand"</span>: <span class="string">"Apple"</span>
+        }
+       }],
+      <span class="string">"should"</span>: [
+        {
+          <span class="string">"term"</span>: {
+            <span class="string">"color"</span>: <span class="string">"metal"</span>
+          }
+        },
+        {
+          <span class="string">"bool"</span>: {
+            <span class="string">"must"</span>: [
+              {
+                <span class="string">"term"</span>: {
+                  <span class="string">"brand"</span>: <span class="string">"Samsung"</span>
+                }
+           },
+              {
+                <span class="string">"term"</span>: {
+                  <span class="string">"color"</span>: <span class="string">"white"</span>
+                }
+           }
+          ]
+          },
+        },
+        {
+          <span class="string">"bool"</span>: {
+            <span class="string">"must"</span>: [
+              {
+                <span class="string">"term"</span>: {
+                  <span class="string">"brand"</span>: <span class="string">"Sony"</span>
+                }
+           },
+              {
+                <span class="string">"term"</span>: {
+                  <span class="string">"color"</span>: <span class="string">"black"</span>
+                }
+           }
+          ]
+          }
+        }
+       ]
+    }
+  }
+}</code></pre><blockquote>
 <p>Elasticseach sidenote</p>
 <h4><strong><em>bool</em></strong> <em>query/filter</em></h4>
 <p>As you can see in the example here, we have using bool filters. This way you can combine any kind of queries and filters, you can also combine multiple usecases (like fuzzy and wildcard), and write complex search requests. To know more check out:

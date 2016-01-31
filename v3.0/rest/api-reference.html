@@ -815,27 +815,28 @@
 </li>
 </ul>
 
-</blockquote><pre><code class="prettyprint prettyprinted" style=""><span class="pln">
-</span><b><span class="typ">Request</span></b><span class="pln">
-</span><span class="inline-heading"><span class="pln">URL</span></span><span class="pln">
-</span><span class="request-type"><span class="pln">DELETE</span></span><span class="pln"> https</span><span class="pun">:</span><span class="com">//v3.api.appbase.io/</span><span class="path-var"><span class="com">appname</span></span><span class="com">/</span><span class="path-var"><span class="com">collection</span></span><span class="com">/</span><span class="path-var"><span class="com">document</span></span><span class="com">/</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">HEADERS</span></span><span class="pln">
-</span><span class="typ">Appbase</span><span class="pun">-</span><span class="typ">Secret</span><span class="pun">:</span><span class="pln"> </span><span class="lit">193dc4d2440146082ea734f36f4f2638</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">BODY</span></span><span class="pln">
-</span><span class="pun">{</span><span class="pln">
-    </span><span class="str">"all"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
-</span><span class="pun">}</span><span class="pln">
+</blockquote><pre><code class="prettyprint">
+<b>Request</b>
+<span class="inline-heading">URL</span>
+<span class="request-type">DELETE</span> https://v3.api.appbase.io/<span class="path-var">appname</span>/<span class="path-var">collection</span>/<span class="path-var">document</span>/
+<span class="inline-heading">HEADERS</span>
+Appbase-Secret: 193dc4d2440146082ea734f36f4f2638
+<span class="inline-heading">BODY</span>
+{
+    "all": true
+}
 
-</span><b><span class="typ">Response</span></b><span class="pln">
-</span><span class="inline-heading"><span class="pln">STATUS</span></span><span class="pln">
-</span><span class="lit">200</span><span class="pln">
-</span><span class="inline-heading"><span class="pln">BODY</span></span><span class="pln">
-</span><span class="pun">{</span><span class="pln">
-  </span><span class="str">"_deleted"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"true"</span><span class="pun">,</span><span class="pln">
-  </span><span class="str">"_timestamp"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1431324814057</span><span class="pun">,</span><span class="pln">
-  </span><span class="str">"_id"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Ice"</span><span class="pun">,</span><span class="pln">
-  </span><span class="str">"_collection"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Materials"</span><span class="pln">
-</span><span class="pun">}</span></code>
+<b>Response</b>
+<span class="inline-heading">STATUS</span>
+200
+<span class="inline-heading">BODY</span>
+{
+  "_deleted": "true",
+  "_timestamp": 1431324814057,
+  "_id": "Ice",
+  "_collection": "Materials"
+}
+</code>
 </pre></div>
   <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/rest/api-reference.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/rest/api-reference.md">
     <span class="fa fa-pencil"> Edit</span>
