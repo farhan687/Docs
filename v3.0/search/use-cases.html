@@ -36,6 +36,8 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v3.0/changelog/changelog.html ng-bind="file.label" class="ng-binding" href=../../v3.0/changelog/changelog.html>Changelog</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v3.0/changelog/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/changelog/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -43,6 +45,8 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v3.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v3.0/rest/api-reference.html>API Reference</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v3.0/rest/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/rest/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -52,6 +56,8 @@
             <a ng-href=../../v3.0/search/quick-start.html ng-bind="file.label" class="ng-binding" href=../../v3.0/search/quick-start.html>Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v3.0/search/use-cases.html ng-bind="file.label" class="ng-binding" href=../../v3.0/search/use-cases.html>Use-cases</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v3.0/search/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/search/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -59,6 +65,8 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v3.0/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../v3.0/concepts/datamodel.html>Datamodel</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v3.0/concepts/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/concepts/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -66,6 +74,8 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v3.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v3.0/rest/api-reference.html>API Reference</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v3.0/rest/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/rest/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -73,6 +83,8 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v3.0/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v3.0/javascript/api-reference.html>API Reference</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v3.0/javascript/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/javascript/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -80,7 +92,8 @@
 
     <ul class="nav navbar-nav navbar-right">      
        <li class="dropdown search-dropdown">
-        <div class="form-group search-form"><input class="search_field form-control dropdown-toggle appbase-search" type="text" placeholder="search"></div>
+        <div class="form-group search-form">
+        </div>
       </li>
       <li class="dropdown">
         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -102,7 +115,7 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid --></nav>
-<div role="flatdoc" class="content-root ng-scope">
+<div role="flatdoc" class="content-root ng-scope" data-ng-show="!index">
   <div class="menubar fixed">
     <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="use-cases-item" class="level-1"><a id="use-cases-link" href="../../v3.0/search/use-cases.html#use-cases" class="level-1" pref="#use-cases">Use-cases</a><ul class="level-2" id="use-cases-list"><li id="use-cases-elasticsearch-introduction-item" class="level-2"><a id="use-cases-elasticsearch-introduction-link" href="../../v3.0/search/use-cases.html#use-cases-elasticsearch-introduction" class="level-2" pref="#use-cases-elasticsearch-introduction">Elasticsearch Introduction</a></li><li id="use-cases-data-mapping-item" class="level-2"><a id="use-cases-data-mapping-link" href="../../v3.0/search/use-cases.html#use-cases-data-mapping" class="level-2" pref="#use-cases-data-mapping">Data Mapping</a></li><li id="use-cases-request-and-response-format-item" class="level-2"><a id="use-cases-request-and-response-format-link" href="../../v3.0/search/use-cases.html#use-cases-request-and-response-format" class="level-2" pref="#use-cases-request-and-response-format">Request and Response Format</a><ul class="level-3" id="use-cases-request-and-response-format-list"><li id="use-cases-request-and-response-format-request-item" class="level-3"><a id="use-cases-request-and-response-format-request-link" href="../../v3.0/search/use-cases.html#use-cases-request-and-response-format-request" class="level-3" pref="#use-cases-request-and-response-format-request">Request</a></li><li id="use-cases-request-and-response-format-response-item" class="level-3"><a id="use-cases-request-and-response-format-response-link" href="../../v3.0/search/use-cases.html#use-cases-request-and-response-format-response" class="level-3" pref="#use-cases-request-and-response-format-response">Response</a></li></ul></li><li id="use-cases-searching-item" class="level-2"><a id="use-cases-searching-link" href="../../v3.0/search/use-cases.html#use-cases-searching" class="level-2" pref="#use-cases-searching">Searching</a><ul class="level-3" id="use-cases-searching-list"><li id="use-cases-searching-simple-match-and-fulltext-item" class="level-3"><a id="use-cases-searching-simple-match-and-fulltext-link" href="../../v3.0/search/use-cases.html#use-cases-searching-simple-match-and-fulltext" class="level-3" pref="#use-cases-searching-simple-match-and-fulltext">Simple Match and Fulltext</a></li><li id="use-cases-searching-fulltext-fuzzy-item" class="level-3"><a id="use-cases-searching-fulltext-fuzzy-link" href="../../v3.0/search/use-cases.html#use-cases-searching-fulltext-fuzzy" class="level-3" pref="#use-cases-searching-fulltext-fuzzy">Fulltext: Fuzzy</a></li><li id="use-cases-searching-fulltext-autocompletewildcard-item" class="level-3"><a id="use-cases-searching-fulltext-autocompletewildcard-link" href="../../v3.0/search/use-cases.html#use-cases-searching-fulltext-autocompletewildcard" class="level-3" pref="#use-cases-searching-fulltext-autocompletewildcard">Fulltext Autocomplete/wildcard</a></li><li id="use-cases-searching-fulltext-fuzzy-and-autocomplete-item" class="level-3"><a id="use-cases-searching-fulltext-fuzzy-and-autocomplete-link" href="../../v3.0/search/use-cases.html#use-cases-searching-fulltext-fuzzy-and-autocomplete" class="level-3" pref="#use-cases-searching-fulltext-fuzzy-and-autocomplete">Fulltext: Fuzzy and Autocomplete</a></li><li id="use-cases-searching-numeric-range-item" class="level-3"><a id="use-cases-searching-numeric-range-link" href="../../v3.0/search/use-cases.html#use-cases-searching-numeric-range" class="level-3" pref="#use-cases-searching-numeric-range">Numeric-range</a></li><li id="use-cases-searching-geo-spatial-item" class="level-3"><a id="use-cases-searching-geo-spatial-link" href="../../v3.0/search/use-cases.html#use-cases-searching-geo-spatial" class="level-3" pref="#use-cases-searching-geo-spatial">Geo spatial</a></li><li id="use-cases-searching-sorting-item" class="level-3"><a id="use-cases-searching-sorting-link" href="../../v3.0/search/use-cases.html#use-cases-searching-sorting" class="level-3" pref="#use-cases-searching-sorting">Sorting</a></li><li id="use-cases-searching-aggregation-item" class="level-3"><a id="use-cases-searching-aggregation-link" href="../../v3.0/search/use-cases.html#use-cases-searching-aggregation" class="level-3" pref="#use-cases-searching-aggregation">Aggregation</a></li><li id="use-cases-searching-combining-queriesfilters-item" class="level-3"><a id="use-cases-searching-combining-queriesfilters-link" href="../../v3.0/search/use-cases.html#use-cases-searching-combining-queriesfilters" class="level-3" pref="#use-cases-searching-combining-queriesfilters">Combining queries/filters</a></li></ul></li><li id="use-cases-next-steps-item" class="level-2"><a id="use-cases-next-steps-link" href="../../v3.0/search/use-cases.html#use-cases-next-steps" class="level-2" pref="#use-cases-next-steps">Next steps</a></li></ul></li></ul></li></ul></div>
   </div>
@@ -500,124 +513,124 @@ product</span><span class="pun">.</span><span class="pln">brand </span><span cla
 <li><code>must</code> - all the conditions (query/filter) defined inside this clause must appear in matching documents.</li>
 <li><code>must_not</code> - the conditions must not appear in the matching documents.</li>
 <li><code>should</code> - any one of the conditions must appear in the matching documents.</li>
-</ul><p>Lets write the request to search the mobile phones we described above.</p><pre><code class="lang-js prettyprint"><span class="comment">//For case <span class="number">1</span>: <span class="string">"Apple"</span> OR <span class="string">"Samsung"</span></span>
-{
-  <span class="string">"query"</span>: {
-    <span class="string">"bool"</span>: {
-      <span class="string">"should"</span>: [
-        {
-          <span class="string">"match"</span>: {
-            <span class="string">"brand"</span>: <span class="string">"Apple"</span>
-          }
-        },
-        {
-          <span class="string">"match"</span>: {
-            <span class="string">"brand"</span>: <span class="string">"Samsung"</span>
-          }
-        }
-      ]
-    }
-  }
-}</code></pre><pre><code class="lang-js prettyprint"><span class="comment">//For case <span class="number">2</span>: <span class="string">"Apple"</span> AND <span class="string">"Samsung"</span></span>
-{
-  <span class="string">"query"</span>: {
-    <span class="string">"bool"</span>: {
-      <span class="string">"must"</span>: [
-        {
-          <span class="string">"match"</span>: {
-            <span class="string">"brand"</span>: <span class="string">"Apple"</span>
-          }
-        },
-        {
-          <span class="string">"match"</span>: {
-            <span class="string">"brand"</span>: <span class="string">"Samsung"</span>
-          }
-        }
-      ]
-    }
-  }
-}</code></pre><pre><code class="lang-js prettyprint">{
-  <span class="string">"query"</span>: {
-    <span class="string">"bool"</span>: {
-      <span class="string">"should"</span>: [
-        {
-          <span class="string">"match"</span>: {
-            <span class="string">"first_name"</span>: <span class="string">"John"</span>
-          }
-        },
-        {
-          <span class="string">"match"</span>: {
-            <span class="string">"last_name"</span>: <span class="string">"John"</span>
-          }
-        }
-      ]
-    }
-  }
-}</code></pre><pre><code class="lang-js prettyprint"><span class="comment">// For case <span class="number">3</span></span>
-{
-  <span class="string">"filter"</span>: {
-    <span class="string">"bool"</span>: {
-      <span class="string">"must"</span>: [
-        {
-          <span class="string">"term"</span>: {
-            <span class="string">"type"</span>: <span class="string">"mobile"</span>
-          }
-        },
-        {
-          <span class="string">"range"</span>: {
-            <span class="string">"price"</span>: {
-              <span class="string">"lt"</span>: <span class="number">800</span>
-            }
-          }
-        }
-       ],
-      <span class="string">"must_not"</span>: [{
-        <span class="string">"term"</span>: {
-          <span class="string">"brand"</span>: <span class="string">"Apple"</span>
-        }
-       }],
-      <span class="string">"should"</span>: [
-        {
-          <span class="string">"term"</span>: {
-            <span class="string">"color"</span>: <span class="string">"metal"</span>
-          }
-        },
-        {
-          <span class="string">"bool"</span>: {
-            <span class="string">"must"</span>: [
-              {
-                <span class="string">"term"</span>: {
-                  <span class="string">"brand"</span>: <span class="string">"Samsung"</span>
-                }
-           },
-              {
-                <span class="string">"term"</span>: {
-                  <span class="string">"color"</span>: <span class="string">"white"</span>
-                }
-           }
-          ]
-          },
-        },
-        {
-          <span class="string">"bool"</span>: {
-            <span class="string">"must"</span>: [
-              {
-                <span class="string">"term"</span>: {
-                  <span class="string">"brand"</span>: <span class="string">"Sony"</span>
-                }
-           },
-              {
-                <span class="string">"term"</span>: {
-                  <span class="string">"color"</span>: <span class="string">"black"</span>
-                }
-           }
-          ]
-          }
-        }
-       ]
-    }
-  }
-}</code></pre><blockquote>
+</ul><p>Lets write the request to search the mobile phones we described above.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="comment"><span class="com">//For case </span><span class="number"><span class="com">1</span></span><span class="com">: </span><span class="string"><span class="com">"Apple"</span></span><span class="com"> OR </span><span class="string"><span class="com">"Samsung"</span></span></span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="string"><span class="str">"query"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="string"><span class="str">"should"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Apple"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Samsung"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">]</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="comment"><span class="com">//For case </span><span class="number"><span class="com">2</span></span><span class="com">: </span><span class="string"><span class="com">"Apple"</span></span><span class="com"> AND </span><span class="string"><span class="com">"Samsung"</span></span></span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="string"><span class="str">"query"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Apple"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Samsung"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">]</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+  </span><span class="string"><span class="str">"query"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="string"><span class="str">"should"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"first_name"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"John"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"last_name"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"John"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">]</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="comment"><span class="com">// For case </span><span class="number"><span class="com">3</span></span></span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="string"><span class="str">"filter"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"type"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"mobile"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"range"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"price"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              </span><span class="string"><span class="str">"lt"</span></span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">800</span></span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+       </span><span class="pun">],</span><span class="pln">
+      </span><span class="string"><span class="str">"must_not"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[{</span><span class="pln">
+        </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Apple"</span></span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+       </span><span class="pun">}],</span><span class="pln">
+      </span><span class="string"><span class="str">"should"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"color"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"metal"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+              </span><span class="pun">{</span><span class="pln">
+                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Samsung"</span></span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+           </span><span class="pun">},</span><span class="pln">
+              </span><span class="pun">{</span><span class="pln">
+                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="string"><span class="str">"color"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"white"</span></span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">]</span><span class="pln">
+          </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+              </span><span class="pun">{</span><span class="pln">
+                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Sony"</span></span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+           </span><span class="pun">},</span><span class="pln">
+              </span><span class="pun">{</span><span class="pln">
+                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="string"><span class="str">"color"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"black"</span></span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">]</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+       </span><span class="pun">]</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><blockquote>
 <p>Elasticseach sidenote</p>
 <h4><strong><em>bool</em></strong> <em>query/filter</em></h4>
 <p>As you can see in the example here, we have using bool filters. This way you can combine any kind of queries and filters, you can also combine multiple usecases (like fuzzy and wildcard), and write complex search requests. To know more check out:
@@ -627,7 +640,8 @@ product</span><span class="pun">.</span><span class="pln">brand </span><span cla
   <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/search/use-cases.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/search/use-cases.md">
     <span class="fa fa-pencil"> Edit</span>
   </a>
-</div></div>
+</div>
+<!-- ngIf: index --></div>
   <script type="text/javascript" src="../../docbase-config.js"></script>
   <script type="text/javascript" src="../../bower_components/docbase/dist/main.unique.js"></script>
   <script type="text/javascript" src="../../scripts/analytics.js"></script>

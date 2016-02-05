@@ -36,6 +36,8 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v2.0/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../v2.0/concepts/datamodel.html>Datamodel</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v2.0/concepts/index.html ng-bind="file.label" class="ng-binding" href=../../v2.0/concepts/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -43,6 +45,8 @@
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v2.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v2.0/rest/api-reference.html>API Reference</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v2.0/rest/index.html ng-bind="file.label" class="ng-binding" href=../../v2.0/rest/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -56,6 +60,8 @@
             <a ng-href=../../v2.0/javascript/angular.html ng-bind="file.label" class="ng-binding" href=../../v2.0/javascript/angular.html>Angular Binding</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v2.0/javascript/oauth.html ng-bind="file.label" class="ng-binding" href=../../v2.0/javascript/oauth.html>OAuth</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v2.0/javascript/index.html ng-bind="file.label" class="ng-binding" href=../../v2.0/javascript/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
@@ -65,6 +71,8 @@
             <a ng-href=../../v2.0/search/quick-start.html ng-bind="file.label" class="ng-binding" href=../../v2.0/search/quick-start.html>Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
             <a ng-href=../../v2.0/search/use-cases.html ng-bind="file.label" class="ng-binding" href=../../v2.0/search/use-cases.html>Use-cases</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" class="ng-scope">
+            <a ng-href=../../v2.0/search/index.html ng-bind="file.label" class="ng-binding" href=../../v2.0/search/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -72,7 +80,8 @@
 
     <ul class="nav navbar-nav navbar-right">      
        <li class="dropdown search-dropdown">
-        <div class="form-group search-form"><span class="twitter-typeahead" style="position: relative; display: inline-block; "><input class="search_field form-control dropdown-toggle appbase-search tt-hint" type="text" style="position: absolute; top: 0px; left: 0px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; box-shadow: none; opacity: 1; background-attachment: scroll; background-clip: border-box; background-color: rgb(255, 255, 255); background-image: none; background-origin: padding-box; background-size:  ; background-position: 0% 0%; background-repeat: repeat repeat; " readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr"><input class="search_field form-control dropdown-toggle appbase-search tt-input" type="text" placeholder="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; "><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none; "></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; "><div class="tt-dataset tt-dataset-titles"></div></div></span></div>
+        <div class="form-group search-form">
+        </div>
       </li>
       <li class="dropdown">
         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -94,7 +103,7 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid --></nav>
-<div role="flatdoc" class="content-root ng-scope">
+<div role="flatdoc" class="content-root ng-scope" data-ng-show="!index">
   <div class="menubar fixed">
     <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="use-cases-item" class="level-1"><a id="use-cases-link" href="../../v2.0/search/use-cases.html#use-cases" class="level-1" pref="#use-cases">Use-cases</a><ul class="level-2" id="use-cases-list"><li id="use-cases-elasticsearch-introduction-item" class="level-2"><a id="use-cases-elasticsearch-introduction-link" href="../../v2.0/search/use-cases.html#use-cases-elasticsearch-introduction" class="level-2" pref="#use-cases-elasticsearch-introduction">Elasticsearch Introduction</a></li><li id="use-cases-data-mapping-item" class="level-2"><a id="use-cases-data-mapping-link" href="../../v2.0/search/use-cases.html#use-cases-data-mapping" class="level-2" pref="#use-cases-data-mapping">Data Mapping</a></li><li id="use-cases-request-and-response-format-item" class="level-2"><a id="use-cases-request-and-response-format-link" href="../../v2.0/search/use-cases.html#use-cases-request-and-response-format" class="level-2" pref="#use-cases-request-and-response-format">Request and Response Format</a><ul class="level-3" id="use-cases-request-and-response-format-list"><li id="use-cases-request-and-response-format-request-item" class="level-3"><a id="use-cases-request-and-response-format-request-link" href="../../v2.0/search/use-cases.html#use-cases-request-and-response-format-request" class="level-3" pref="#use-cases-request-and-response-format-request">Request</a></li><li id="use-cases-request-and-response-format-response-item" class="level-3"><a id="use-cases-request-and-response-format-response-link" href="../../v2.0/search/use-cases.html#use-cases-request-and-response-format-response" class="level-3" pref="#use-cases-request-and-response-format-response">Response</a></li></ul></li><li id="use-cases-searching-item" class="level-2"><a id="use-cases-searching-link" href="../../v2.0/search/use-cases.html#use-cases-searching" class="level-2" pref="#use-cases-searching">Searching</a><ul class="level-3" id="use-cases-searching-list"><li id="use-cases-searching-simple-match-item" class="level-3"><a id="use-cases-searching-simple-match-link" href="../../v2.0/search/use-cases.html#use-cases-searching-simple-match" class="level-3" pref="#use-cases-searching-simple-match">Simple Match</a></li><li id="use-cases-searching-fuzzy-item" class="level-3"><a id="use-cases-searching-fuzzy-link" href="../../v2.0/search/use-cases.html#use-cases-searching-fuzzy" class="level-3" pref="#use-cases-searching-fuzzy">Fuzzy</a></li><li id="use-cases-searching-numeric-range-item" class="level-3"><a id="use-cases-searching-numeric-range-link" href="../../v2.0/search/use-cases.html#use-cases-searching-numeric-range" class="level-3" pref="#use-cases-searching-numeric-range">Numeric-range</a></li><li id="use-cases-searching-geo-spatial-item" class="level-3"><a id="use-cases-searching-geo-spatial-link" href="../../v2.0/search/use-cases.html#use-cases-searching-geo-spatial" class="level-3" pref="#use-cases-searching-geo-spatial">Geo spatial</a></li><li id="use-cases-searching-sorting-item" class="level-3"><a id="use-cases-searching-sorting-link" href="../../v2.0/search/use-cases.html#use-cases-searching-sorting" class="level-3" pref="#use-cases-searching-sorting">Sorting</a></li><li id="use-cases-searching-aggregation-item" class="level-3"><a id="use-cases-searching-aggregation-link" href="../../v2.0/search/use-cases.html#use-cases-searching-aggregation" class="level-3" pref="#use-cases-searching-aggregation">Aggregation</a></li><li id="use-cases-searching-combining-queriesfilters-item" class="level-3"><a id="use-cases-searching-combining-queriesfilters-link" href="../../v2.0/search/use-cases.html#use-cases-searching-combining-queriesfilters" class="level-3" pref="#use-cases-searching-combining-queriesfilters">Combining queries/filters</a></li></ul></li><li id="use-cases-next-steps-item" class="level-2"><a id="use-cases-next-steps-link" href="../../v2.0/search/use-cases.html#use-cases-next-steps" class="level-2" pref="#use-cases-next-steps">Next steps</a></li></ul></li></ul></li></ul></div>
   </div>
@@ -434,7 +443,8 @@ product</span><span class="pun">.</span><span class="pln">brand </span><span cla
   <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/search/use-cases.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/search/use-cases.md">
     <span class="fa fa-pencil"> Edit</span>
   </a>
-</div></div>
+</div>
+<!-- ngIf: index --></div>
   <script type="text/javascript" src="../../docbase-config.js"></script>
   <script type="text/javascript" src="../../bower_components/docbase/dist/main.unique.js"></script>
   <script type="text/javascript" src="../../scripts/analytics.js"></script>

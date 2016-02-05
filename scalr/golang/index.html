@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../../styles/docs.css">
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
-<body role="flatdoc" class="no-literate big-h3 large-brief">
+<body role="flatdoc">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -118,32 +118,31 @@
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid --></nav>
-<div role="flatdoc" class="content-root ng-scope" data-ng-show="!index">
-  <div class="menubar fixed">
-    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="appbase-data-model-item" class="level-1"><a id="appbase-data-model-link" href="../../scalr/concepts/datamodel.html#appbase-data-model" class="level-1" pref="#appbase-data-model">Appbase Data Model</a><ul class="level-2" id="appbase-data-model-list"><li id="appbase-data-model-what-is-appbaseio-item" class="level-2"><a id="appbase-data-model-what-is-appbaseio-link" href="../../scalr/concepts/datamodel.html#appbase-data-model-what-is-appbaseio" class="level-2" pref="#appbase-data-model-what-is-appbaseio">What is appbase.io</a></li></ul></li><li id="appbase-data-schema-item" class="level-1"><a id="appbase-data-schema-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema" class="level-1" pref="#appbase-data-schema">Appbase Data Schema</a><ul class="level-2" id="appbase-data-schema-list"><li id="appbase-data-schema-app-aka-index-item" class="level-2"><a id="appbase-data-schema-app-aka-index-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema-app-aka-index" class="level-2" pref="#appbase-data-schema-app-aka-index">App aka Index</a></li><li id="appbase-data-schema-type-item" class="level-2"><a id="appbase-data-schema-type-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema-type" class="level-2" pref="#appbase-data-schema-type">Type</a></li><li id="appbase-data-schema-document-item" class="level-2"><a id="appbase-data-schema-document-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema-document" class="level-2" pref="#appbase-data-schema-document">Document</a></li><li id="appbase-data-schema-visualizing-the-data-model-item" class="level-2"><a id="appbase-data-schema-visualizing-the-data-model-link" href="../../scalr/concepts/datamodel.html#appbase-data-schema-visualizing-the-data-model" class="level-2" pref="#appbase-data-schema-visualizing-the-data-model">Visualizing the Data Model</a></li></ul></li></ul></li></ul></div>
+<div role="flatdoc" class="content-root ng-scope ng-hide" data-ng-show="!index">
+  <div class="menubar">
+    <div class="menu section" role="flatdoc-menu"></div>
   </div>
-  <div role="flatdoc-content" class="content"><div class="extra_container"><div class="contributors_header">Contributors<span class="pull-right modified-date">Last Modified On : <a href="https://github.com/appbaseio/Docs/commit/9683e5f074953e97618dcc5acc576b785d93a286">Sep 18, 2015</a></span></div><div class="contributor-container"><a class="contributor" href="https://github.com/siddharthlatest" title="siddharthlatest" target="_blank"><img class="contributor_img img-rounded" src="https://avatars.githubusercontent.com/u/630042?v=3" alt="siddharthlatest"></a></div></div><div class="clearFix"></div><h1 id="appbase-data-model">Appbase Data Model</h1><h2 id="appbase-data-model-what-is-appbaseio">What is appbase.io</h2><p><a href="https://appbase.io">Appbase.io</a> is a data streams API service for continuous search and aggregation queries. You can build reactive apps with Appbase.io, where views update in conjunction with the data changes.</p><p>It enables you to:  </p><ul>
-<li>Build a blazing fast text search, messaging systems, or implement a mix of esoteric filters (fuzzy, geo, terms, range, multiple items),</li>
-<li>Stream JSON results directly as new data is added or the original data is updated,  </li>
-<li>Scale seamlessly upto 10,000 updates per second and store at terbyte scale.</li>
-</ul><p><img src="http://i.imgur.com/iJpqtks.png?1" alt="Appbase Architecture"><br><strong>Image 1:</strong> It provides a reliable data streams API as a service, while leveraging ElasticSearch (and Lucene) for storage and search.</p><p>While not primarily intended, Appbase.io can also be used as a hosted ElasticSearch API or as a message queue with a publish / subscribe model.</p><p>There are some catches if you intend to:  </p><ul>
-<li>Use it as a primary data store - ElasticSearch is <a href="https://www.elastic.co/guide/en/elasticsearch/resiliency/current/index.html#_loss_of_documents_during_network_partition_status_ongoing">known to lose data</a> for some time on network partitions.<br><code>Status:</code> We are working towards adding support for durability by using Apache Kafka as a frontend (things you can do in SaaS!).</li>
-<li>Model financial or sensitive data - Appbase.io is not ACIDic and we don’t intend to be. A good design choice in this situation would be to use something that supports ACID transactions for storing sensitive data, and use Appbase.io for the data that needs to be searchable or accessed in realtime.</li>
-<li>Use it for OLAP use-cases - Appbase.io is designed as an OLTP system although it supports aggregations and queries on data sets of the size of terabytes. There are plenty of ideal tools for OLAP use-cases - Amazon Redshift, Google Big Query, Apache Hadoop and Appbase.io can be used with any of them (via REST API).</li>
-</ul><h1 id="appbase-data-schema">Appbase Data Schema</h1><p>Appbase uses the same data schema as ElasticSearch.</p><h2 id="appbase-data-schema-app-aka-index">App <span style="font-weight: 200;">aka Index</span></h2><p>An app in <a href="https://appbase.io">appbase.io</a> is stored as an index in ElasticSearch. App is the highest level of construct supported by appbase and is equivalent to a <strong>database</strong> in SQL.</p><h2 id="appbase-data-schema-type">Type</h2><p>Types are equivalent to <strong>tables</strong> in SQL. Data in an app is always stored within it’s types. A good way to think of them is as collections of different kinds of data.</p><h2 id="appbase-data-schema-document">Document</h2><p>A <strong>document</strong> is the actual data stored in Appbase. Documents are <code>JSON</code> objects, equivalent to <strong>records</strong> or <strong>rows</strong> in SQL.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
-   </span><span class="string"><span class="str">"user"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"data"</span></span><span class="pun">,</span><span class="pln">
-   </span><span class="string"><span class="str">"remember"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"something"</span></span><span class="pun">,</span><span class="pln">
-   </span><span class="string"><span class="str">"molala"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"yaya"</span></span><span class="pun">,</span><span class="pln">
-   </span><span class="string"><span class="str">"lifeis"</span></span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">42</span></span><span class="pun">,</span><span class="pln">
-   </span><span class="string"><span class="str">"recursive"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-           </span><span class="string"><span class="str">"how's this"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"one nested value"</span></span><span class="pln">
-   </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">}</span></code></pre><p><br></p><h2 id="appbase-data-schema-visualizing-the-data-model">Visualizing the Data Model</h2><p>An app can have one or more types and each type is a container for JSON documents. Visually, the arrangement looks like below:</p><p><img src="https://farm1.staticflickr.com/616/21319701888_dbe75d9f6f_c.jpg" alt="img"></p></div>
-  <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/scalr/concepts/datamodel.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/scalr/concepts/datamodel.md">
+  <div role="flatdoc-content" class="content"></div>
+  <a class="edit" ng-href="" target="_blank">
     <span class="fa fa-pencil"> Edit</span>
   </a>
 </div>
-<!-- ngIf: index --></div>
+<!-- ngIf: index --><div class="index-container ng-scope" data-ng-if="index">
+	<div class="container">
+		<div class="row">
+			<h1 class="col-xs-12 ng-binding">
+				golang
+			</h1>
+		</div>
+		<ul class="row indexList">
+			<!-- ngRepeat: file in indexList --><!-- ngIf: file.name != 'index' --><li class="col-xs-12 indexLi ng-scope" data-ng-repeat="file in indexList" data-ng-if="file.name != 'index'">
+				<a href=../../scalr/golang/golang-intro.html class="col-xs-12 ng-binding">golang-intro</a>
+			</li><!-- end ngIf: file.name != 'index' --><!-- end ngRepeat: file in indexList --><!-- ngIf: file.name != 'index' --><li class="col-xs-12 indexLi ng-scope" data-ng-repeat="file in indexList" data-ng-if="file.name != 'index'">
+				<a href=../../scalr/golang/api-reference.html class="col-xs-12 ng-binding">api-reference</a>
+			</li><!-- end ngIf: file.name != 'index' --><!-- end ngRepeat: file in indexList --><!-- ngIf: file.name != 'index' --><!-- end ngRepeat: file in indexList -->
+		</ul>
+	</div>
+</div><!-- end ngIf: index --></div>
   <script type="text/javascript" src="../../docbase-config.js"></script>
   <script type="text/javascript" src="../../bower_components/docbase/dist/main.unique.js"></script>
   <script type="text/javascript" src="../../scripts/analytics.js"></script>
