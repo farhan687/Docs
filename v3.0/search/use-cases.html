@@ -565,71 +565,71 @@ product</span><span class="pun">.</span><span class="pln">brand </span><span cla
       </span><span class="pun">]</span><span class="pln">
     </span><span class="pun">}</span><span class="pln">
   </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">}</span></code></pre><pre><code class="lang-js prettyprint"><span class="comment">// For case <span class="number">3</span></span>
-{
-  <span class="string">"filter"</span>: {
-    <span class="string">"bool"</span>: {
-      <span class="string">"must"</span>: [
-        {
-          <span class="string">"term"</span>: {
-            <span class="string">"type"</span>: <span class="string">"mobile"</span>
-          }
-        },
-        {
-          <span class="string">"range"</span>: {
-            <span class="string">"price"</span>: {
-              <span class="string">"lt"</span>: <span class="number">800</span>
-            }
-          }
-        }
-       ],
-      <span class="string">"must_not"</span>: [{
-        <span class="string">"term"</span>: {
-          <span class="string">"brand"</span>: <span class="string">"Apple"</span>
-        }
-       }],
-      <span class="string">"should"</span>: [
-        {
-          <span class="string">"term"</span>: {
-            <span class="string">"color"</span>: <span class="string">"metal"</span>
-          }
-        },
-        {
-          <span class="string">"bool"</span>: {
-            <span class="string">"must"</span>: [
-              {
-                <span class="string">"term"</span>: {
-                  <span class="string">"brand"</span>: <span class="string">"Samsung"</span>
-                }
-           },
-              {
-                <span class="string">"term"</span>: {
-                  <span class="string">"color"</span>: <span class="string">"white"</span>
-                }
-           }
-          ]
-          },
-        },
-        {
-          <span class="string">"bool"</span>: {
-            <span class="string">"must"</span>: [
-              {
-                <span class="string">"term"</span>: {
-                  <span class="string">"brand"</span>: <span class="string">"Sony"</span>
-                }
-           },
-              {
-                <span class="string">"term"</span>: {
-                  <span class="string">"color"</span>: <span class="string">"black"</span>
-                }
-           }
-          ]
-          }
-        }
-       ]
-    }
-  }
-}</code></pre><blockquote>
+</span><span class="pun">}</span></code></pre><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="comment"><span class="com">// For case </span><span class="number"><span class="com">3</span></span></span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="string"><span class="str">"filter"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"type"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"mobile"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"range"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"price"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              </span><span class="string"><span class="str">"lt"</span></span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">800</span></span><span class="pln">
+            </span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+       </span><span class="pun">],</span><span class="pln">
+      </span><span class="string"><span class="str">"must_not"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[{</span><span class="pln">
+        </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Apple"</span></span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+       </span><span class="pun">}],</span><span class="pln">
+      </span><span class="string"><span class="str">"should"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"color"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"metal"</span></span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+              </span><span class="pun">{</span><span class="pln">
+                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Samsung"</span></span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+           </span><span class="pun">},</span><span class="pln">
+              </span><span class="pun">{</span><span class="pln">
+                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="string"><span class="str">"color"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"white"</span></span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">]</span><span class="pln">
+          </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+          </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="string"><span class="str">"must"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+              </span><span class="pun">{</span><span class="pln">
+                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="string"><span class="str">"brand"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"Sony"</span></span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+           </span><span class="pun">},</span><span class="pln">
+              </span><span class="pun">{</span><span class="pln">
+                </span><span class="string"><span class="str">"term"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+                  </span><span class="string"><span class="str">"color"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"black"</span></span><span class="pln">
+                </span><span class="pun">}</span><span class="pln">
+           </span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">]</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+       </span><span class="pun">]</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><blockquote>
 <p>Elasticseach sidenote</p>
 <h4><strong><em>bool</em></strong> <em>query/filter</em></h4>
 <p>As you can see in the example here, we have using bool filters. This way you can combine any kind of queries and filters, you can also combine multiple usecases (like fuzzy and wildcard), and write complex search requests. To know more check out:
@@ -647,4 +647,4 @@ product</span><span class="pun">.</span><span class="pln">brand </span><span cla
   <script type="text/javascript" src="../../scripts/main.js"></script>
 
 
-</body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json'); })</script></html>
+</body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json', true); })</script></html>
