@@ -4,16 +4,16 @@
   <meta name="viewport" content="width=device-width">
   <base href="../../">
   <title>Documentation</title>
-  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <!-- Flatdoc theme -->
-  <link href="../../bower_components/flatdoc/theme-white/style.css" rel="stylesheet">
+  <link href="./bower_components/flatdoc/theme-white/style.css" rel="stylesheet">
   <!-- DocBase -->
-  <link rel="stylesheet" type="text/css" href="../../bower_components/docbase/styles/main.css">
-  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="../../bower_components/google-code-prettify/bin/prettify.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../bower_components/google-code-prettify/bin/prettify.min.css">
-  <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../../styles/docs.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/docbase/styles/main.css">
+  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./bower_components/google-code-prettify/bin/prettify.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./bower_components/google-code-prettify/bin/prettify.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./styles/docs.css">
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
@@ -25,54 +25,54 @@
       <span class="icon-bar"></span>
     </button>
     <a id="docs-appbase-logo" class="navbar-brand" href="http://docs.appbase.io">
-      <img src="../../images/logo.svg">
+      <img src="/images/logo.svg">
     </a>
   </div>
 
   <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav">
       <!-- ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v2.0/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v2.0/concepts">Concepts</a>
+        <a ng-href=./v2.0/concepts.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v2.0/concepts.html>Concepts</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v2.0/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../v2.0/concepts/datamodel.html>Datamodel</a>
+            <a ng-href=./v2.0/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=./v2.0/concepts/datamodel.html>Datamodel</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v2.0/concepts/index.html ng-bind="file.label" class="ng-binding" href=../../v2.0/concepts/index.html>index</a>
+            <a ng-href=./v2.0/concepts/index.html ng-bind="file.label" class="ng-binding" href=./v2.0/concepts/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v2.0/rest" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v2.0/rest">REST</a>
+        <a ng-href=./v2.0/rest.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v2.0/rest.html>REST</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v2.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v2.0/rest/api-reference.html>API Reference</a>
+            <a ng-href=./v2.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=./v2.0/rest/api-reference.html>API Reference</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v2.0/rest/index.html ng-bind="file.label" class="ng-binding" href=../../v2.0/rest/index.html>index</a>
+            <a ng-href=./v2.0/rest/index.html ng-bind="file.label" class="ng-binding" href=./v2.0/rest/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v2.0/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v2.0/javascript">Javascript</a>
+        <a ng-href=./v2.0/javascript.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v2.0/javascript.html>Javascript</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v2.0/javascript/quick-start.html ng-bind="file.label" class="ng-binding" href=../../v2.0/javascript/quick-start.html>Quick start</a>
+            <a ng-href=./v2.0/javascript/quick-start.html ng-bind="file.label" class="ng-binding" href=./v2.0/javascript/quick-start.html>Quick start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v2.0/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v2.0/javascript/api-reference.html>API Reference</a>
+            <a ng-href=./v2.0/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=./v2.0/javascript/api-reference.html>API Reference</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v2.0/javascript/angular.html ng-bind="file.label" class="ng-binding" href=../../v2.0/javascript/angular.html>Angular Binding</a>
+            <a ng-href=./v2.0/javascript/angular.html ng-bind="file.label" class="ng-binding" href=./v2.0/javascript/angular.html>Angular Binding</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v2.0/javascript/oauth.html ng-bind="file.label" class="ng-binding" href=../../v2.0/javascript/oauth.html>OAuth</a>
+            <a ng-href=./v2.0/javascript/oauth.html ng-bind="file.label" class="ng-binding" href=./v2.0/javascript/oauth.html>OAuth</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v2.0/javascript/index.html ng-bind="file.label" class="ng-binding" href=../../v2.0/javascript/index.html>index</a>
+            <a ng-href=./v2.0/javascript/index.html ng-bind="file.label" class="ng-binding" href=./v2.0/javascript/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v2.0/search" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v2.0/search">Search Queries</a>
+        <a ng-href=./v2.0/search.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v2.0/search.html>Search Queries</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v2.0/search/quick-start.html ng-bind="file.label" class="ng-binding" href=../../v2.0/search/quick-start.html>Quick Start</a>
+            <a ng-href=./v2.0/search/quick-start.html ng-bind="file.label" class="ng-binding" href=./v2.0/search/quick-start.html>Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v2.0/search/use-cases.html ng-bind="file.label" class="ng-binding" href=../../v2.0/search/use-cases.html>Use-cases</a>
+            <a ng-href=./v2.0/search/use-cases.html ng-bind="file.label" class="ng-binding" href=./v2.0/search/use-cases.html>Use-cases</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v2.0/search/index.html ng-bind="file.label" class="ng-binding" href=../../v2.0/search/index.html>index</a>
+            <a ng-href=./v2.0/search/index.html ng-bind="file.label" class="ng-binding" href=./v2.0/search/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -80,7 +80,7 @@
 
     <ul class="nav navbar-nav navbar-right">      
        <li class="dropdown search-dropdown">
-        <div class="form-group search-form"><input class="search_field form-control dropdown-toggle appbase-search" type="text" placeholder="search"></div>
+        <div class="form-group search-form"><span class="twitter-typeahead" style="position: relative; display: inline-block; "><input class="search_field form-control dropdown-toggle appbase-search tt-hint" type="text" style="position: absolute; top: 0px; left: 0px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; box-shadow: none; opacity: 1; background-attachment: scroll; background-clip: border-box; background-color: rgb(255, 255, 255); background-image: none; background-origin: padding-box; background-size:  ; background-position: 0% 0%; background-repeat: repeat repeat; " readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr"><input class="search_field form-control dropdown-toggle appbase-search tt-input" type="text" placeholder="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; "><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none; "></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; "><div class="tt-dataset tt-dataset-titles"></div></div></span></div>
       </li>
       <li class="dropdown">
         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -88,11 +88,11 @@
         </a>
         <ul class="dropdown-menu version-switcher" role="menu">
           <!-- ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../scalr/concepts/intro.html ng-bind="version" class="ng-binding" href=../../scalr/concepts/intro.html>scalr</a>
+            <a ng-href=./scalr/concepts/intro.html ng-bind="version" class="ng-binding" href=./scalr/concepts/intro.html>scalr</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../v2.0/concepts/datamodel.html ng-bind="version" class="ng-binding" href=../../v2.0/concepts/datamodel.html>v2.0</a>
+            <a ng-href=./v2.0/concepts/datamodel.html ng-bind="version" class="ng-binding" href=./v2.0/concepts/datamodel.html>v2.0</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../v3.0/changelog/changelog.html ng-bind="version" class="ng-binding" href=../../v3.0/changelog/changelog.html>v3.0</a>
+            <a ng-href=./v3.0/changelog/changelog.html ng-bind="version" class="ng-binding" href=./v3.0/changelog/changelog.html>v3.0</a>
           </li><!-- end ngRepeat: version in versions -->
         </ul>
       </li>
@@ -104,7 +104,7 @@
 </div><!-- /.container-fluid --></nav>
 <div role="flatdoc" class="content-root ng-scope" data-ng-show="!index">
   <div class="menubar fixed">
-    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="ng-appbase-guide-item" class="level-1"><a id="ng-appbase-guide-link" href="../../v2.0/javascript/angular.html#ng-appbase-guide" class="level-1" pref="#ng-appbase-guide">ng-Appbase Guide</a><ul class="level-2" id="ng-appbase-guide-list"><li id="ng-appbase-guide-integrating-the-awesome-item" class="level-2"><a id="ng-appbase-guide-integrating-the-awesome-link" href="../../v2.0/javascript/angular.html#ng-appbase-guide-integrating-the-awesome" class="level-2" pref="#ng-appbase-guide-integrating-the-awesome">Integrating the awesome</a></li><li id="ng-appbase-guide-binding-objects-item" class="level-2"><a id="ng-appbase-guide-binding-objects-link" href="../../v2.0/javascript/angular.html#ng-appbase-guide-binding-objects" class="level-2" pref="#ng-appbase-guide-binding-objects">Binding Objects</a><ul class="level-3" id="ng-appbase-guide-binding-objects-list"><li id="ng-appbase-guide-binding-objects-example-item" class="level-3"><a id="ng-appbase-guide-binding-objects-example-link" href="../../v2.0/javascript/angular.html#ng-appbase-guide-binding-objects-example" class="level-3" pref="#ng-appbase-guide-binding-objects-example">Example:</a></li></ul></li><li id="ng-appbase-guide-binding-arrays-item" class="level-2"><a id="ng-appbase-guide-binding-arrays-link" href="../../v2.0/javascript/angular.html#ng-appbase-guide-binding-arrays" class="level-2" pref="#ng-appbase-guide-binding-arrays">Binding Arrays</a><ul class="level-3" id="ng-appbase-guide-binding-arrays-list"><li id="ng-appbase-guide-binding-arrays-example-item" class="level-3"><a id="ng-appbase-guide-binding-arrays-example-link" href="../../v2.0/javascript/angular.html#ng-appbase-guide-binding-arrays-example" class="level-3" pref="#ng-appbase-guide-binding-arrays-example">Example</a></li></ul></li><li id="ng-appbase-guide-modifying-data-item" class="level-2"><a id="ng-appbase-guide-modifying-data-link" href="../../v2.0/javascript/angular.html#ng-appbase-guide-modifying-data" class="level-2" pref="#ng-appbase-guide-modifying-data">Modifying data</a></li><li id="ng-appbase-guide-next-steps-item" class="level-2"><a id="ng-appbase-guide-next-steps-link" href="../../v2.0/javascript/angular.html#ng-appbase-guide-next-steps" class="level-2" pref="#ng-appbase-guide-next-steps">Next Steps</a></li></ul></li><li id="appbase-api-docs-item" class="level-1"><a id="appbase-api-docs-link" href="../../v2.0/javascript/angular.html#appbase-api-docs" class="level-1" pref="#appbase-api-docs">$appbase API Docs</a><ul class="level-2" id="appbase-api-docs-list"><li id="appbase-api-docs-vertexrefbindedges-item" class="level-2"><a id="appbase-api-docs-vertexrefbindedges-link" href="../../v2.0/javascript/angular.html#appbase-api-docs-vertexrefbindedges" class="level-2" pref="#appbase-api-docs-vertexrefbindedges">vertexRef.bindEdges()</a><ul class="level-3" id="appbase-api-docs-vertexrefbindedges-list"><li id="appbase-api-docs-vertexrefbindedges-returns-item" class="level-3"><a id="appbase-api-docs-vertexrefbindedges-returns-link" href="../../v2.0/javascript/angular.html#appbase-api-docs-vertexrefbindedges-returns" class="level-3" pref="#appbase-api-docs-vertexrefbindedges-returns">Returns</a></li><li id="appbase-api-docs-vertexrefbindedges-arguments-item" class="level-3"><a id="appbase-api-docs-vertexrefbindedges-arguments-link" href="../../v2.0/javascript/angular.html#appbase-api-docs-vertexrefbindedges-arguments" class="level-3" pref="#appbase-api-docs-vertexrefbindedges-arguments">Arguments</a></li></ul></li><li id="appbase-api-docs-bindvertices-item" class="level-2"><a id="appbase-api-docs-bindvertices-link" href="../../v2.0/javascript/angular.html#appbase-api-docs-bindvertices" class="level-2" pref="#appbase-api-docs-bindvertices">bindVertices()</a></li><li id="appbase-api-docs-bindproperties-item" class="level-2"><a id="appbase-api-docs-bindproperties-link" href="../../v2.0/javascript/angular.html#appbase-api-docs-bindproperties" class="level-2" pref="#appbase-api-docs-bindproperties">bindProperties()</a><ul class="level-3" id="appbase-api-docs-bindproperties-list"><li id="appbase-api-docs-bindproperties-returns-item" class="level-3"><a id="appbase-api-docs-bindproperties-returns-link" href="../../v2.0/javascript/angular.html#appbase-api-docs-bindproperties-returns" class="level-3" pref="#appbase-api-docs-bindproperties-returns">Returns</a></li><li id="appbase-api-docs-bindproperties-arguments-item" class="level-3"><a id="appbase-api-docs-bindproperties-arguments-link" href="../../v2.0/javascript/angular.html#appbase-api-docs-bindproperties-arguments" class="level-3" pref="#appbase-api-docs-bindproperties-arguments">Arguments</a></li></ul></li></ul></li></ul></li></ul></div>
+    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="ng-appbase-guide-item" class="level-1"><a id="ng-appbase-guide-link" href="./v2.0/javascript/angular.html#ng-appbase-guide" class="level-1" pref="#ng-appbase-guide">ng-Appbase Guide</a><ul class="level-2" id="ng-appbase-guide-list"><li id="ng-appbase-guide-integrating-the-awesome-item" class="level-2"><a id="ng-appbase-guide-integrating-the-awesome-link" href="./v2.0/javascript/angular.html#ng-appbase-guide-integrating-the-awesome" class="level-2" pref="#ng-appbase-guide-integrating-the-awesome">Integrating the awesome</a></li><li id="ng-appbase-guide-binding-objects-item" class="level-2"><a id="ng-appbase-guide-binding-objects-link" href="./v2.0/javascript/angular.html#ng-appbase-guide-binding-objects" class="level-2" pref="#ng-appbase-guide-binding-objects">Binding Objects</a><ul class="level-3" id="ng-appbase-guide-binding-objects-list"><li id="ng-appbase-guide-binding-objects-example-item" class="level-3"><a id="ng-appbase-guide-binding-objects-example-link" href="./v2.0/javascript/angular.html#ng-appbase-guide-binding-objects-example" class="level-3" pref="#ng-appbase-guide-binding-objects-example">Example:</a></li></ul></li><li id="ng-appbase-guide-binding-arrays-item" class="level-2"><a id="ng-appbase-guide-binding-arrays-link" href="./v2.0/javascript/angular.html#ng-appbase-guide-binding-arrays" class="level-2" pref="#ng-appbase-guide-binding-arrays">Binding Arrays</a><ul class="level-3" id="ng-appbase-guide-binding-arrays-list"><li id="ng-appbase-guide-binding-arrays-example-item" class="level-3"><a id="ng-appbase-guide-binding-arrays-example-link" href="./v2.0/javascript/angular.html#ng-appbase-guide-binding-arrays-example" class="level-3" pref="#ng-appbase-guide-binding-arrays-example">Example</a></li></ul></li><li id="ng-appbase-guide-modifying-data-item" class="level-2"><a id="ng-appbase-guide-modifying-data-link" href="./v2.0/javascript/angular.html#ng-appbase-guide-modifying-data" class="level-2" pref="#ng-appbase-guide-modifying-data">Modifying data</a></li><li id="ng-appbase-guide-next-steps-item" class="level-2"><a id="ng-appbase-guide-next-steps-link" href="./v2.0/javascript/angular.html#ng-appbase-guide-next-steps" class="level-2" pref="#ng-appbase-guide-next-steps">Next Steps</a></li></ul></li><li id="appbase-api-docs-item" class="level-1"><a id="appbase-api-docs-link" href="./v2.0/javascript/angular.html#appbase-api-docs" class="level-1" pref="#appbase-api-docs">$appbase API Docs</a><ul class="level-2" id="appbase-api-docs-list"><li id="appbase-api-docs-vertexrefbindedges-item" class="level-2"><a id="appbase-api-docs-vertexrefbindedges-link" href="./v2.0/javascript/angular.html#appbase-api-docs-vertexrefbindedges" class="level-2" pref="#appbase-api-docs-vertexrefbindedges">vertexRef.bindEdges()</a><ul class="level-3" id="appbase-api-docs-vertexrefbindedges-list"><li id="appbase-api-docs-vertexrefbindedges-returns-item" class="level-3"><a id="appbase-api-docs-vertexrefbindedges-returns-link" href="./v2.0/javascript/angular.html#appbase-api-docs-vertexrefbindedges-returns" class="level-3" pref="#appbase-api-docs-vertexrefbindedges-returns">Returns</a></li><li id="appbase-api-docs-vertexrefbindedges-arguments-item" class="level-3"><a id="appbase-api-docs-vertexrefbindedges-arguments-link" href="./v2.0/javascript/angular.html#appbase-api-docs-vertexrefbindedges-arguments" class="level-3" pref="#appbase-api-docs-vertexrefbindedges-arguments">Arguments</a></li></ul></li><li id="appbase-api-docs-bindvertices-item" class="level-2"><a id="appbase-api-docs-bindvertices-link" href="./v2.0/javascript/angular.html#appbase-api-docs-bindvertices" class="level-2" pref="#appbase-api-docs-bindvertices">bindVertices()</a></li><li id="appbase-api-docs-bindproperties-item" class="level-2"><a id="appbase-api-docs-bindproperties-link" href="./v2.0/javascript/angular.html#appbase-api-docs-bindproperties" class="level-2" pref="#appbase-api-docs-bindproperties">bindProperties()</a><ul class="level-3" id="appbase-api-docs-bindproperties-list"><li id="appbase-api-docs-bindproperties-returns-item" class="level-3"><a id="appbase-api-docs-bindproperties-returns-link" href="./v2.0/javascript/angular.html#appbase-api-docs-bindproperties-returns" class="level-3" pref="#appbase-api-docs-bindproperties-returns">Returns</a></li><li id="appbase-api-docs-bindproperties-arguments-item" class="level-3"><a id="appbase-api-docs-bindproperties-arguments-link" href="./v2.0/javascript/angular.html#appbase-api-docs-bindproperties-arguments" class="level-3" pref="#appbase-api-docs-bindproperties-arguments">Arguments</a></li></ul></li></ul></li></ul></li></ul></div>
   </div>
   <div role="flatdoc-content" class="content"><div class="extra_container"><div class="contributors_header">Contributors<span class="pull-right modified-date">Last Modified On : <a href="https://github.com/appbaseio/Docs/commit/8b87d5e762d3871d4e23302311298c4994a36df8">May 4, 2015</a></span></div><div class="contributor-container"><a class="contributor" href="https://github.com/henriquesa" title="henriquesa" target="_blank"><img class="contributor_img img-rounded" src="https://avatars.githubusercontent.com/u/2140352?v=3" alt="henriquesa"></a></div></div><div class="clearFix"></div><h1 id="ng-appbase-guide">ng-Appbase Guide</h1><p>Appbase provides a realtime graph backend, is designed to write complex applications completely clientside. Appbase fits perfectly as a backend in your AngularJS application.</p><p>ngAppbase - AngularJS binding for Appbase, makes it very simple to bind your data between AngularJS and Appbase backend.</p><p><a href="http://appbase.io/tutorial.html">Here</a>‘s a quick tutorial for Appbase JS api.</p><h2 id="ng-appbase-guide-integrating-the-awesome">Integrating the awesome</h2><p>Add these script tags in your HTML:</p><pre><code class="lang-html prettyprint prettyprinted" style=""><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="string"><span class="atv">"https:</span><span class="comment"><span class="atv">//cdnjs.cloudflare.com/ajax/libs/angular.js/</span><span class="number"><span class="number"><span class="atv">1</span></span><span class="atv">.</span><span class="number"><span class="atv">2</span></span></span><span class="atv">.</span><span class="number"><span class="atv">20</span></span><span class="atv">/angular.js"</span></span><span class="tag">&gt;&lt;/script&gt;</span></span><span class="pln">
 </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="string"><span class="atv">"https:</span><span class="comment"><span class="atv">//cdn.appbase.io/latest/appbase.js"</span></span><span class="tag">&gt;&lt;/script&gt;</span></span><span class="pln">
@@ -203,10 +203,10 @@ Each object (called <em>edgeData</em> from now on) in array represents an edge a
   </a>
 </div>
 <!-- ngIf: index --></div>
-  <script type="text/javascript" src="../../docbase-config.js"></script>
-  <script type="text/javascript" src="../../bower_components/docbase/dist/main.unique.js"></script>
-  <script type="text/javascript" src="../../scripts/analytics.js"></script>
-  <script type="text/javascript" src="../../scripts/main.js"></script>
+  <script type="text/javascript" src="./docbase-config.js"></script>
+  <script type="text/javascript" src="./bower_components/docbase/dist/js/main.unique.js"></script>
+  <script type="text/javascript" src="./scripts/analytics.js"></script>
+  <script type="text/javascript" src="./scripts/main.js"></script>
 
 
 </body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json', true); })</script></html>

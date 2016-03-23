@@ -174,13 +174,15 @@
           Events.bind();
         };
         if (!Docbase.versions) {
-          $.get(Docbase.options.map.path + '/' + Docbase.options.map.file)
-            .success(prepareMapFile)
-            .error(function(error) {
-              // no map available for labels
-              jWindow.trigger('mapped');
-              Events.bind();
-            });
+          jWindow.trigger('mapped');
+
+          // $.get(Docbase.options.map.path + '/' + Docbase.options.map.file)
+          //   .success(prepareMapFile)
+          //   .error(function(error) {
+          //     // no map available for labels
+          //     jWindow.trigger('mapped');
+          //     Events.bind();
+          //   });
         } else {
           prepareMapFile(Docbase.options.versions);
         }
@@ -449,8 +451,8 @@
         if (options.github.path) {
           var full_path = options.github.path + '/' + file_path.version + '/' + file_path.folder + '/' + file_path.file;
           var urlToCommits = 'https://api.github.com/repos/' + options.github.user + '/' + options.github.repo + '/commits?path=' + full_path + '.md';
-          if (options.github.client_id && options.github.client_secret) {
-            urlToCommits += '&client_id=' + options.github.client_id + '&client_secret=' + options.github.client_secret;
+          if (options.github.access_token) {
+            urlToCommits += '&access_token=' + options.github.access_token;
           }
           resultPromise = $http.get(urlToCommits);
         } else {
@@ -473,6 +475,7 @@
       $scope.github = data.github;
       $scope.navbarHtml = Docbase.options.navbarHtml;
       $scope.logoSrc = Docbase.options.logoSrc;
+      $scope.docbaseOptions = Docbase.options;
 
       function versionIn(folder) {
         if (folder.name === data.currentFolder) {
@@ -540,6 +543,7 @@
   };
 
   Route.mainCtrl = function($scope, $location, $timeout, $rootScope) {
+    $scope.docbaseOptions = Docbase.options;
     if (Docbase.options.indexType === 'markdown') {
       var path = Docbase.options.indexSrc;
       if (endsWith(path, '.md')) {
@@ -658,7 +662,10 @@
 
     var baseurl = 'https://api.github.com/repos/' + options.user + '/' + options.repo + '/';
 
-    var url = baseurl + 'contents/' + path;
+    var url = baseurl + 'contents?ref=' + options.branch + path;
+    if (options.access_token) {
+      url += '&access_token=' + options.access_token;
+    }
 
     $.get(url, {
         ref: options.branch
@@ -670,7 +677,12 @@
         });
         if (commitData[0]) {
           var sha = commitData[0].sha;
-          $.get(baseurl + 'git/trees/' + sha + '?recursive=1')
+          var treeUrl = baseurl + 'git/trees/' + sha + '?recursive=1';
+          if (options.access_token) {
+            treeUrl += '&access_token=' + options.access_token;
+          }
+
+          $.get(treeUrl)
             .success(function(tree) {
               tree = tree.tree.filter(function(each) {
                 return endsWith(each.path, '.md');
@@ -716,8 +728,8 @@
                 }
               });
 
+              map = Docbase._index(map);
               callback(null, map);
-
             })
             .error(function(error) {
               callback(error);

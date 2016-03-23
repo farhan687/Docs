@@ -4,16 +4,16 @@
   <meta name="viewport" content="width=device-width">
   <base href="../../">
   <title>Documentation</title>
-  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <!-- Flatdoc theme -->
-  <link href="../../bower_components/flatdoc/theme-white/style.css" rel="stylesheet">
+  <link href="./bower_components/flatdoc/theme-white/style.css" rel="stylesheet">
   <!-- DocBase -->
-  <link rel="stylesheet" type="text/css" href="../../bower_components/docbase/styles/main.css">
-  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="../../bower_components/google-code-prettify/bin/prettify.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../bower_components/google-code-prettify/bin/prettify.min.css">
-  <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../../styles/docs.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/docbase/styles/main.css">
+  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./bower_components/google-code-prettify/bin/prettify.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./bower_components/google-code-prettify/bin/prettify.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./styles/docs.css">
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate big-h3">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
@@ -25,69 +25,69 @@
       <span class="icon-bar"></span>
     </button>
     <a id="docs-appbase-logo" class="navbar-brand" href="http://docs.appbase.io">
-      <img src="../../images/logo.svg">
+      <img src="/images/logo.svg">
     </a>
   </div>
 
   <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav">
       <!-- ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/scalr/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/concepts">Concepts</a>
+        <a ng-href=./scalr/concepts.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./scalr/concepts.html>Concepts</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/intro.html>Intro</a>
+            <a ng-href=./scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/intro.html>Intro</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/datamodel.html>Data Model</a>
+            <a ng-href=./scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/datamodel.html>Data Model</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../scalr/concepts/index.html ng-bind="file.label" class="ng-binding" href=../../scalr/concepts/index.html>index</a>
+            <a ng-href=./scalr/concepts/index.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/scalr/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/javascript">Javascript</a>
+        <a ng-href=./scalr/javascript.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./scalr/javascript.html>Javascript</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/javascript-intro.html>JS Quick Start</a>
+            <a ng-href=./scalr/javascript/javascript-intro.html ng-bind="file.label" class="ng-binding" href=./scalr/javascript/javascript-intro.html>JS Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/nodejs-intro.html>Node Quick Start</a>
+            <a ng-href=./scalr/javascript/nodejs-intro.html ng-bind="file.label" class="ng-binding" href=./scalr/javascript/nodejs-intro.html>Node Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/api-reference.html>API Reference</a>
+            <a ng-href=./scalr/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=./scalr/javascript/api-reference.html>API Reference</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/javascript/meteor-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/meteor-intro.html>Meteor Quick Start</a>
+            <a ng-href=./scalr/javascript/meteor-intro.html ng-bind="file.label" class="ng-binding" href=./scalr/javascript/meteor-intro.html>Meteor Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/javascript/javascript-webhooks.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/javascript-webhooks.html>Webhooks Guide</a>
+            <a ng-href=./scalr/javascript/javascript-webhooks.html ng-bind="file.label" class="ng-binding" href=./scalr/javascript/javascript-webhooks.html>Webhooks Guide</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../scalr/javascript/index.html ng-bind="file.label" class="ng-binding" href=../../scalr/javascript/index.html>index</a>
+            <a ng-href=./scalr/javascript/index.html ng-bind="file.label" class="ng-binding" href=./scalr/javascript/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/scalr/rest" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/rest">REST</a>
+        <a ng-href=./scalr/rest.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./scalr/rest.html>REST</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/rest/intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/rest/intro.html>Quick Start</a>
+            <a ng-href=./scalr/rest/intro.html ng-bind="file.label" class="ng-binding" href=./scalr/rest/intro.html>Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../scalr/rest/index.html ng-bind="file.label" class="ng-binding" href=../../scalr/rest/index.html>index</a>
+            <a ng-href=./scalr/rest/index.html ng-bind="file.label" class="ng-binding" href=./scalr/rest/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/scalr/golang" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/golang">Go</a>
+        <a ng-href=./scalr/golang.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./scalr/golang.html>Go</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/golang/golang-intro.html ng-bind="file.label" class="ng-binding" href=../../scalr/golang/golang-intro.html>Quick Start</a>
+            <a ng-href=./scalr/golang/golang-intro.html ng-bind="file.label" class="ng-binding" href=./scalr/golang/golang-intro.html>Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/golang/api-reference.html ng-bind="file.label" class="ng-binding" href=../../scalr/golang/api-reference.html>API Reference</a>
+            <a ng-href=./scalr/golang/api-reference.html ng-bind="file.label" class="ng-binding" href=./scalr/golang/api-reference.html>API Reference</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../scalr/golang/index.html ng-bind="file.label" class="ng-binding" href=../../scalr/golang/index.html>index</a>
+            <a ng-href=./scalr/golang/index.html ng-bind="file.label" class="ng-binding" href=./scalr/golang/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/scalr/FAQs" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/scalr/FAQs">FAQs</a>
+        <a ng-href=./scalr/FAQs.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./scalr/FAQs.html>FAQs</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/jsapi.html>JS API</a>
+            <a ng-href=./scalr/FAQs/jsapi.html ng-bind="file.label" class="ng-binding" href=./scalr/FAQs/jsapi.html>JS API</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../scalr/FAQs/rest.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/rest.html>REST</a>
+            <a ng-href=./scalr/FAQs/rest.html ng-bind="file.label" class="ng-binding" href=./scalr/FAQs/rest.html>REST</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../scalr/FAQs/index.html ng-bind="file.label" class="ng-binding" href=../../scalr/FAQs/index.html>index</a>
+            <a ng-href=./scalr/FAQs/index.html ng-bind="file.label" class="ng-binding" href=./scalr/FAQs/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -103,11 +103,11 @@
         </a>
         <ul class="dropdown-menu version-switcher" role="menu">
           <!-- ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../scalr/concepts/intro.html ng-bind="version" class="ng-binding" href=../../scalr/concepts/intro.html>scalr</a>
+            <a ng-href=./scalr/concepts/intro.html ng-bind="version" class="ng-binding" href=./scalr/concepts/intro.html>scalr</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../v2.0/concepts/datamodel.html ng-bind="version" class="ng-binding" href=../../v2.0/concepts/datamodel.html>v2.0</a>
+            <a ng-href=./v2.0/concepts/datamodel.html ng-bind="version" class="ng-binding" href=./v2.0/concepts/datamodel.html>v2.0</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../v3.0/changelog/changelog.html ng-bind="version" class="ng-binding" href=../../v3.0/changelog/changelog.html>v3.0</a>
+            <a ng-href=./v3.0/changelog/changelog.html ng-bind="version" class="ng-binding" href=./v3.0/changelog/changelog.html>v3.0</a>
           </li><!-- end ngRepeat: version in versions -->
         </ul>
       </li>
@@ -119,7 +119,7 @@
 </div><!-- /.container-fluid --></nav>
 <div role="flatdoc" class="content-root ng-scope" data-ng-show="!index">
   <div class="menubar fixed">
-    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="quick-start-to-the-nodejs-api-item" class="level-1"><a id="quick-start-to-the-nodejs-api-link" href="../../scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api" class="level-1" pref="#quick-start-to-the-nodejs-api">Quick Start to the  Node.JS API</a><ul class="level-2" id="quick-start-to-the-nodejs-api-list"><li id="quick-start-to-the-nodejs-api-step-0-creating-an-app-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-0-creating-an-app-link" href="../../scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-0-creating-an-app" class="level-2" pref="#quick-start-to-the-nodejs-api-step-0-creating-an-app">Step 0: Creating an App</a></li><li id="quick-start-to-the-nodejs-api-step-1-lib-setup-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-1-lib-setup-link" href="../../scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-1-lib-setup" class="level-2" pref="#quick-start-to-the-nodejs-api-step-1-lib-setup">Step 1: Lib Setup</a></li><li id="quick-start-to-the-nodejs-api-step-2-storing-data-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-2-storing-data-link" href="../../scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-2-storing-data" class="level-2" pref="#quick-start-to-the-nodejs-api-step-2-storing-data">Step 2: Storing Data</a></li><li id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-link" href="../../scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data" class="level-2" pref="#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data">Step 3: GETing vs Streaming Data</a><ul class="level-3" id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-list"><li id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3a-subscribing-to-document-stream-item" class="level-3"><a id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3a-subscribing-to-document-stream-link" href="../../scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3a-subscribing-to-document-stream" class="level-3" pref="#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3a-subscribing-to-document-stream">3.a: Subscribing to document stream</a></li><li id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3b-observe-the-updates-in-realtime-item" class="level-3"><a id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3b-observe-the-updates-in-realtime-link" href="../../scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3b-observe-the-updates-in-realtime" class="level-3" pref="#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3b-observe-the-updates-in-realtime">3.b: Observe the updates in realtime</a></li></ul></li><li id="quick-start-to-the-nodejs-api-step-4-streaming-rich-queries-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-4-streaming-rich-queries-link" href="../../scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-4-streaming-rich-queries" class="level-2" pref="#quick-start-to-the-nodejs-api-step-4-streaming-rich-queries">Step 4: Streaming Rich Queries</a></li></ul></li></ul></li></ul></div>
+    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="quick-start-to-the-nodejs-api-item" class="level-1"><a id="quick-start-to-the-nodejs-api-link" href="./scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api" class="level-1" pref="#quick-start-to-the-nodejs-api">Quick Start to the  Node.JS API</a><ul class="level-2" id="quick-start-to-the-nodejs-api-list"><li id="quick-start-to-the-nodejs-api-step-0-creating-an-app-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-0-creating-an-app-link" href="./scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-0-creating-an-app" class="level-2" pref="#quick-start-to-the-nodejs-api-step-0-creating-an-app">Step 0: Creating an App</a></li><li id="quick-start-to-the-nodejs-api-step-1-lib-setup-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-1-lib-setup-link" href="./scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-1-lib-setup" class="level-2" pref="#quick-start-to-the-nodejs-api-step-1-lib-setup">Step 1: Lib Setup</a></li><li id="quick-start-to-the-nodejs-api-step-2-storing-data-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-2-storing-data-link" href="./scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-2-storing-data" class="level-2" pref="#quick-start-to-the-nodejs-api-step-2-storing-data">Step 2: Storing Data</a></li><li id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-link" href="./scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data" class="level-2" pref="#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data">Step 3: GETing vs Streaming Data</a><ul class="level-3" id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-list"><li id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3a-subscribing-to-document-stream-item" class="level-3"><a id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3a-subscribing-to-document-stream-link" href="./scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3a-subscribing-to-document-stream" class="level-3" pref="#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3a-subscribing-to-document-stream">3.a: Subscribing to document stream</a></li><li id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3b-observe-the-updates-in-realtime-item" class="level-3"><a id="quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3b-observe-the-updates-in-realtime-link" href="./scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3b-observe-the-updates-in-realtime" class="level-3" pref="#quick-start-to-the-nodejs-api-step-3-geting-vs-streaming-data-3b-observe-the-updates-in-realtime">3.b: Observe the updates in realtime</a></li></ul></li><li id="quick-start-to-the-nodejs-api-step-4-streaming-rich-queries-item" class="level-2"><a id="quick-start-to-the-nodejs-api-step-4-streaming-rich-queries-link" href="./scalr/javascript/nodejs-intro.html#quick-start-to-the-nodejs-api-step-4-streaming-rich-queries" class="level-2" pref="#quick-start-to-the-nodejs-api-step-4-streaming-rich-queries">Step 4: Streaming Rich Queries</a></li></ul></li></ul></li></ul></div>
   </div>
   <div role="flatdoc-content" class="content"><div class="extra_container"><div class="contributors_header">Contributors<span class="pull-right modified-date">Last Modified On : <a href="https://github.com/appbaseio/Docs/commit/c5dfadae38cbb3da9e2a4e755cd5eeff3c226d5b">Jan 31, 2016</a></span></div><div class="contributor-container"><a class="contributor" href="https://github.com/siddharthlatest" title="siddharthlatest" target="_blank"><img class="contributor_img img-rounded" src="https://avatars.githubusercontent.com/u/630042?v=3" alt="siddharthlatest"></a></div></div><div class="clearFix"></div><h1 id="quick-start-to-the-nodejs-api">Quick Start to the <img src="http://i.imgur.com/Eppz2lz.png?1" alt="Scalr"> Node.JS API</h1><p><a href="https://github.com/appbaseio/appbase-js">Appbase.JS</a> is a minimalistic library for data streams.  </p><p>It can:</p><ul>
 <li>Continuously stream updates to documents, queries or filters over <code>websockets</code>.</li>
@@ -226,10 +226,10 @@ RESPONSE WHEN NEW DATA MATCHES
   </a>
 </div>
 <!-- ngIf: index --></div>
-  <script type="text/javascript" src="../../docbase-config.js"></script>
-  <script type="text/javascript" src="../../bower_components/docbase/dist/main.unique.js"></script>
-  <script type="text/javascript" src="../../scripts/analytics.js"></script>
-  <script type="text/javascript" src="../../scripts/main.js"></script>
+  <script type="text/javascript" src="./docbase-config.js"></script>
+  <script type="text/javascript" src="./bower_components/docbase/dist/js/main.unique.js"></script>
+  <script type="text/javascript" src="./scripts/analytics.js"></script>
+  <script type="text/javascript" src="./scripts/main.js"></script>
 
 
 </body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json', true); })</script></html>

@@ -8,18 +8,17 @@ var docbaseConfig = {
     'path': 'src'
   },
   github: {
-    client_id:'2189c9f3da189f760f69',
-    client_secret: '5385328f8910540ae0e5fde1df78fba6686651cd',
+    access_token: '945751d3f595b888024dbcab62b339134d2cac9f',
     user: 'appbaseio',
     repo: 'Docs',
     path: 'src',
     branch: 'master'
   },
   indexType: 'html',
-  indexHtml: 'html/main.html',
+  indexHtml: './html/main.html',
   editGithubBtn: true,
   html5mode: false,
-  flatdocHtml: 'html/flatdoc.html',
+  flatdocHtml: './html/flatdoc.html',
   angularAppName: 'docbaseApp',
   versions : {
       "scalr": [

@@ -4,16 +4,16 @@
   <meta name="viewport" content="width=device-width">
   <base href="../../">
   <title>Documentation</title>
-  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <!-- Flatdoc theme -->
-  <link href="../../bower_components/flatdoc/theme-white/style.css" rel="stylesheet">
+  <link href="./bower_components/flatdoc/theme-white/style.css" rel="stylesheet">
   <!-- DocBase -->
-  <link rel="stylesheet" type="text/css" href="../../bower_components/docbase/styles/main.css">
-  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="../../bower_components/google-code-prettify/bin/prettify.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../bower_components/google-code-prettify/bin/prettify.min.css">
-  <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../../styles/docs.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/docbase/styles/main.css">
+  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./bower_components/google-code-prettify/bin/prettify.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./bower_components/google-code-prettify/bin/prettify.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./styles/docs.css">
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
@@ -25,66 +25,66 @@
       <span class="icon-bar"></span>
     </button>
     <a id="docs-appbase-logo" class="navbar-brand" href="http://docs.appbase.io">
-      <img src="../../images/logo.svg">
+      <img src="/images/logo.svg">
     </a>
   </div>
 
   <div class="collapse navbar-collapse" id="navbar-collapse">
     <ul class="nav navbar-nav">
       <!-- ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v3.0/changelog" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/changelog">Changelog</a>
+        <a ng-href=./v3.0/changelog.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v3.0/changelog.html>Changelog</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v3.0/changelog/changelog.html ng-bind="file.label" class="ng-binding" href=../../v3.0/changelog/changelog.html>Changelog</a>
+            <a ng-href=./v3.0/changelog/changelog.html ng-bind="file.label" class="ng-binding" href=./v3.0/changelog/changelog.html>Changelog</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v3.0/changelog/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/changelog/index.html>index</a>
+            <a ng-href=./v3.0/changelog/index.html ng-bind="file.label" class="ng-binding" href=./v3.0/changelog/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v3.0/rest" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/rest">REST</a>
+        <a ng-href=./v3.0/rest.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v3.0/rest.html>REST</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v3.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v3.0/rest/api-reference.html>API Reference</a>
+            <a ng-href=./v3.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=./v3.0/rest/api-reference.html>API Reference</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v3.0/rest/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/rest/index.html>index</a>
+            <a ng-href=./v3.0/rest/index.html ng-bind="file.label" class="ng-binding" href=./v3.0/rest/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v3.0/search" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/search">Search</a>
+        <a ng-href=./v3.0/search.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v3.0/search.html>Search</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v3.0/search/quick-start.html ng-bind="file.label" class="ng-binding" href=../../v3.0/search/quick-start.html>Quick Start</a>
+            <a ng-href=./v3.0/search/quick-start.html ng-bind="file.label" class="ng-binding" href=./v3.0/search/quick-start.html>Quick Start</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v3.0/search/use-cases.html ng-bind="file.label" class="ng-binding" href=../../v3.0/search/use-cases.html>Use-cases</a>
+            <a ng-href=./v3.0/search/use-cases.html ng-bind="file.label" class="ng-binding" href=./v3.0/search/use-cases.html>Use-cases</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v3.0/search/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/search/index.html>index</a>
+            <a ng-href=./v3.0/search/index.html ng-bind="file.label" class="ng-binding" href=./v3.0/search/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v3.0/concepts" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/concepts">Concepts</a>
+        <a ng-href=./v3.0/concepts.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v3.0/concepts.html>Concepts</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v3.0/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=../../v3.0/concepts/datamodel.html>Datamodel</a>
+            <a ng-href=./v3.0/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=./v3.0/concepts/datamodel.html>Datamodel</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v3.0/concepts/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/concepts/index.html>index</a>
+            <a ng-href=./v3.0/concepts/index.html ng-bind="file.label" class="ng-binding" href=./v3.0/concepts/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v3.0/rest" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/rest">REST</a>
+        <a ng-href=./v3.0/rest.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v3.0/rest.html>REST</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v3.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v3.0/rest/api-reference.html>API Reference</a>
+            <a ng-href=./v3.0/rest/api-reference.html ng-bind="file.label" class="ng-binding" href=./v3.0/rest/api-reference.html>API Reference</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v3.0/rest/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/rest/index.html>index</a>
+            <a ng-href=./v3.0/rest/index.html ng-bind="file.label" class="ng-binding" href=./v3.0/rest/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] --><li class="dropdown ng-scope" ng-repeat="folder in map[currentVersion]">
-        <a ng-href="#/v3.0/javascript" class="dropdown-toggle ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href="#/v3.0/javascript">Javascript</a>
+        <a ng-href=./v3.0/javascript.html class="dropdown-toggle  map_folder ng-binding" data-toggle="dropdown" role="button" aria-expanded="false" ng-bind="folder.label" href=./v3.0/javascript.html>Javascript</a>
         <ul class="dropdown-menu">
           <!-- ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
-            <a ng-href=../../v3.0/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=../../v3.0/javascript/api-reference.html>API Reference</a>
+            <a ng-href=./v3.0/javascript/api-reference.html ng-bind="file.label" class="ng-binding" href=./v3.0/javascript/api-reference.html>API Reference</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
-            <a ng-href=../../v3.0/javascript/index.html ng-bind="file.label" class="ng-binding" href=../../v3.0/javascript/index.html>index</a>
+            <a ng-href=./v3.0/javascript/index.html ng-bind="file.label" class="ng-binding" href=./v3.0/javascript/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
         </ul>
       </li><!-- end ngRepeat: folder in map[currentVersion] -->
@@ -100,11 +100,11 @@
         </a>
         <ul class="dropdown-menu version-switcher" role="menu">
           <!-- ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../scalr/concepts/intro.html ng-bind="version" class="ng-binding" href=../../scalr/concepts/intro.html>scalr</a>
+            <a ng-href=./scalr/concepts/intro.html ng-bind="version" class="ng-binding" href=./scalr/concepts/intro.html>scalr</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../v2.0/concepts/datamodel.html ng-bind="version" class="ng-binding" href=../../v2.0/concepts/datamodel.html>v2.0</a>
+            <a ng-href=./v2.0/concepts/datamodel.html ng-bind="version" class="ng-binding" href=./v2.0/concepts/datamodel.html>v2.0</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=../../v3.0/changelog/changelog.html ng-bind="version" class="ng-binding" href=../../v3.0/changelog/changelog.html>v3.0</a>
+            <a ng-href=./v3.0/changelog/changelog.html ng-bind="version" class="ng-binding" href=./v3.0/changelog/changelog.html>v3.0</a>
           </li><!-- end ngRepeat: version in versions -->
         </ul>
       </li>
@@ -116,7 +116,7 @@
 </div><!-- /.container-fluid --></nav>
 <div role="flatdoc" class="content-root ng-scope" data-ng-show="!index">
   <div class="menubar fixed">
-    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="use-cases-item" class="level-1"><a id="use-cases-link" href="../../v3.0/search/use-cases.html#use-cases" class="level-1" pref="#use-cases">Use-cases</a><ul class="level-2" id="use-cases-list"><li id="use-cases-elasticsearch-introduction-item" class="level-2"><a id="use-cases-elasticsearch-introduction-link" href="../../v3.0/search/use-cases.html#use-cases-elasticsearch-introduction" class="level-2" pref="#use-cases-elasticsearch-introduction">Elasticsearch Introduction</a></li><li id="use-cases-data-mapping-item" class="level-2"><a id="use-cases-data-mapping-link" href="../../v3.0/search/use-cases.html#use-cases-data-mapping" class="level-2" pref="#use-cases-data-mapping">Data Mapping</a></li><li id="use-cases-request-and-response-format-item" class="level-2"><a id="use-cases-request-and-response-format-link" href="../../v3.0/search/use-cases.html#use-cases-request-and-response-format" class="level-2" pref="#use-cases-request-and-response-format">Request and Response Format</a><ul class="level-3" id="use-cases-request-and-response-format-list"><li id="use-cases-request-and-response-format-request-item" class="level-3"><a id="use-cases-request-and-response-format-request-link" href="../../v3.0/search/use-cases.html#use-cases-request-and-response-format-request" class="level-3" pref="#use-cases-request-and-response-format-request">Request</a></li><li id="use-cases-request-and-response-format-response-item" class="level-3"><a id="use-cases-request-and-response-format-response-link" href="../../v3.0/search/use-cases.html#use-cases-request-and-response-format-response" class="level-3" pref="#use-cases-request-and-response-format-response">Response</a></li></ul></li><li id="use-cases-searching-item" class="level-2"><a id="use-cases-searching-link" href="../../v3.0/search/use-cases.html#use-cases-searching" class="level-2" pref="#use-cases-searching">Searching</a><ul class="level-3" id="use-cases-searching-list"><li id="use-cases-searching-simple-match-and-fulltext-item" class="level-3"><a id="use-cases-searching-simple-match-and-fulltext-link" href="../../v3.0/search/use-cases.html#use-cases-searching-simple-match-and-fulltext" class="level-3" pref="#use-cases-searching-simple-match-and-fulltext">Simple Match and Fulltext</a></li><li id="use-cases-searching-fulltext-fuzzy-item" class="level-3"><a id="use-cases-searching-fulltext-fuzzy-link" href="../../v3.0/search/use-cases.html#use-cases-searching-fulltext-fuzzy" class="level-3" pref="#use-cases-searching-fulltext-fuzzy">Fulltext: Fuzzy</a></li><li id="use-cases-searching-fulltext-autocompletewildcard-item" class="level-3"><a id="use-cases-searching-fulltext-autocompletewildcard-link" href="../../v3.0/search/use-cases.html#use-cases-searching-fulltext-autocompletewildcard" class="level-3" pref="#use-cases-searching-fulltext-autocompletewildcard">Fulltext Autocomplete/wildcard</a></li><li id="use-cases-searching-fulltext-fuzzy-and-autocomplete-item" class="level-3"><a id="use-cases-searching-fulltext-fuzzy-and-autocomplete-link" href="../../v3.0/search/use-cases.html#use-cases-searching-fulltext-fuzzy-and-autocomplete" class="level-3" pref="#use-cases-searching-fulltext-fuzzy-and-autocomplete">Fulltext: Fuzzy and Autocomplete</a></li><li id="use-cases-searching-numeric-range-item" class="level-3"><a id="use-cases-searching-numeric-range-link" href="../../v3.0/search/use-cases.html#use-cases-searching-numeric-range" class="level-3" pref="#use-cases-searching-numeric-range">Numeric-range</a></li><li id="use-cases-searching-geo-spatial-item" class="level-3"><a id="use-cases-searching-geo-spatial-link" href="../../v3.0/search/use-cases.html#use-cases-searching-geo-spatial" class="level-3" pref="#use-cases-searching-geo-spatial">Geo spatial</a></li><li id="use-cases-searching-sorting-item" class="level-3"><a id="use-cases-searching-sorting-link" href="../../v3.0/search/use-cases.html#use-cases-searching-sorting" class="level-3" pref="#use-cases-searching-sorting">Sorting</a></li><li id="use-cases-searching-aggregation-item" class="level-3"><a id="use-cases-searching-aggregation-link" href="../../v3.0/search/use-cases.html#use-cases-searching-aggregation" class="level-3" pref="#use-cases-searching-aggregation">Aggregation</a></li><li id="use-cases-searching-combining-queriesfilters-item" class="level-3"><a id="use-cases-searching-combining-queriesfilters-link" href="../../v3.0/search/use-cases.html#use-cases-searching-combining-queriesfilters" class="level-3" pref="#use-cases-searching-combining-queriesfilters">Combining queries/filters</a></li></ul></li><li id="use-cases-next-steps-item" class="level-2"><a id="use-cases-next-steps-link" href="../../v3.0/search/use-cases.html#use-cases-next-steps" class="level-2" pref="#use-cases-next-steps">Next steps</a></li></ul></li></ul></li></ul></div>
+    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="use-cases-item" class="level-1"><a id="use-cases-link" href="./v3.0/search/use-cases.html#use-cases" class="level-1" pref="#use-cases">Use-cases</a><ul class="level-2" id="use-cases-list"><li id="use-cases-elasticsearch-introduction-item" class="level-2"><a id="use-cases-elasticsearch-introduction-link" href="./v3.0/search/use-cases.html#use-cases-elasticsearch-introduction" class="level-2" pref="#use-cases-elasticsearch-introduction">Elasticsearch Introduction</a></li><li id="use-cases-data-mapping-item" class="level-2"><a id="use-cases-data-mapping-link" href="./v3.0/search/use-cases.html#use-cases-data-mapping" class="level-2" pref="#use-cases-data-mapping">Data Mapping</a></li><li id="use-cases-request-and-response-format-item" class="level-2"><a id="use-cases-request-and-response-format-link" href="./v3.0/search/use-cases.html#use-cases-request-and-response-format" class="level-2" pref="#use-cases-request-and-response-format">Request and Response Format</a><ul class="level-3" id="use-cases-request-and-response-format-list"><li id="use-cases-request-and-response-format-request-item" class="level-3"><a id="use-cases-request-and-response-format-request-link" href="./v3.0/search/use-cases.html#use-cases-request-and-response-format-request" class="level-3" pref="#use-cases-request-and-response-format-request">Request</a></li><li id="use-cases-request-and-response-format-response-item" class="level-3"><a id="use-cases-request-and-response-format-response-link" href="./v3.0/search/use-cases.html#use-cases-request-and-response-format-response" class="level-3" pref="#use-cases-request-and-response-format-response">Response</a></li></ul></li><li id="use-cases-searching-item" class="level-2"><a id="use-cases-searching-link" href="./v3.0/search/use-cases.html#use-cases-searching" class="level-2" pref="#use-cases-searching">Searching</a><ul class="level-3" id="use-cases-searching-list"><li id="use-cases-searching-simple-match-and-fulltext-item" class="level-3"><a id="use-cases-searching-simple-match-and-fulltext-link" href="./v3.0/search/use-cases.html#use-cases-searching-simple-match-and-fulltext" class="level-3" pref="#use-cases-searching-simple-match-and-fulltext">Simple Match and Fulltext</a></li><li id="use-cases-searching-fulltext-fuzzy-item" class="level-3"><a id="use-cases-searching-fulltext-fuzzy-link" href="./v3.0/search/use-cases.html#use-cases-searching-fulltext-fuzzy" class="level-3" pref="#use-cases-searching-fulltext-fuzzy">Fulltext: Fuzzy</a></li><li id="use-cases-searching-fulltext-autocompletewildcard-item" class="level-3"><a id="use-cases-searching-fulltext-autocompletewildcard-link" href="./v3.0/search/use-cases.html#use-cases-searching-fulltext-autocompletewildcard" class="level-3" pref="#use-cases-searching-fulltext-autocompletewildcard">Fulltext Autocomplete/wildcard</a></li><li id="use-cases-searching-fulltext-fuzzy-and-autocomplete-item" class="level-3"><a id="use-cases-searching-fulltext-fuzzy-and-autocomplete-link" href="./v3.0/search/use-cases.html#use-cases-searching-fulltext-fuzzy-and-autocomplete" class="level-3" pref="#use-cases-searching-fulltext-fuzzy-and-autocomplete">Fulltext: Fuzzy and Autocomplete</a></li><li id="use-cases-searching-numeric-range-item" class="level-3"><a id="use-cases-searching-numeric-range-link" href="./v3.0/search/use-cases.html#use-cases-searching-numeric-range" class="level-3" pref="#use-cases-searching-numeric-range">Numeric-range</a></li><li id="use-cases-searching-geo-spatial-item" class="level-3"><a id="use-cases-searching-geo-spatial-link" href="./v3.0/search/use-cases.html#use-cases-searching-geo-spatial" class="level-3" pref="#use-cases-searching-geo-spatial">Geo spatial</a></li><li id="use-cases-searching-sorting-item" class="level-3"><a id="use-cases-searching-sorting-link" href="./v3.0/search/use-cases.html#use-cases-searching-sorting" class="level-3" pref="#use-cases-searching-sorting">Sorting</a></li><li id="use-cases-searching-aggregation-item" class="level-3"><a id="use-cases-searching-aggregation-link" href="./v3.0/search/use-cases.html#use-cases-searching-aggregation" class="level-3" pref="#use-cases-searching-aggregation">Aggregation</a></li><li id="use-cases-searching-combining-queriesfilters-item" class="level-3"><a id="use-cases-searching-combining-queriesfilters-link" href="./v3.0/search/use-cases.html#use-cases-searching-combining-queriesfilters" class="level-3" pref="#use-cases-searching-combining-queriesfilters">Combining queries/filters</a></li></ul></li><li id="use-cases-next-steps-item" class="level-2"><a id="use-cases-next-steps-link" href="./v3.0/search/use-cases.html#use-cases-next-steps" class="level-2" pref="#use-cases-next-steps">Next steps</a></li></ul></li></ul></li></ul></div>
   </div>
   <div role="flatdoc-content" class="content"><div class="extra_container"><div class="contributors_header">Contributors<span class="pull-right modified-date">Last Modified On : <a href="https://github.com/appbaseio/Docs/commit/d93c6ef00aa536452040acba111f90dc932dfd73">May 26, 2015</a></span></div><div class="contributor-container"><a class="contributor" href="https://github.com/henriquesa" title="henriquesa" target="_blank"><img class="contributor_img img-rounded" src="https://avatars.githubusercontent.com/u/2140352?v=3" alt="henriquesa"></a><a class="contributor" href="https://github.com/siddharthlatest" title="siddharthlatest" target="_blank"><img class="contributor_img img-rounded" src="https://avatars.githubusercontent.com/u/630042?v=3" alt="siddharthlatest"></a></div></div><div class="clearFix"></div><h1 id="use-cases">Use-cases</h1><p>Appbase uses Elasticsearch in the backend, and provides all the search queries and filters supported by ES, on the data stored in Appbase. Every data that’s pushed into Appbase is automatically indexed on ElasticSearch.</p><h2 id="use-cases-elasticsearch-introduction">Elasticsearch Introduction</h2><p>ElasticSearch is powered by Lucene, a powerful open-source full-text search library, under the hood. More than just full-text queries, ES can be used for numeric range queries, geo spatial queries, aggregation/ordering/grouping search results etc. In addition, we can combine these queries (logical and/or) and search across multiple collections and properties. To learn more about Elasticsearch, checkout <a href="http://exploringelasticsearch.com/">this very effective guide</a>.</p><h2 id="use-cases-data-mapping">Data Mapping</h2><p>As in Appbase has the concepts of collections, Documents and Properties, Elasticsearch has Types, Documents, and Fields. Let’s see how Appbase data is indexed and how these concepts are mapped.</p><table>
 <thead>
@@ -144,8 +144,8 @@
 </tr>
 </tbody>
 </table><p>In a nutshell, All the <em>documents</em> of Appbase are stored as <em>documents</em> inside ES, where the <em>collection</em> of the document becomes its <em>type</em>. <em>Properties</em> of the document can be accessed and filtered as <em>fields</em> inside ES.</p><p>All the examples in this doc ES concepts (Type, Document and Field), as we will be making direct Elasticsearch DSL query, but the query is explained in context the of data in Appbase, so Appbase concepts (collection, document and Property) are used.</p><h2 id="use-cases-request-and-response-format">Request and Response Format</h2><p>Appbase provides two REST API endpoints for performing search.</p><ol>
-<li><a href="http://docs.appbase.io//v3.0/rest/api-reference.html#api-reference-global-search-collections">v3.api.appbase.io/&lt;app_name&gt;/~search</a></li>
-<li><a href="http://docs.appbase.io//v3.0/rest/api-reference.html#api-reference-collection-search-documents-by-propertyies">v3.api.appbase.io/&lt;app_name&gt;/&lt;collection&gt;/~search</a></li>
+<li><a href="http://docs.appbase.io/./v3.0/rest/api-reference.html#api-reference-global-search-collections">v3.api.appbase.io/&lt;app_name&gt;/~search</a></li>
+<li><a href="http://docs.appbase.io/./v3.0/rest/api-reference.html#api-reference-collection-search-documents-by-propertyies">v3.api.appbase.io/&lt;app_name&gt;/&lt;collection&gt;/~search</a></li>
 </ol><p>The <strong>1.</strong> searches across multiple collections and has an additional field to specify this in the request body. Both endpoints are compatible with <a href="http://www.elastic.co/guide/en/elasticsearch/reference/1.x/query-dsl.html">ElasticSearch Query DSL</a> and return results in the same format.</p><blockquote>
 <p><code>Roadmap Note</code>:
 We will be adding a search endpoint at the <strong>document</strong> level that queries on the document and it’s references.</p>
@@ -398,7 +398,7 @@ Read more about them:
 <p>Elasticseach sidenote</p>
 <h4><strong><em>wildcard</em></strong> search</h4>
 <p>You can use either <code>*</code> or <code>?</code> as wildcards. <code>?</code> stands for a single characters, and <code>*</code> stands for any character length. Checkout the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/1.4/query-dsl-wildcard-query.html">Elasticsearch documentation</a> for more.</p>
-</blockquote><h3 id="use-cases-searching-fulltext-fuzzy-and-autocomplete">Fulltext: Fuzzy and Autocomplete</h3><p>Using the <a href="http://docs.appbase.io//v3.0/search/use-cases.html#use-cases-searching-combining-queriesfilters">bool query</a>, which is explained <a href="http://docs.appbase.io//v3.0/search/use-cases.html#use-cases-searching-combining-queriesfilters">later in this document</a>, we can combine above two cases into a single query and improve our search results.</p><p>Example:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
+</blockquote><h3 id="use-cases-searching-fulltext-fuzzy-and-autocomplete">Fulltext: Fuzzy and Autocomplete</h3><p>Using the <a href="http://docs.appbase.io/./v3.0/search/use-cases.html#use-cases-searching-combining-queriesfilters">bool query</a>, which is explained <a href="http://docs.appbase.io/./v3.0/search/use-cases.html#use-cases-searching-combining-queriesfilters">later in this document</a>, we can combine above two cases into a single query and improve our search results.</p><p>Example:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
   </span><span class="string"><span class="str">"query"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="string"><span class="str">"bool"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
       </span><span class="string"><span class="str">"should"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
@@ -641,10 +641,10 @@ product</span><span class="pun">.</span><span class="pln">brand </span><span cla
   </a>
 </div>
 <!-- ngIf: index --></div>
-  <script type="text/javascript" src="../../docbase-config.js"></script>
-  <script type="text/javascript" src="../../bower_components/docbase/dist/main.unique.js"></script>
-  <script type="text/javascript" src="../../scripts/analytics.js"></script>
-  <script type="text/javascript" src="../../scripts/main.js"></script>
+  <script type="text/javascript" src="./docbase-config.js"></script>
+  <script type="text/javascript" src="./bower_components/docbase/dist/js/main.unique.js"></script>
+  <script type="text/javascript" src="./scripts/analytics.js"></script>
+  <script type="text/javascript" src="./scripts/main.js"></script>
 
 
 </body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json', true); })</script></html>
