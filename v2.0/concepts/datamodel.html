@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate">
-  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
+  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -315,9 +315,18 @@ movieNSRef</span><span class="pun">.</span><span class="pln">on</span><span clas
 </span><span class="typ">Appbase</span><span class="pun">.</span><span class="pln">ns</span><span class="pun">(</span><span class="string"><span class="str">'movie'</span></span><span class="pun">).</span><span class="pln">search</span><span class="pun">(</span><span class="pln">query</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">error</span><span class="pun">,</span><span class="pln"> arrayOfVertices</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="comment"><span class="com">//display vertices</span></span><span class="pln">
 </span><span class="pun">});</span></code></pre><p>This query searches on all the vertices of the namespace <em>movie</em>, and returns an array of vertices who’s property <code>year</code>, matches fuzzily with the text “2010”. See <a href="http://docs.appbase.io/docs/search.html">this documentation</a> for more details.</p></div>
-  <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/concepts/datamodel.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/concepts/datamodel.md">
-    <span class="fa fa-pencil"> Edit</span>
-  </a>
+  	<div class="footer content">
+		<div class="row">
+			<div class="col-xs-12">	
+				<span data-ng-class="{disabled: paginationLinks.prev == null}" class="pull-left disabled">
+					<a href="" class="paginationLink pull-left">Previous</a>
+				</span>
+				<span data-ng-class="{disabled: paginationLinks.next == null}" class="pull-right">
+					<a href=./v2.0/rest/api-reference.html class="paginationLink pull-right">Next</a>
+				</span>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- ngIf: index --></div>
   <script type="text/javascript" src="./docbase-config.js"></script>
@@ -326,4 +335,4 @@ movieNSRef</span><span class="pun">.</span><span class="pln">on</span><span clas
   <script type="text/javascript" src="./scripts/main.js"></script>
 
 
-</body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json', true); })</script></html>
+</body><script>$(function(){  $('.search-form').searchAppbase('./search-index.json', true); $(document).ready(function(){ setTimeout(function(){ $('#folder-navbar').megaMenu(); },200); }); });</script></html>

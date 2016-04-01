@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate">
-  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
+  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -447,9 +447,18 @@ product</span><span class="pun">.</span><span class="pln">brand </span><span cla
 <li><a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-bool-filter.html"><em>bool</em> filter documentation</a></li>
 </ul>
 </blockquote><h2 id="use-cases-next-steps">Next steps</h2><p>This document may only be able to give you a headstart on Elasticsearch, and it is impossible to cover every use case and feature provided by Elasticsearch. </p><p>If you have confusions on any of the use cases covered here, see the additional notes and links provided beside them.</p><p>To understand the Elasticsearch from the basics to advanced level, the book <a href="http://exploringelasticsearch.com/">“Exploring Elasticsearch” by Andrew Cholakian</a>, and <a href="http://www.elasticsearch.org/guide/en/elasticsearch/guide/current/index.html">Elasticsearch: The Definitive Guide</a> are definitely helpful.</p></div>
-  <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/search/use-cases.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/search/use-cases.md">
-    <span class="fa fa-pencil"> Edit</span>
-  </a>
+  	<div class="footer content">
+		<div class="row">
+			<div class="col-xs-12">	
+				<span data-ng-class="{disabled: paginationLinks.prev == null}" class="pull-left">
+					<a href=./v2.0/search/quick-start.html class="paginationLink pull-left">Previous</a>
+				</span>
+				<span data-ng-class="{disabled: paginationLinks.next == null}" class="pull-right disabled">
+					<a href="" class="paginationLink pull-right">Next</a>
+				</span>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- ngIf: index --></div>
   <script type="text/javascript" src="./docbase-config.js"></script>
@@ -458,4 +467,4 @@ product</span><span class="pun">.</span><span class="pln">brand </span><span cla
   <script type="text/javascript" src="./scripts/main.js"></script>
 
 
-</body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json', true); })</script></html>
+</body><script>$(function(){  $('.search-form').searchAppbase('./search-index.json', true); $(document).ready(function(){ setTimeout(function(){ $('#folder-navbar').megaMenu(); },200); }); });</script></html>

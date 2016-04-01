@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc">
-  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
+  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -415,9 +415,18 @@ inVertex </span><span class="pun">=</span><span class="pln"> vref</span><span cl
 </tr>
 </tbody>
 </table></div>
-  <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/javascript/api-reference.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v2.0/javascript/api-reference.md">
-    <span class="fa fa-pencil"> Edit</span>
-  </a>
+  	<div class="footer content">
+		<div class="row">
+			<div class="col-xs-12">	
+				<span data-ng-class="{disabled: paginationLinks.prev == null}" class="pull-left">
+					<a href=./v2.0/javascript/quick-start.html class="paginationLink pull-left">Previous</a>
+				</span>
+				<span data-ng-class="{disabled: paginationLinks.next == null}" class="pull-right">
+					<a href=./v2.0/javascript/angular.html class="paginationLink pull-right">Next</a>
+				</span>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- ngIf: index --></div>
   <script type="text/javascript" src="./docbase-config.js"></script>
@@ -426,4 +435,4 @@ inVertex </span><span class="pun">=</span><span class="pln"> vref</span><span cl
   <script type="text/javascript" src="./scripts/main.js"></script>
 
 
-</body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json', true); })</script></html>
+</body><script>$(function(){  $('.search-form').searchAppbase('./search-index.json', true); $(document).ready(function(){ setTimeout(function(){ $('#folder-navbar').megaMenu(); },200); }); });</script></html>

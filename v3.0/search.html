@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script><script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate">
-  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
+  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -228,9 +228,18 @@
 </li>
 </ul>
 </blockquote><p>That’s it! In less than 10 minutes, we were able to add production grade search in your app.</p><h2 id="searching-for-a-better-search-full-text-and-more">Full text and more</h2><p>Do you want to customize the ‘fuzziness’ of your search? Or perhaps apply multiple queries and filter the data at the same time. If this has whetted your appetite, check out our main article over here. <a href="http://docs.appbase.io/#/v3.0/search/use-cases">Search Usecases</a>.</p></div>
-  <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/search/quick-start.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/v3.0/search/quick-start.md">
-    <span class="fa fa-pencil"> Edit</span>
-  </a>
+  	<div class="footer content">
+		<div class="row">
+			<div class="col-xs-12">	
+				<span data-ng-class="{disabled: paginationLinks.prev == null}" class="pull-left">
+					<a href=./v3.0/rest/api-reference.html class="paginationLink pull-left">Previous</a>
+				</span>
+				<span data-ng-class="{disabled: paginationLinks.next == null}" class="pull-right">
+					<a href=./v3.0/search/use-cases.html class="paginationLink pull-right">Next</a>
+				</span>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- ngIf: index --></div>
   <script type="text/javascript" src="./docbase-config.js"></script>
@@ -239,4 +248,4 @@
   <script type="text/javascript" src="./scripts/main.js"></script>
 
 
-</body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json', true); })</script></html>
+</body><script>$(function(){  $('.search-form').searchAppbase('./search-index.json', true); $(document).ready(function(){ setTimeout(function(){ $('#folder-navbar').megaMenu(); },200); }); });</script></html>

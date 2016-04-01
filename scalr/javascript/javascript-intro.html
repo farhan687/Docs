@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
 <script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate big-h3">
-  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
+  <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
       <span class="sr-only">Toggle navigation</span>
@@ -222,9 +222,18 @@ RESPONSE WHEN NEW DATA MATCHES
     </span><span class="string"><span class="str">"price"</span></span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">6034</span></span><span class="pln">
   </span><span class="pun">}</span><span class="pln">
 </span><span class="pun">}</span></code></pre><p><code>Note:</code> Like <code>getStream()</code>, <code>searchStream()</code> subscribes to the new matches. For fetching existing search results, check out <a href="http://docs.appbase.io/scalr/javascript/api-reference.html#javascript-api-reference-getting-data-search"><code>search()</code></a>.</p><p><strong>v0.10.0</strong> introduces a new method <a href="http://docs.appbase.io/scalr/javascript/api-reference.html#javascript-api-reference-streaming-data-searchstreamtourl"><code>searchStreamToURL()</code></a> that streams results directly to a URL instead of streaming back.</p><p>In this tutorial, we have learnt how to index new data and stream both individual data and results of an expressive query. <a href="https://appbase.io">Appbase.io</a> supports a wide range of queries.</p><p>For next steps, check out our <a href="http://docs.appbase.io/scalr/javascript/api-reference.html">Javascript API reference</a>.</p></div>
-  <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/scalr/javascript/javascript-intro.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/scalr/javascript/javascript-intro.md">
-    <span class="fa fa-pencil"> Edit</span>
-  </a>
+  	<div class="footer content">
+		<div class="row">
+			<div class="col-xs-12">	
+				<span data-ng-class="{disabled: paginationLinks.prev == null}" class="pull-left">
+					<a href=./scalr/concepts/datamodel.html class="paginationLink pull-left">Previous</a>
+				</span>
+				<span data-ng-class="{disabled: paginationLinks.next == null}" class="pull-right">
+					<a href=./scalr/javascript/nodejs-intro.html class="paginationLink pull-right">Next</a>
+				</span>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- ngIf: index --></div>
   <script type="text/javascript" src="./docbase-config.js"></script>
@@ -233,4 +242,4 @@ RESPONSE WHEN NEW DATA MATCHES
   <script type="text/javascript" src="./scripts/main.js"></script>
 
 
-</body><script>$(function(){  $('.search-form').searchAppbase('/search-index.json', true); })</script></html>
+</body><script>$(function(){  $('.search-form').searchAppbase('./search-index.json', true); $(document).ready(function(){ setTimeout(function(){ $('#folder-navbar').megaMenu(); },200); }); });</script></html>
