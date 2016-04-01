@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="./bower_components/google-code-prettify/bin/prettify.min.css">
   <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
-<script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script><script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
+<script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate big-h3">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: 'html/navbar.html' --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="'html/navbar.html'"><div class="container-fluid ng-scope">
   <div class="navbar-header">
@@ -103,11 +103,11 @@
         </a>
         <ul class="dropdown-menu version-switcher" role="menu">
           <!-- ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=./scalr/concepts/intro.html ng-bind="version" class="ng-binding" href=./scalr/concepts/intro.html>scalr</a>
+            <a ng-href=./scalr.html ng-bind="version" class="ng-binding" href=./scalr.html>scalr</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=./v2.0/concepts/datamodel.html ng-bind="version" class="ng-binding" href=./v2.0/concepts/datamodel.html>v2.0</a>
+            <a ng-href=./v2.0.html ng-bind="version" class="ng-binding" href=./v2.0.html>v2.0</a>
           </li><!-- end ngRepeat: version in versions --><li ng-repeat="version in versions" class="ng-scope">
-            <a ng-href=./v3.0/changelog/changelog.html ng-bind="version" class="ng-binding" href=./v3.0/changelog/changelog.html>v3.0</a>
+            <a ng-href=./v3.0.html ng-bind="version" class="ng-binding" href=./v3.0.html>v3.0</a>
           </li><!-- end ngRepeat: version in versions -->
         </ul>
       </li>
@@ -118,69 +118,10 @@
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid --></nav>
 <div role="flatdoc" class="content-root ng-scope" data-ng-show="!index">
-  <div class="menubar fixed">
-    <div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="how-to-item" class="level-1"><a id="how-to-link" href="./scalr/FAQs/jsapi.html#how-to" class="level-1" pref="#how-to">How to</a><ul class="level-2" id="how-to-list"><li id="how-to-unsubscribe-from-a-streaming-query-item" class="level-2"><a id="how-to-unsubscribe-from-a-streaming-query-link" href="./scalr/FAQs/jsapi.html#how-to-unsubscribe-from-a-streaming-query" class="level-2" pref="#how-to-unsubscribe-from-a-streaming-query">Unsubscribe from a streaming query</a></li><li id="how-to-pause-a-streaming-query-item" class="level-2"><a id="how-to-pause-a-streaming-query-link" href="./scalr/FAQs/jsapi.html#how-to-pause-a-streaming-query" class="level-2" pref="#how-to-pause-a-streaming-query">Pause a streaming query</a></li><li id="how-to-stream-results-of-a-range-query-item" class="level-2"><a id="how-to-stream-results-of-a-range-query-link" href="./scalr/FAQs/jsapi.html#how-to-stream-results-of-a-range-query" class="level-2" pref="#how-to-stream-results-of-a-range-query">Stream results of a range query</a></li><li id="how-to-change-the-default-results-in-a-search-query-item" class="level-2"><a id="how-to-change-the-default-results-in-a-search-query-link" href="./scalr/FAQs/jsapi.html#how-to-change-the-default-results-in-a-search-query" class="level-2" pref="#how-to-change-the-default-results-in-a-search-query">Change the default results in a search query</a></li></ul></li></ul></li></ul></div>
+  <div class="menubar">
+    <div class="menu section" role="flatdoc-menu"></div>
   </div>
-  <div role="flatdoc-content" class="content"><div class="extra_container"><div class="contributors_header">Contributors<span class="pull-right modified-date">Last Modified On : <a href="https://github.com/appbaseio/Docs/commit/202e249cc15489ddf4d95786bb113ced87d2b38f">Nov 9, 2015</a></span></div><div class="contributor-container"><a class="contributor" href="https://github.com/siddharthlatest" title="siddharthlatest" target="_blank"><img class="contributor_img img-rounded" src="https://avatars.githubusercontent.com/u/630042?v=3" alt="siddharthlatest"></a><a class="contributor" href="https://github.com/mateusfreira" title="mateusfreira" target="_blank"><img class="contributor_img img-rounded" src="https://avatars.githubusercontent.com/u/234049?v=3" alt="mateusfreira"></a><a class="contributor" href="https://github.com/yashshah" title="yashshah" target="_blank"><img class="contributor_img img-rounded" src="https://avatars.githubusercontent.com/u/1558352?v=3" alt="yashshah"></a></div></div><div class="clearFix"></div><h1 id="how-to">How to</h1><h2 id="how-to-unsubscribe-from-a-streaming-query">Unsubscribe from a streaming query</h2><p>The JS API methods for the <a href="http://docs.appbase.io/scalr/javascript/api-reference.html#javascript-api-reference-setup-new-appbase"><code>appbaseRef</code></a> object implement a <strong>streams</strong> interface. Let’s see an example:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="comment"><span class="com">// responseStream implements the streams interface.</span></span><span class="pln">
-</span><span class="kwd">var</span><span class="pln"> responseStream </span><span class="pun">=</span><span class="pln"> appbaseRef</span><span class="pun">.</span><span class="pln">searchStream</span><span class="pun">({</span><span class="pln">
-    type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"tweet"</span></span><span class="pun">,</span><span class="pln">
-    body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-        query</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-            match_all</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">
-        </span><span class="pun">}</span><span class="pln">
-    </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">})</span><span class="pln">
-
-</span><span class="comment"><span class="com">// You can attach a </span><span class="string"><span class="com">'data'</span></span><span class="com"> handler to responseStream and get new events</span></span><span class="pln">
-</span><span class="comment"><span class="com">// when documents match the query</span></span><span class="pln">
-responseStream</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">"data"</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    </span><span class="comment"><span class="com">// handle new updates, one at a time.</span></span><span class="pln">
-    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">res</span><span class="pun">);</span><span class="pln">
-</span><span class="pun">});</span></code></pre><p>Unsubscribing from the <code>responseStream</code> is simple: using <code>stop()</code> method.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">setTimeout</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">responseStream</span><span class="pun">.</span><span class="pln">stop</span><span class="pun">()},</span><span class="pln"> </span><span class="number"><span class="lit">10000</span></span><span class="pun">);</span><span class="pln"> </span><span class="comment"><span class="com">// unsubscribes after </span><span class="number"><span class="com">10</span></span><span class="com">s timeout</span></span></code></pre><blockquote>
-<p><span class="fa fa-info-circle"></span> The same is true for all other methods (like <code>index()</code>, <code>getStream()</code>) as well, data is returned asynchronously via the ‘data’ event handler.</p>
-</blockquote><h2 id="how-to-pause-a-streaming-query">Pause a streaming query</h2><p><a href="https://nodejs.org/api/stream.html#stream_readable_pause">Pausing a response stream object</a> prevents new data responses from emitting. The stream can be resumed again via conveniently named <code>responseStream.resume()</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">responseStream</span><span class="pun">.</span><span class="pln">pause</span><span class="pun">();</span></code></pre><blockquote>
-<p><span class="fa fa-info-circle"></span> <strong>pause()</strong> vs <strong>stop()</strong> - pause() merely prevents emitting new responses in the ‘data’ event handler, all the response stream object buffers the new events emitted by the <code>searchStream()</code> method. When resume() is called, all these responses are returned by the ‘data’ event handler. </p>
-</blockquote><p>By contrast, <code>stop()</code> unsubscribes from the query and kills the response stream object.</p><blockquote>
-<p><span class="fa fa-star"></span> Check out more things you can do with streams here -  <a href="http://www.sitepoint.com/basics-node-js-streams/">http://www.sitepoint.com/basics-node-js-streams/</a>.</p>
-</blockquote><h2 id="how-to-stream-results-of-a-range-query">Stream results of a range query</h2><p>Appbase.io implements a streaming interface for the entire <a href="https://www.elastic.co/guide/en/elasticsearch/reference/1.7/query-dsl.html">Query DSL</a> supported by ElasticSearch. So if we can compose a range query, making it return continuous results is easy.</p><p>Let’s say we have a <strong>type</strong> called <em>items</em> which contains items with their corresponding value. An example document inside the <em>items</em> type looks like:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
-    </span><span class="string"><span class="str">"item"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"socks"</span></span><span class="pun">,</span><span class="pln">
-    </span><span class="string"><span class="str">"value"</span></span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"</span><span class="number"><span class="str">255</span></span><span class="str">"</span></span><span class="pun">,</span><span class="pln">
-    </span><span class="string"><span class="str">"visible"</span></span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
-</span><span class="pun">}</span></code></pre><p>Composing the query:</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> responseStream </span><span class="pun">=</span><span class="pln"> appbaseRef</span><span class="pun">.</span><span class="pln">searchStream</span><span class="pun">({</span><span class="pln">
-      type</span><span class="pun">:</span><span class="pln"> </span><span class="string"><span class="str">"items"</span></span><span class="pun">,</span><span class="pln">
-      body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-          query</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-              range</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-                  value</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-                      lte</span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">300</span></span><span class="pun">,</span><span class="pln">
-                      gte</span><span class="pun">:</span><span class="pln"> </span><span class="number"><span class="lit">200</span></span><span class="pln">
-                  </span><span class="pun">}</span><span class="pln">
-              </span><span class="pun">}</span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-      </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p>The default state of <code>responseStream</code> object is paused. As soon as attach a data handler to it, it will start streaming the responses.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">responseStream</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">"data"</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">res</span><span class="pun">.</span><span class="pln">hits</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">res</span><span class="pun">.</span><span class="pln">hits</span><span class="pun">.</span><span class="pln">hits</span><span class="pun">);</span><span class="pln"> </span><span class="comment"><span class="com">// returns an array of initially matching objects</span></span><span class="pln">
-    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">else</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">res</span><span class="pun">.</span><span class="pln">_source</span><span class="pun">);</span><span class="pln">   </span><span class="comment"><span class="com">// a newly inserted document just matched the range query </span></span><span class="pln">
-    </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">})</span></code></pre><h2 id="how-to-change-the-default-results-in-a-search-query">Change the default results in a search query</h2><p>Appbase returns 10 objects in the initial response to <code>searchStream()</code> method. Sometimes, we need to return more objects. We can do this by specifying the <code>size</code> attribute inside our query like this:</p><pre><code class="prettyprint prettyprinted" style=""><span class="kwd">var</span><span class="pln"> responseStream </span><span class="pun">=</span><span class="pln"> appbaseRef</span><span class="pun">.</span><span class="pln">searchStream</span><span class="pun">({</span><span class="pln">
-      type</span><span class="pun">:</span><span class="pln"> </span><span class="str">"items"</span><span class="pun">,</span><span class="pln">
-      size</span><span class="pun">:</span><span class="pln"> </span><span class="lit">100</span><span class="pun">,</span><span class="pln">
-      body</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-          query</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-              range</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-                  value</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
-                      lte</span><span class="pun">:</span><span class="pln"> </span><span class="lit">300</span><span class="pun">,</span><span class="pln">
-                      gte</span><span class="pun">:</span><span class="pln"> </span><span class="lit">200</span><span class="pln">
-                  </span><span class="pun">}</span><span class="pln">
-              </span><span class="pun">}</span><span class="pln">
-          </span><span class="pun">}</span><span class="pln">
-      </span><span class="pun">}</span><span class="pln">
-</span><span class="pun">})</span></code></pre><p>The <code>responseStream</code> object will now return max(total_objects_matching_our_query, 100) objects on the <code>'data'</code> event handler.</p><blockquote>
-<p><span class="fa fa-star"></span> The <code>size</code> attribute can specify a maximum of 1000 objects to return in one response.</p>
-<p><span class="fa fa-info-circle"></span> <code>size</code> attribute can be applied on both <code>searchStream()</code> and <code>search()</code> methods.</p>
-</blockquote></div>
+  <div role="flatdoc-content" class="content"></div>
   <a class="edit" ng-href="https://github.com/appbaseio/Docs/tree/master/src/scalr/FAQs/jsapi.md" target="_blank" href="https://github.com/appbaseio/Docs/tree/master/src/scalr/FAQs/jsapi.md">
     <span class="fa fa-pencil"> Edit</span>
   </a>

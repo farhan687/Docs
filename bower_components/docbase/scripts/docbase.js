@@ -44,13 +44,16 @@
         repo: 'repo',*/
         path: '/',
         branch: 'gh-pages',
-        editGithubBtn: true
+        editGithubBtn: true,
+        access_token: ''
       },
       generic: {
         baseurl: '',
         path: '/'
       },
       html5mode: false,
+      default_version: '',
+      manual_override: false,
       indexType: 'html',
       indexSrc: 'v1/path/index.md',
       navbarHtml: 'html/navbar.html',
@@ -61,7 +64,9 @@
     };
 
     options = $.extend({}, defaults, options);
-
+    if (options.github.access_token) {
+      options.github.access_token = atob(options.github.access_token);
+    }
     if (options.method === 'github') {
       if (!options.github.user) {
         throw Error('Missing GitHub user info.');
@@ -87,7 +92,7 @@
     Events.bind();
     if (options.method === 'file') {
       Docbase.file(options.map);
-    } else if (options.method === 'github') {
+    } else if (options.method === 'github' && !options.manual_override) {
       Docbase.github(options.github);
     } else {
       Docbase.file(options.map);
@@ -277,9 +282,8 @@
         resolve: resolve
       })
       .when('/:version', {
-        templateUrl: flatdocURL,
-        controller: 'URLCtrl',
-        resolve: resolve
+        templateUrl: mainURL,
+        controller: 'VersionCtrl'
       })
       .when('/', {
         templateUrl: mainURL,
@@ -465,7 +469,7 @@
     };
   };
 
-  Route.URLCtrl = function($scope, $location, $filter, data, commits, $timeout) {
+  Route.URLCtrl = function($scope, $route, $location, $filter, data, commits, $timeout, pagination) {
     $timeout(function() {
       $location.path(data.locationPath);
       $scope.index = false;
@@ -476,6 +480,10 @@
       $scope.navbarHtml = Docbase.options.navbarHtml;
       $scope.logoSrc = Docbase.options.logoSrc;
       $scope.docbaseOptions = Docbase.options;
+
+      setTimeout(function(){
+        $('#folder-navbar').megaMenu();
+      },200);
 
       function versionIn(folder) {
         if (folder.name === data.currentFolder) {
@@ -497,6 +505,8 @@
           }
         }
       } else {
+        
+        $scope.paginationLinks = pagination.getLink($scope.map, $route.current.params);
         var contribut_array = [];
         if (!data.fail) {
           var content = data.markdown;
@@ -510,7 +520,7 @@
         if (commits.status == 200 && commits.data && commits.data.length) {
           var commits_data = commits.data;
           var commiter_data = $filter('date')(commits.data[0].commit.committer.date, 'mediumDate');
-          var last_date = $('<span>').addClass('pull-right modified-date').html('Last Modified On : <a href="' + commits.data[0].html_url + '">' + commiter_data + '</a>');
+          var last_date = $('<span>').addClass('pull-right modified-date').html('Last modified on: <a href="' + commits.data[0].html_url + '">' + commiter_data + '</a>');
 
           var contributors_data = commits_data;
           var contributors = $('<div>').addClass('contributor-container');
@@ -531,9 +541,8 @@
             }
           }
           var contributors_header = $('<div>').addClass('contributors_header').append('Contributors').append(last_date);
-          $(extra_container).prepend(contributors).prepend(contributors_header);
-
-
+          var contributors_footer = $('<div>').addClass('contributors_header nobg').append("<a class='edit-btn' href='"+$scope.github+"' target='_blank'><span class='fa fa-pencil'> Edit this page on Github </span></a>");
+          $(extra_container).prepend(contributors_footer).prepend(contributors).prepend(contributors_header);
         }
 
         var div2 = $('<div>').addClass('clearFix');
@@ -561,7 +570,45 @@
           $rootScope.logoSrc = Docbase.options.logoSrc;
           $scope.map = Docbase.map;
           $scope.versions = Object.keys($scope.map);
-          $scope.currentVersion = $scope.versions[0];
+          $scope.currentVersion = $scope.docbaseOptions.default_version && $scope.docbaseOptions.default_version !== null && $scope.docbaseOptions.default_version !== '' ? $scope.docbaseOptions.default_version: $scope.versions[0];
+          
+          setTimeout(function(){
+            $('#folder-navbar').megaMenu();
+          },200);
+
+        });
+      };
+      if (Docbase.map) {
+        onMapped();
+      } else {
+        jWindow.on('mapped', onMapped);
+      }
+    }
+  };
+  Route.VersionCtrl = function($scope, $route, $location, $filter, $timeout, $rootScope) {
+    $scope.docbaseOptions = Docbase.options;
+
+    if (Docbase.options.indexType === 'markdown') {
+      var path = Docbase.options.indexSrc;
+      if (endsWith(path, '.md')) {
+        path = path.substring(0, path.length - 3);
+      }
+      if (path.charAt(0) !== '/') {
+        path = '/' + path;
+      }
+
+      $location.path(path);
+    } else {
+      var onMapped = function() {
+        $timeout(function() {
+          $rootScope.navbarHtml = Docbase.options.navbarHtml;
+          $rootScope.logoSrc = Docbase.options.logoSrc;
+          $scope.map = Docbase.map;
+          $scope.versions = Object.keys($scope.map);
+          $scope.currentVersion = $route.current.params.version;
+          setTimeout(function(){
+            $('#folder-navbar').megaMenu();
+          },200);
         });
       };
       if (Docbase.map) {
@@ -628,6 +675,71 @@
       fail: false
     };
   };
+
+  Route.pagination = function() {
+    var pageObj = {
+      getLink: function(map, path) {
+        var currentVersion = path.version;
+        var currentMap = map[currentVersion];
+        var currentFolderKey,  currentFileKey, currentFolder;
+        currentMap.forEach(function(folder, folderKey) {
+          if (folder.name == path.folder) {
+            currentFolder = folder;
+            currentFolderKey = folderKey;
+            folder.files.forEach(function(files, fileKey) {
+              if (files.name == path.file) {
+                currentFileKey = fileKey;
+              }
+            });
+          }
+        });
+
+        var prevLink = function() {
+          var targetLink, targetFileKey, targetfolderKey, targetFolder;
+          if (currentFolderKey === 0 && currentFileKey === 0) {
+            targetLink = null;
+          } else {
+            if (currentFileKey === 0) {
+              targetfolderKey = currentFolderKey - 1;
+              targetFolder = map[currentVersion][targetfolderKey];
+              targetFileKey = targetFolder.files.length - 2;
+            } else {
+              targetFileKey = currentFileKey - 1;
+              targetFolder = currentFolder;
+            }
+            targetLink = '#/' + currentVersion + '/' + targetFolder.name + '/' + targetFolder.files[targetFileKey].name;
+          }
+          return targetLink;
+        };
+
+        var nextLink = function() {
+          var targetLink, targetFileKey, targetfolderKey, targetFolder;
+          if (currentFolderKey === map[currentVersion].length - 1 && currentFileKey === map[currentVersion][currentFolderKey].files.length - 2) {
+            targetLink = null;
+          } else {
+            if (currentFileKey === map[currentVersion][currentFolderKey].files.length - 2) {
+              targetfolderKey = currentFolderKey + 1;
+              targetFolder = map[currentVersion][targetfolderKey];
+              targetFileKey = 0;
+            } else {
+              targetFileKey = currentFileKey + 1;
+              targetFolder = currentFolder;
+            }
+            targetLink = '#/' + currentVersion + '/' + targetFolder.name + '/' + targetFolder.files[targetFileKey].name;
+          }
+          return targetLink;
+        };
+        var paginationLinks = {
+          'prev': prevLink(),
+          'next': nextLink()
+        };
+
+        return paginationLinks;
+      }
+    };
+    
+    return pageObj;
+  }; 
 
   function cutTrailingSlashes(value) {
     if (!angular.isString(value)) {
@@ -756,7 +868,9 @@
 
   var angApp = angular.module('docbaseApp', ['ngRoute'], function() {})
     .factory('FlatdocService', ['$q', '$route', '$location', '$anchorScroll', '$http', Route.fetch])
-    .controller('URLCtrl', ['$scope', '$location', '$filter', 'data', 'commits', '$timeout', Route.URLCtrl])
+    .service('Pagination', [Route.pagination])
+    .controller('URLCtrl', ['$scope', '$route', '$location', '$filter', 'data', 'commits', '$timeout', 'Pagination', Route.URLCtrl])
+    .controller('VersionCtrl', ['$scope', '$route', '$location', '$filter', '$timeout', '$rootScope', Route.VersionCtrl])
     .controller('MainCtrl', ['$scope', '$location', '$timeout', '$rootScope', Route.mainCtrl])
     .config(['$routeProvider', '$locationProvider', Route.config])
     .run(
