@@ -39,6 +39,24 @@
       }
     });
 
+    $('.content li').each(function() {
+      var content = JSON.stringify($(this).html());
+      var self = this;
+      if(content.indexOf('<p>') === 1 && content.indexOf('<strong>') === 4) {
+        setTitle();
+      }
+      else if(content.indexOf('<strong>') === 1) {
+        setTitle();
+      }
+      function setTitle() {
+        $(self).find('strong').eq(0).addClass('li-title');
+        var strongClose = '</strong>';
+        if(content.indexOf(strongClose) + strongClose.length + 1 === content.indexOf('<code>')) {
+          $(self).find('code').eq(0).addClass('code-with-title');  
+        }
+      }
+    });
+
     var $sidebar = $('.menubar');
     var elTop;
 

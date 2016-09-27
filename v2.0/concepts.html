@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="./bower_components/google-code-prettify/bin/prettify.min.css">
   <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
-<script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script><script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
+<script type="text/javascript" async="" src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script><script type="text/javascript" async="" src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
@@ -80,7 +80,7 @@
 
     <ul class="nav navbar-nav navbar-right">      
        <li class="dropdown search-dropdown">
-        <div class="form-group search-form" style="right: 50px; "><input class="search_field form-control dropdown-toggle appbase-search" type="text" placeholder="search"></div>
+        <div class="form-group search-form" style="right: 50px; "><span class="twitter-typeahead" style="position: relative; display: inline-block; "><input class="search_field form-control dropdown-toggle appbase-search tt-hint" type="text" style="position: absolute; top: 0px; left: 0px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; box-shadow: none; opacity: 1; background-attachment: scroll; background-clip: border-box; background-color: rgb(255, 255, 255); background-image: none; background-origin: padding-box; background-size:  ; background-position: 0% 0%; background-repeat: repeat repeat; " readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr"><input class="search_field form-control dropdown-toggle appbase-search tt-input" type="text" placeholder="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; "><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none; "></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; "><div class="tt-dataset tt-dataset-titles"></div></div></span></div>
       </li>
       <li class="dropdown">
         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -111,25 +111,25 @@
 <li><a href="http://en.wikipedia.org/wiki/SQL">Relational (SQL) Databases</a> SQLite, PostgreSQL  </li>
 <li><a href="http://en.wikipedia.org/wiki/NoSQL">NoSQL Databases</a><br>a. <a href="http://en.wikipedia.org/wiki/NoSQL#Key-value_stores">Key/Value Store</a>  Redis, Riak<br>b. <a href="http://en.wikipedia.org/wiki/Column-oriented_DBMS">Columnar Store</a> Cassandra, HBase<br>c. <a href="http://en.wikipedia.org/wiki/NoSQL#Document_store">Document Store</a> CouchBase, MongoDB<br>d. <a href="http://en.wikipedia.org/wiki/Graph_database">Graph Store</a> Neo4j, TitanDB  </li>
 </ol><h2 id="datamodel-data-in-appbase">Data in Appbase</h2><p>Appbase is a <a href="http://en.wikipedia.org/wiki/Directed_graph"><em>Directed Graph</em></a>. Objects inside Appbase are called <a href="http://en.wikipedia.org/wiki/Vertex_(graph_theory">Vertices</a>) (a graph term for entities), and the links (relationships) between the objects are called <a href="http://en.wikipedia.org/wiki/Glossary_of_graph_theory#Basics">Edges</a>.</p><p>Data in Appbase is stored as JSON objects. Appbase supports flexible schema, i.e. the properties of the JSON object need not be defined in advance. </p><p>Although Appbase supports storing embedded JSON objects and arrays, one doesn’t have to store data in this denormalized fashion. This is mainly for compatibility with existing document stores like MongoDB. The recommended approach is to create reference links between distint entities. In this doc, we will cover how you can store different kinds data (primitive values, objects, lists), create relationships amongst them, normalize, and do perform different queries on them.</p><h2 id="datamodel-concepts">Concepts</h2><p>Similar to how SQL has concepts for <em>table</em>, <em>row</em>, <em>column</em>, <em>relation</em> and MongoDB has <em>collection</em> , <em>Document</em> and <em>fields</em>, here are the key concepts in Appbase.</p><ol>
-<li><p><strong>Vertex</strong> — is similar to a <em>Document</em> in MongoDB, it stores data.  </p>
+<li><p><strong class="li-title">Vertex</strong> — is similar to a <em>Document</em> in MongoDB, it stores data.  </p>
 <ul>
-<li><strong>Key</strong> — A string that is used to access the vertex as an entry point.</li>
-<li><strong>Properties</strong> — A JSON object representing the data inside the vertex. </li>
+<li><strong class="li-title">Key</strong> — A string that is used to access the vertex as an entry point.</li>
+<li><strong class="li-title">Properties</strong> — A JSON object representing the data inside the vertex. </li>
 </ul>
 </li>
-<li><p><strong>Namespace</strong> — is similar to a <em>Collection</em> in MongoDB or <em>type</em> in ElasticSearch. A <em>vertex</em> always belongs to a <em>namespace</em> and <em>security rules</em> can be applied on <em>namespaces</em>. </p>
+<li><p><strong class="li-title">Namespace</strong> — is similar to a <em>Collection</em> in MongoDB or <em>type</em> in ElasticSearch. A <em>vertex</em> always belongs to a <em>namespace</em> and <em>security rules</em> can be applied on <em>namespaces</em>. </p>
 </li>
-<li><p><strong>Edge</strong> — is a directional link to another vertex.  </p>
+<li><p><strong class="li-title">Edge</strong> — is a directional link to another vertex.  </p>
 <ul>
-<li><strong>Priority</strong> — An <em>edge</em> can optionally have a priority, a <strong>Number</strong> (a secondary index).</li>
-<li><strong>outVertex</strong> — is the vertex which the edge points <em>to</em>.</li>
-<li><strong>inVertex</strong>  — the vertex <em>from</em> which the edge starts.</li>
+<li><strong class="li-title">Priority</strong> — An <em>edge</em> can optionally have a priority, a <strong>Number</strong> (a secondary index).</li>
+<li><strong class="li-title">outVertex</strong> — is the vertex which the edge points <em>to</em>.</li>
+<li><strong class="li-title">inVertex</strong>  — the vertex <em>from</em> which the edge starts.</li>
 </ul>
 <p>i.e. an <em>edge</em> is pointed from <em>inVertex</em> to an <em>outVertex</em>.</p>
 </li>
-<li><p><strong>Path</strong> — Every <em>vertex</em> in Appbase has a path, starting from the &lt;namespace&gt; and ending at the <em>vertex</em>, not unlike the UNIX path. A typical path looks like &lt;namespace&gt;/&lt;v1&gt;/&lt;v2&gt;/…/&lt;vn&gt;/.</p>
+<li><p><strong class="li-title">Path</strong> — Every <em>vertex</em> in Appbase has a path, starting from the &lt;namespace&gt; and ending at the <em>vertex</em>, not unlike the UNIX path. A typical path looks like &lt;namespace&gt;/&lt;v1&gt;/&lt;v2&gt;/…/&lt;vn&gt;/.</p>
 </li>
-<li><p><strong>URL</strong> — It is a way to point to a <em>Path</em> in the REST API. Paths are prefixed with the Appbase API base URL, application’s name and the API version. Eg. <a href="https://api.appbase.io/chat_app/v2/&lt;path&gt;/">https://api.appbase.io/chat_app/v2/&lt;path&gt;/</a>.</p>
+<li><p><strong class="li-title">URL</strong> — It is a way to point to a <em>Path</em> in the REST API. Paths are prefixed with the Appbase API base URL, application’s name and the API version. Eg. <a href="https://api.appbase.io/chat_app/v2/&lt;path&gt;/">https://api.appbase.io/chat_app/v2/&lt;path&gt;/</a>.</p>
 </li>
 </ol><p>We can not actually compare these concepts with other kinds of databases, but it helps to understand Appbase if we compare the <em>usage practices</em>.</p><table>
 <thead>
@@ -288,11 +288,11 @@ moviesRef</span><span class="pun">.</span><span class="pln">on</span><span class
 moviesRef</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'edge_added'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">error</span><span class="pun">,</span><span class="pln"> eRef</span><span class="pun">,</span><span class="pln"> eSnap</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">eSnap</span><span class="pun">.</span><span class="pln">properties</span><span class="pun">());</span><span class="pln">
 </span><span class="pun">});</span></code></pre><h4 id="filters">Filters</h4><p>With edge filters, it is possible to fetch only certain edges. It comes handy when there are large number of edges and you want to paginate them, or want to fetch only a particular edge.</p><p>When more than one filter is provided, they work as logical <code>AND</code> and only the edges matchihg all filters will be fetched. This is what each filter means:</p><ol>
-<li><strong>startAt</strong> <code>Number</code> - Edges having priorities equal or more than this</li>
-<li><strong>endAt</strong> <code>Number</code> - Edges having priorities equal or less than this</li>
-<li><strong>limit</strong> <code>Number</code> - Only this number of edges</li>
-<li><strong>skip</strong> <code>Number</code> - Skipping certain number of edges, which match all the other filters</li>
-<li><strong>onlyNew</strong> <code>Boolean</code> - return only newly created edges</li>
+<li><strong class="li-title">startAt</strong> <code class="code-with-title">Number</code> - Edges having priorities equal or more than this</li>
+<li><strong class="li-title">endAt</strong> <code class="code-with-title">Number</code> - Edges having priorities equal or less than this</li>
+<li><strong class="li-title">limit</strong> <code class="code-with-title">Number</code> - Only this number of edges</li>
+<li><strong class="li-title">skip</strong> <code class="code-with-title">Number</code> - Skipping certain number of edges, which match all the other filters</li>
+<li><strong class="li-title">onlyNew</strong> <code class="code-with-title">Boolean</code> - return only newly created edges</li>
 </ol><p>Notice that:</p><ul>
 <li>Filters are a way to fetch existing edges, thus they work only with _edge<em>added</em> event</li>
 <li>Edges are always returned ordered according to their priorities</li>

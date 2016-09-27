@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="./bower_components/google-code-prettify/bin/prettify.min.css">
   <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
-<script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
+<script type="text/javascript" async="" src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="no-literate">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
@@ -151,8 +151,8 @@
 <p><code>Roadmap Note</code>:
 We will be adding a search endpoint at the <strong>document</strong> level that queries on the document and it’s references.</p>
 </blockquote><h3 id="use-cases-request-and-response-format-request">Request</h3><p>A typical request object defines:</p><ul>
-<li><strong>collections</strong> - <em>array</em> : The collections on which the query will run</li>
-<li><strong>body</strong> - <em>object</em> : The Elasticsearch Query DSL body</li>
+<li><strong class="li-title">collections</strong> - <em>array</em> : The collections on which the query will run</li>
+<li><strong class="li-title">body</strong> - <em>object</em> : The Elasticsearch Query DSL body</li>
 </ul><p>Elasticsearch provides rich Query DSL (Domain Specific Language) based on JSON to define queries. Queries involving major usecases are covered in this documentation, but if you want to know more about DSL, goto <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl.html">this link</a>.</p><p>This is a sample request <strong>query object</strong>, let’s call it <code>body.json</code>:</p><pre><code class="lang-json prettyprint prettyprinted" style=""><span class="pun">{</span><span class="pln">
    </span><span class="string"><span class="str">"query"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
       </span><span class="string"><span class="str">"multi_match"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -166,18 +166,18 @@ We will be adding a search endpoint at the <strong>document</strong> level that 
 <p><code>Note:</code>
 The search endpoint here is not on a particular collection, it is on the app. The collections on which the search should apply are defined in the request body.</p>
 </blockquote><h3 id="use-cases-request-and-response-format-response">Response</h3><p>We provide an unaltered DSL Response from ES. A typical response includes:</p><ul>
-<li><strong>took</strong> - <em>number</em> : The time it took for the query to run</li>
-<li><strong>timeout</strong> - <em>boolean</em> : If the was query timed out</li>
-<li><strong>_shards</strong> -  <em>object</em> : Sharding information</li>
-<li><strong>hits</strong> - <em>object</em> : Query results and more<ul>
-<li><strong>total</strong> - <em>number</em>: Number of results</li>
-<li><strong>max_score</strong> - <em>number</em> : The maximum <em>score</em> that matched the query. This score comes into picture when we do a full text query.</li>
-<li><strong>hits</strong> - <em>array</em> : The results that satisfied the query. Each object inside this array is a JSON object representing a <em>document</em>,  and has following perperties:<ul>
-<li><strong>_index</strong> - <em>string</em> : Index inside which the object is stored. Appbase stores all the documents of a single application inside a single index. So this will equal to the name of Appbase application you are using.</li>
-<li><strong>_type</strong> - <em>string</em> : Type of the document. I.E. collection of the document (As explained in the Data Mapping).</li>
-<li><strong>_id</strong> - <em>string</em> : Id of the document inside ES.</li>
-<li><strong>_score</strong> - <em>number</em> : The score by witch the document matched the query</li>
-<li><strong>_source</strong> - <em>object</em> : The data inside the document (document).</li>
+<li><strong class="li-title">took</strong> - <em>number</em> : The time it took for the query to run</li>
+<li><strong class="li-title">timeout</strong> - <em>boolean</em> : If the was query timed out</li>
+<li><strong class="li-title">_shards</strong> -  <em>object</em> : Sharding information</li>
+<li><strong class="li-title">hits</strong> - <em>object</em> : Query results and more<ul>
+<li><strong class="li-title">total</strong> - <em>number</em>: Number of results</li>
+<li><strong class="li-title">max_score</strong> - <em>number</em> : The maximum <em>score</em> that matched the query. This score comes into picture when we do a full text query.</li>
+<li><strong class="li-title">hits</strong> - <em>array</em> : The results that satisfied the query. Each object inside this array is a JSON object representing a <em>document</em>,  and has following perperties:<ul>
+<li><strong class="li-title">_index</strong> - <em>string</em> : Index inside which the object is stored. Appbase stores all the documents of a single application inside a single index. So this will equal to the name of Appbase application you are using.</li>
+<li><strong class="li-title">_type</strong> - <em>string</em> : Type of the document. I.E. collection of the document (As explained in the Data Mapping).</li>
+<li><strong class="li-title">_id</strong> - <em>string</em> : Id of the document inside ES.</li>
+<li><strong class="li-title">_score</strong> - <em>number</em> : The score by witch the document matched the query</li>
+<li><strong class="li-title">_source</strong> - <em>object</em> : The data inside the document (document).</li>
 </ul>
 </li>
 </ul>

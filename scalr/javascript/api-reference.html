@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="./bower_components/google-code-prettify/bin/prettify.min.css">
   <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
-<script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
+<script type="text/javascript" async="" src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc" class="big-h3">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
@@ -95,7 +95,7 @@
 
     <ul class="nav navbar-nav navbar-right">      
        <li class="dropdown search-dropdown">
-        <div class="form-group search-form" style="right: 50px; "><span class="twitter-typeahead" style="position: relative; display: inline-block; "><input class="search_field form-control dropdown-toggle appbase-search tt-hint" type="text" style="position: absolute; top: 0px; left: 0px; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; box-shadow: none; opacity: 1; background-attachment: scroll; background-clip: border-box; background-color: rgb(255, 255, 255); background-image: none; background-origin: padding-box; background-size:  ; background-position: 0% 0%; background-repeat: repeat repeat; " readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr"><input class="search_field form-control dropdown-toggle appbase-search tt-input" type="text" placeholder="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent; "><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: 'Helvetica Neue', 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none; "></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; "><div class="tt-dataset tt-dataset-titles"></div></div></span></div>
+        <div class="form-group search-form" style="right: 50px; "><input class="search_field form-control dropdown-toggle appbase-search" type="text" placeholder="search"></div>
       </li>
       <li class="dropdown">
         <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -132,12 +132,12 @@
     </span><span class="string"><span class="str">"username"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">APP_CREDENTIAL</span><span class="pun">&gt;,</span><span class="pln">
     </span><span class="string"><span class="str">"password"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">APP_SECRET</span><span class="pun">&gt;</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>new Appbase(appData)</code></p><ul>
-<li><p><strong>appData</strong> <code>Object</code> - A Javascript object containing the following fields and values</p>
+<li><p><strong class="li-title">appData</strong> <code class="code-with-title">Object</code> - A Javascript object containing the following fields and values</p>
 <ul>
-<li><strong>url</strong> <code>String</code> - URL with the API version, always <em><a href="https://scalr.api.appbase.io">https://scalr.api.appbase.io</a></em></li>
-<li><strong>appname</strong> <code>String</code> - name of the app as displayed in the <a href="https://appbase.io/scalr">dashboard</a></li>
-<li><strong>username</strong> <code>String</code> - username as displayed in the app dashboard</li>
-<li><strong>password</strong> <code>String</code> - password as displayed in the app dashboard</li>
+<li><strong class="li-title">url</strong> <code class="code-with-title">String</code> - URL with the API version, always <em><a href="https://scalr.api.appbase.io">https://scalr.api.appbase.io</a></em></li>
+<li><strong class="li-title">appname</strong> <code class="code-with-title">String</code> - name of the app as displayed in the <a href="https://appbase.io/scalr">dashboard</a></li>
+<li><strong class="li-title">username</strong> <code class="code-with-title">String</code> - username as displayed in the app dashboard</li>
+<li><strong class="li-title">password</strong> <code class="code-with-title">String</code> - password as displayed in the app dashboard</li>
 </ul>
 </li>
 </ul><p><strong>Returns</strong></p><p><code>Object</code> <strong>appbaseRef</strong> <em>Appbase reference object</em> - has <code>index()</code>, <code>update()</code>, <code>delete()</code>, <code>bulk()</code>, <code>search()</code>, <code>get()</code>, <code>getTypes()</code>, <code>getStream()</code>, <code>searchStream()</code> and <code>searchStreamToURL()</code> methods.</p><h2 id="javascript-api-reference-writing-data">WRITING DATA</h2><h3 id="javascript-api-reference-writing-data-index">index()</h3><p>Writes a JSON data object at a given <code>type</code> and <code>id</code> location, or replaces if an object already exists.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="pln">index</span><span class="pun">({</span><span class="pln">
@@ -154,11 +154,11 @@
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"indexing error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.index(params)</code></p><ul>
-<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the type, id and the JSON data to be indexed</p>
+<li><p><strong class="li-title">params</strong> <code class="code-with-title">Object</code> - A Javascript object containing the type, id and the JSON data to be indexed</p>
 <ul>
-<li><strong>type</strong> <code>String</code> - The type (aka collection) under which the data will be indexed</li>
-<li><strong>body</strong> <code>Object</code> - Data to be indexed, a valid JSON object</li>
-<li><strong>id</strong> <code>String</code> - Unique ID for the JSON data. <code>id</code> is auto generated if not specified</li>
+<li><strong class="li-title">type</strong> <code class="code-with-title">String</code> - The type (aka collection) under which the data will be indexed</li>
+<li><strong class="li-title">body</strong> <code class="code-with-title">Object</code> - Data to be indexed, a valid JSON object</li>
+<li><strong class="li-title">id</strong> <code class="code-with-title">String</code> - Unique ID for the JSON data. <code>id</code> is auto generated if not specified</li>
 </ul>
 </li>
 </ul><h3 id="javascript-api-reference-writing-data-update">update()</h3><p>Partially updates an existing document at a given <code>type</code> and <code>id</code> location. The important difference with the index() method is that the latter replaces the existing data values wholesale, while update() only replaces the values that are specified in the <code>body.doc</code> field.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="pln">update</span><span class="pun">({</span><span class="pln">
@@ -175,11 +175,11 @@
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"update document error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.update(params)</code></p><ul>
-<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the type, id, and the partial JSON data to be updated</p>
+<li><p><strong class="li-title">params</strong> <code class="code-with-title">Object</code> - A Javascript object containing the type, id, and the partial JSON data to be updated</p>
 <ul>
-<li><strong>type</strong> <code>String</code> - The type (aka collection) under which the data will be indexed</li>
-<li><strong>body.doc</strong> <code>Object</code> - Partial doc JSON to be updated (all the JSON data can only reside under the body.doc field)</li>
-<li><strong>id</strong> <code>String</code> - Unique ID of the JSON document to be updated. <code>id</code> here is mandatory and should match an existing object.</li>
+<li><strong class="li-title">type</strong> <code class="code-with-title">String</code> - The type (aka collection) under which the data will be indexed</li>
+<li><strong class="li-title">body.doc</strong> <code class="code-with-title">Object</code> - Partial doc JSON to be updated (all the JSON data can only reside under the body.doc field)</li>
+<li><strong class="li-title">id</strong> <code class="code-with-title">String</code> - Unique ID of the JSON document to be updated. <code>id</code> here is mandatory and should match an existing object.</li>
 </ul>
 </li>
 </ul><h3 id="javascript-api-reference-writing-data-delete">delete()</h3><p>Delete a JSON data object by <code>id</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="kwd">delete</span><span class="pun">({</span><span class="pln">
@@ -190,10 +190,10 @@
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"deletion error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.delete(params)</code></p><ul>
-<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the JSON object to be deleted</p>
+<li><p><strong class="li-title">params</strong> <code class="code-with-title">Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the JSON object to be deleted</p>
 <ul>
-<li><strong>type</strong> <code>String</code> - The type (aka collection) of the object to be deleted</li>
-<li><strong>id</strong> <code>String</code> - Unique ID for the JSON data</li>
+<li><strong class="li-title">type</strong> <code class="code-with-title">String</code> - The type (aka collection) of the object to be deleted</li>
+<li><strong class="li-title">id</strong> <code class="code-with-title">String</code> - Unique ID for the JSON data</li>
 </ul>
 </li>
 </ul><h3 id="javascript-api-reference-writing-data-bulk">bulk()</h3><p>Apply many index / delete operations together, useful when importing data for the first time.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="pln">bulk</span><span class="pun">({</span><span class="pln">
@@ -216,10 +216,10 @@
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="str">'</span></span><span class="str">error'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"bulk failed: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.bulk(params)</code></p><ul>
-<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>body</code> and optionally a default <code>type</code> to be used for actions</p>
+<li><p><strong class="li-title">params</strong> <code class="code-with-title">Object</code> - A Javascript object containing the <code>body</code> and optionally a default <code>type</code> to be used for actions</p>
 <ul>
-<li><strong>body</strong> <code>String</code> - A Javascript array of actions to be performed written as a sequence of action#1, data#1, action#2, data#2, … action#n, data#n</li>
-<li><strong>type</strong> <code>String</code> - Default document type for actions that don’t provide one</li>
+<li><strong class="li-title">body</strong> <code class="code-with-title">String</code> - A Javascript array of actions to be performed written as a sequence of action#1, data#1, action#2, data#2, … action#n, data#n</li>
+<li><strong class="li-title">type</strong> <code class="code-with-title">String</code> - Default document type for actions that don’t provide one</li>
 </ul>
 </li>
 </ul><h2 id="javascript-api-reference-getting-data">GETTING DATA</h2><h3 id="javascript-api-reference-getting-data-get">get()</h3><p>Get the JSON document from a particular <code>type</code> and <code>id</code>. For subscribing to realtime updates on a document, check out <code>getStream()</code>.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">({</span><span class="pln">
@@ -230,9 +230,9 @@
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"get() method failed with: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.get(params)</code></p><ul>
-<li><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the document to retrieve.  <ul>
-<li><strong>type</strong> <code>String</code> - Document Type</li>
-<li><strong>id</strong> <code>String</code> - Unique ID of the JSON document</li>
+<li><strong class="li-title">params</strong> <code class="code-with-title">Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the document to retrieve.  <ul>
+<li><strong class="li-title">type</strong> <code class="code-with-title">String</code> - Document Type</li>
+<li><strong class="li-title">id</strong> <code class="code-with-title">String</code> - Unique ID of the JSON document</li>
 </ul>
 </li>
 </ul><p>Returns the document at the given <code>type</code> and <code>id</code>.</p><h3 id="javascript-api-reference-getting-data-gettypes">getTypes()</h3><p>Get all the <code>types</code> of an appname.</p><pre><code class="lang-js prettyprint prettyprinted" style=""><span class="pln">appbaseRef</span><span class="pun">.</span><span class="pln">getTypes</span><span class="pun">().</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'data'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">res</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
@@ -251,10 +251,10 @@
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"search error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.search(params)</code></p><ul>
-<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the query <code>type</code> and <code>body</code>.</p>
+<li><p><strong class="li-title">params</strong> <code class="code-with-title">Object</code> - A Javascript object containing the query <code>type</code> and <code>body</code>.</p>
 <ul>
-<li><strong>type</strong> <code>String</code> - Document type</li>
-<li><strong>body</strong> <code>String</code> - A JSON object specifying a valid query in the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">ElasticSearch Query DSL</a> format</li>
+<li><strong class="li-title">type</strong> <code class="code-with-title">String</code> - Document type</li>
+<li><strong class="li-title">body</strong> <code class="code-with-title">String</code> - A JSON object specifying a valid query in the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">ElasticSearch Query DSL</a> format</li>
 </ul>
 </li>
 </ul><p><strong>Returns</strong></p><p><a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream.Readable</a> <code>Object</code> with</p><ul>
@@ -267,10 +267,10 @@
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"streaming error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.getStream(params)</code></p><ul>
-<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the document to be streamed.</p>
+<li><p><strong class="li-title">params</strong> <code class="code-with-title">Object</code> - A Javascript object containing the <code>type</code> and <code>id</code> of the document to be streamed.</p>
 <ul>
-<li><strong>type</strong> <code>String</code> - Document type</li>
-<li><strong>id</strong> <code>String</code> - Document ID (The ID is always a <code>String</code> value)</li>
+<li><strong class="li-title">type</strong> <code class="code-with-title">String</code> - Document type</li>
+<li><strong class="li-title">id</strong> <code class="code-with-title">String</code> - Document ID (The ID is always a <code>String</code> value)</li>
 </ul>
 </li>
 </ul><p><span class="fa fa-info-circle"></span> The <code>streamOnly</code> field parameter is deprecated starting v0.9.0 onwards, and is the default for how <code>getStream()</code> works (previously <code>readStream()</code>).</p><p><strong>Returns</strong></p><p><a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream.Readable</a> <code>Object</code> with</p><ul>
@@ -297,10 +297,10 @@ responseStream</span><span class="pun">.</span><span class="pln">stop</span><spa
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"streaming error: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.searchStream(params)</code></p><ul>
-<li><p><strong>params</strong> <code>Object</code> - A Javascript object containing the query <code>type</code> and <code>body</code></p>
+<li><p><strong class="li-title">params</strong> <code class="code-with-title">Object</code> - A Javascript object containing the query <code>type</code> and <code>body</code></p>
 <ul>
-<li><strong>type</strong> <code>String</code> - Document type</li>
-<li><strong>body</strong> <code>String</code> - A JSON object specifying a valid query in the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">ElasticSearch Query DSL</a> format</li>
+<li><strong class="li-title">type</strong> <code class="code-with-title">String</code> - Document type</li>
+<li><strong class="li-title">body</strong> <code class="code-with-title">String</code> - A JSON object specifying a valid query in the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">ElasticSearch Query DSL</a> format</li>
 </ul>
 </li>
 </ul><p><span class="fa fa-info-circle"></span> The <code>streamOnly</code> field parameter is deprecated starting v0.9.0 onwards, and is the default for how <code>searchStream()</code> works.</p><p><strong>Returns</strong></p><p><a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream.Readable</a> <code>Object</code> with</p><ul>
@@ -336,19 +336,19 @@ setTimeout</span><span class="pun">(</span><span class="pln">responseStream</spa
 </span><span class="pun">}).</span><span class="pln">on</span><span class="pun">(</span><span class="string"><span class="str">'error'</span></span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">err</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="string"><span class="str">"Error in registering webhook: "</span></span><span class="pun">,</span><span class="pln"> err</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">})</span></code></pre><p><strong>Usage</strong></p><p><code>appbaseRef.searchStreamToURL(queryParams, urlParams)</code></p><ul>
-<li><p><strong>queryParams</strong> <code>Object</code> - A Javascript object containing the query <code>type</code> and <code>body</code></p>
+<li><p><strong class="li-title">queryParams</strong> <code class="code-with-title">Object</code> - A Javascript object containing the query <code>type</code> and <code>body</code></p>
 <ul>
-<li><strong>type</strong> <code>String</code> - Document type</li>
-<li><strong>body</strong> <code>String</code> - A JSON object specifying a valid query in the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">ElasticSearch Query DSL</a> format</li>
+<li><strong class="li-title">type</strong> <code class="code-with-title">String</code> - Document type</li>
+<li><strong class="li-title">body</strong> <code class="code-with-title">String</code> - A JSON object specifying a valid query in the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html">ElasticSearch Query DSL</a> format</li>
 </ul>
 </li>
-<li><p><strong>urlParams</strong> <code>Object</code> - A Javascript object containing the <code>url</code> to which data would be streamed on a query match. It supports optional fields to attach JSON (or string) payloads, control the frequency and number of updates.</p>
+<li><p><strong class="li-title">urlParams</strong> <code class="code-with-title">Object</code> - A Javascript object containing the <code>url</code> to which data would be streamed on a query match. It supports optional fields to attach JSON (or string) payloads, control the frequency and number of updates.</p>
 <ul>
-<li><strong>url</strong> <code>String</code> - A URL string</li>
-<li><strong>body</strong> <code>Object</code> - A JSON object to be sent to the URL (used as an alternative to <strong>string_body</strong>)</li>
-<li><strong>string_body</strong> <code>String</code> - A raw string to be sent to the URL (used as an alternative to <strong>body</strong>)</li>
-<li><strong>count</strong> <code>Number</code> - # of times the result-request should be sent before terminating the webhook</li>
-<li><strong>interval</strong> <code>Number</code> - Wait duration in seconds before the next result-request</li>
+<li><strong class="li-title">url</strong> <code class="code-with-title">String</code> - A URL string</li>
+<li><strong class="li-title">body</strong> <code class="code-with-title">Object</code> - A JSON object to be sent to the URL (used as an alternative to <strong>string_body</strong>)</li>
+<li><strong class="li-title">string_body</strong> <code class="code-with-title">String</code> - A raw string to be sent to the URL (used as an alternative to <strong>body</strong>)</li>
+<li><strong class="li-title">count</strong> <code class="code-with-title">Number</code> - # of times the result-request should be sent before terminating the webhook</li>
+<li><strong class="li-title">interval</strong> <code class="code-with-title">Number</code> - Wait duration in seconds before the next result-request</li>
 </ul>
 </li>
 </ul><p><span class="fa fa-star"></span> <strong>body</strong> and <strong>string_body</strong> fields support <a href="http://mustache.github.io/mustache.5.html">mustache syntax</a> for accessing values inside the matching result object.</p><p><strong>Returns</strong></p><p><a href="https://nodejs.org/api/stream.html#stream_class_stream_readable">stream.Readable</a> <code>Object</code> with</p><ul>

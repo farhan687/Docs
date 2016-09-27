@@ -22,7 +22,7 @@ body:not(.no-literate) .content h1 {
 }
 
 .menu a.active:after {
-  top: 10px;
+  top: 13px;
   left: -15px;
 }
 
@@ -317,4 +317,46 @@ body.no-literate .content h1:first-child {
     display: inline-block !important;
     top: 0px !important;
     left: 0 !important;
+}
+
+body.no-literate .content pre > code {
+  display: block;
+  overflow-x: auto;
+  padding: .5em;
+  color: #333;
+  background: #f8f8f8;
+  border: 0;
+  border-radius: 0;
+  font-size: 16px;
+  letter-spacing: 0;
+}
+body.no-literate .content pre > code span {
+
+}
+.content li > strong.li-title, ul li > strong.li-title, ul li > p > strong.li-title, strong.li-title  {
+  height: 32px;
+  line-height: 32px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #777;
+}
+.code-with-title {
+	margin: 0 15px; 
+}
+.menu a, .menu a:visited {
+  color: #333;
+}
+.menu a.active {
+  font-weight: normal !important;
+}
+.content ul > li {
+      list-style-type: circle; 
+}
+.content ul > li:before {
+  width: 0;
+  height: 0;
+  border: 0; 
+}
+.content code {
+  background: transparent;
 }

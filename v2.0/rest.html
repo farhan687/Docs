@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="./bower_components/google-code-prettify/bin/prettify.min.css">
   <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
-<script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script><script type="text/javascript" async="" src="http://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
+<script type="text/javascript" async="" src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script><script type="text/javascript" async="" src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
 <body role="flatdoc">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
@@ -737,22 +737,22 @@ connection</span><span class="pun">:</span><span class="pln"> keep</span><span c
     </span><span class="string"><span class="str">"listener_id"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">string</span><span class="pun">&gt;,</span><span class="pln">
     </span><span class="string"><span class="str">"timestamp"</span></span><span class="pun">:</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">natural number</span><span class="pun">&gt;</span><span class="pln">
 </span><span class="pun">}</span></code></pre><ul>
-<li><strong>appname</strong> - The name of the application</li>
-<li><strong>secret</strong> - Application secret</li>
-<li><strong>token</strong> - Appbase Auth Token returned using the OAuth flow
+<li><strong class="li-title">appname</strong> - The name of the application</li>
+<li><strong class="li-title">secret</strong> - Application secret</li>
+<li><strong class="li-title">token</strong> - Appbase Auth Token returned using the OAuth flow
 Only any one of <em>secret</em> or <em>token</em> needs to be present in the request.</li>
-<li><strong>namespace</strong> - The namespace from where the path starts
+<li><strong class="li-title">namespace</strong> - The namespace from where the path starts
 E.g. for path <em>user/andy/machod/bhenchod</em>, the namespace would be <em>user</em>.</li>
-<li><strong>key</strong> - The vertex key in the path
+<li><strong class="li-title">key</strong> - The vertex key in the path
 For the path <em>user/andy/machod/bhenchod</em>, the key would be <em>andy</em>.
 For <em>user/</em> (only the namespace), it would be <code>undefined</code>.</li>
-<li><strong>obj_path</strong> - The path of the vertex that follows the key
+<li><strong class="li-title">obj_path</strong> - The path of the vertex that follows the key
 For the path <em>user/andy/machod/bhenchod</em>, the obj_path would be <em>machod/bhenchod</em>.
 For <em>user/andy</em>, it would be <code>undefined</code>.</li>
-<li><strong>filters</strong> - edge filters, applies only when listening for edges on a vertex</li>
-<li><strong>timestamp</strong> - specify milliseconds since epoch, from where to start ‘syncing’ data
+<li><strong class="li-title">filters</strong> - edge filters, applies only when listening for edges on a vertex</li>
+<li><strong class="li-title">timestamp</strong> - specify milliseconds since epoch, from where to start ‘syncing’ data
 When there’s a reconnection with the server, due to network connectivity problems, this handy option allows you to ‘resume’ listening and sync the changes happend after that timestamp</li>
-<li><strong>listener_id</strong> - a unique string that will be used in your application to distuinguish Socket.IO listeners</li>
+<li><strong class="li-title">listener_id</strong> - a unique string that will be used in your application to distuinguish Socket.IO listeners</li>
 </ul><h3 id="socketio-api-endpoints-requesting-for-data-vertex">Vertex</h3><p>When the path you are pointing to is a vertex, you can listen to:</p><ul>
 <li>Properties of the Vertex. I.e. fetch existing properties of the vertx, and get updates when they change.</li>
 <li>Edges of the Vertex. I.e. fetch existing edges, and get updates when edges are added, removed or replaced.</li>
