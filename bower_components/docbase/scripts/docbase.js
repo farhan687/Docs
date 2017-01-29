@@ -410,12 +410,14 @@
             } catch (e) {
               markdown.unshift(obj);
               obj = {
-                'threeColumns': false
+                'threeColumns': false,
+                'navigationSidebar': true
               };
             }
 
             markdown = markdown.join('\n');
-
+            retObj.threeColumns = obj.threeColumns;
+            retObj.navigationSidebar = obj.navigationSidebar;
             if (obj.threeColumns) {
               $('body').removeClass('no-literate');
             } else {
@@ -483,7 +485,13 @@
       $scope.navbarHtml = Docbase.options.navbarHtml;
       $scope.logoSrc = Docbase.options.logoSrc;
       $scope.docbaseOptions = Docbase.options;
-
+      $scope.threeColumns = data.threeColumns ? data.threeColumns : false;
+      $scope.navigationSidebar = data.navigationSidebar ? data.navigationSidebar : true;
+      var urlSplit = data.locationPath.split('/');
+      var tempFolder = urlSplit[urlSplit.length-2];
+      var tempFile = urlSplit[urlSplit.length-1];
+      $scope.currentFolder = data.currentFolder ? data.currentFolder : tempFolder;
+      $scope.currentFile = data.currentFile ? data.currentFile : tempFile;
       setTimeout(function(){
         $('#folder-navbar').megaMenu();
       },200);
@@ -496,7 +504,6 @@
       //If index is true
       if (data.index) {
         $scope.index = true;
-        $scope.currentFolder = data.currentFolder;
         $scope.indexList = [];
 
         for (var version in data.map) {
@@ -544,7 +551,7 @@
             }
           }
           var contributors_header = $('<div>').addClass('contributors_header').append('Contributors').append(last_date);
-          var contributors_footer = $('<div>').addClass('contributors_header nobg').append("<a class='edit-btn' href='"+$scope.github+"' target='_blank'><span class='fa fa-pencil'> Edit this page on Github </span></a>");
+          var contributors_footer = $('<div>').addClass('contributors_header nobg').append("<a class='edit-btn' href='"+$scope.github+"' target='_blank'><span><i class='fa fa-pencil'></i> Edit this page on Github </span></a>");
           $(extra_container).prepend(contributors_footer).prepend(contributors).prepend(contributors_header);
         }
 
