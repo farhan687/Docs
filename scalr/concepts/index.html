@@ -38,6 +38,8 @@
             <a ng-href=./scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/intro.html>Intro</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
             <a ng-href=./scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/datamodel.html>Data Model</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
+            <a ng-href=./scalr/concepts/databrowser.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/databrowser.html>Data Browser</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
             <a ng-href=./scalr/concepts/index.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
@@ -127,6 +129,8 @@
 				<a class="level-2 ng-binding" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/concepts/intro.html ng-bind="file.label" href=./scalr/concepts/intro.html>Intro</a>
 			</li><!-- end ngIf: file.name !== 'index' --><!-- end ngRepeat: file in folder.files --><!-- ngIf: file.name !== 'index' --><li ng-repeat="file in folder.files" data-ng-if="file.name !== 'index'" class="ng-scope">
 				<a class="level-2 ng-binding" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/concepts/datamodel.html ng-bind="file.label" href=./scalr/concepts/datamodel.html>Data Model</a>
+			</li><!-- end ngIf: file.name !== 'index' --><!-- end ngRepeat: file in folder.files --><!-- ngIf: file.name !== 'index' --><li ng-repeat="file in folder.files" data-ng-if="file.name !== 'index'" class="ng-scope">
+				<a class="level-2 ng-binding" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/concepts/databrowser.html ng-bind="file.label" href=./scalr/concepts/databrowser.html>Data Browser</a>
 			</li><!-- end ngIf: file.name !== 'index' --><!-- end ngRepeat: file in folder.files --><!-- ngIf: file.name !== 'index' --><!-- end ngRepeat: file in folder.files -->
 		</ul><!-- end ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] -->
 	</div><!-- end ngIf: !threeColumns && navigationSidebar -->
@@ -147,18 +151,20 @@
 	<div class="container">
 		<div class="row">
 			<h1 class="col-xs-12 ng-binding">
-				concepts (2 files)
+				concepts (3 files)
 			</h1>
 		</div>
 		<div class="row indexLinkContainer">
 			<ul class="col-xs-12 col-sm-6">
 				<!-- ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><li class="col-xs-12 ng-scope" data-ng-repeat="(key, file) in indexList" data-ng-if="file.name != 'index' &amp;&amp; (key+1) &lt;= indexList.length/2">
 					<a href=./scalr/concepts/intro.html class="col-xs-12 ng-binding"> intro</a>
+				</li><!-- end ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><li class="col-xs-12 ng-scope" data-ng-repeat="(key, file) in indexList" data-ng-if="file.name != 'index' &amp;&amp; (key+1) &lt;= indexList.length/2">
+					<a href=./scalr/concepts/datamodel.html class="col-xs-12 ng-binding"> datamodel</a>
 				</li><!-- end ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList -->
 			</ul>
 			<ul class="col-xs-12 col-sm-6">
-				<!-- ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><li class="col-xs-12 ng-scope" data-ng-repeat="(key, file) in indexList" data-ng-if="file.name != 'index' &amp;&amp; (key+1) &gt; indexList.length/2">
-					<a href=./scalr/concepts/datamodel.html class="col-xs-12 ng-binding"> datamodel</a>
+				<!-- ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><li class="col-xs-12 ng-scope" data-ng-repeat="(key, file) in indexList" data-ng-if="file.name != 'index' &amp;&amp; (key+1) &gt; indexList.length/2">
+					<a href=./scalr/concepts/databrowser.html class="col-xs-12 ng-binding"> databrowser</a>
 				</li><!-- end ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList -->
 			</ul>
 		</div>

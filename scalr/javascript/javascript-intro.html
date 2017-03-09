@@ -38,6 +38,8 @@
             <a ng-href=./scalr/concepts/intro.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/intro.html>Intro</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
             <a ng-href=./scalr/concepts/datamodel.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/datamodel.html>Data Model</a>
+          </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope">
+            <a ng-href=./scalr/concepts/databrowser.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/databrowser.html>Data Browser</a>
           </li><!-- end ngRepeat: file in folder.files --><li ng-repeat="file in folder.files" data-ng-hide="file.name == 'index'" class="ng-scope ng-hide">
             <a ng-href=./scalr/concepts/index.html ng-bind="file.label" class="ng-binding" href=./scalr/concepts/index.html>index</a>
           </li><!-- end ngRepeat: file in folder.files -->
@@ -238,7 +240,7 @@ RESPONSE WHEN NEW DATA MATCHES
 		<div class="row">
 			<div class="col-xs-12">
 				<span data-ng-class="{disabled: paginationLinks.prev == null}" class="pull-left">
-					<a href=./scalr/concepts/datamodel.html class="paginationLink pull-left">Previous</a>
+					<a href=./scalr/concepts/databrowser.html class="paginationLink pull-left">Previous</a>
 				</span>
 				<span data-ng-class="{disabled: paginationLinks.next == null}" class="pull-right">
 					<a href=./scalr/javascript/nodejs-intro.html class="paginationLink pull-right">Next</a>

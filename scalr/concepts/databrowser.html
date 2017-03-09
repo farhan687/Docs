@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="./styles/docs.css">
 <script type="text/javascript" async="" src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script></head>
-<body role="flatdoc">
+<body role="flatdoc" class="no-literate big-h3 large-brief">
   <!-- ngView:  --><div ng-view="" class="ng-scope"><!-- ngInclude: navbarHtml --><nav class="navbar navbar-default navbar-fixed-top ng-scope" ng-include="navbarHtml"><div class="container-fluid ng-scope">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -112,68 +112,42 @@
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
-<div role="flatdoc" class="content-root ng-scope ng-hide" data-ng-show="!index">
-	<div class="menubar">
-		<div class="menu section" role="flatdoc-menu"></div>
+<div role="flatdoc" class="content-root ng-scope" data-ng-show="!index">
+	<div class="menubar fixed">
+		<div class="menu section" role="flatdoc-menu"><ul><li id="root-item" class="level-0"><ul class="level-1" id="root-list"><li id="data-browser-item" class="level-1"><a id="data-browser-link" href="./scalr/concepts/databrowser.html#data-browser" class="level-1" pref="#data-browser">Data Browser</a><ul class="level-2" id="data-browser-list"><li id="data-browser-adding-your-first-data-item" class="level-2"><a id="data-browser-adding-your-first-data-link" href="./scalr/concepts/databrowser.html#data-browser-adding-your-first-data" class="level-2" pref="#data-browser-adding-your-first-data">Adding Your First Data</a></li><li id="data-browser-operations-item" class="level-2"><a id="data-browser-operations-link" href="./scalr/concepts/databrowser.html#data-browser-operations" class="level-2" pref="#data-browser-operations">Operations</a><ul class="level-3" id="data-browser-operations-list"><li id="data-browser-operations-adding-data-item" class="level-3"><a id="data-browser-operations-adding-data-link" href="./scalr/concepts/databrowser.html#data-browser-operations-adding-data" class="level-3" pref="#data-browser-operations-adding-data">Adding Data</a></li><li id="data-browser-operations-updating-existing-data-item" class="level-3"><a id="data-browser-operations-updating-existing-data-link" href="./scalr/concepts/databrowser.html#data-browser-operations-updating-existing-data" class="level-3" pref="#data-browser-operations-updating-existing-data">Updating Existing Data</a></li><li id="data-browser-operations-deleting-data-item" class="level-3"><a id="data-browser-operations-deleting-data-link" href="./scalr/concepts/databrowser.html#data-browser-operations-deleting-data" class="level-3" pref="#data-browser-operations-deleting-data">Deleting Data</a></li></ul></li><li id="data-browser-doing-more-with-data-item" class="level-2"><a id="data-browser-doing-more-with-data-link" href="./scalr/concepts/databrowser.html#data-browser-doing-more-with-data" class="level-2" pref="#data-browser-doing-more-with-data">Doing more with data</a></li></ul></li></ul></li></ul></div>
 	</div>
-	<div role="flatdoc-content" class="content"></div>
+	<div role="flatdoc-content" class="content"><div class="extra_container"><div class="contributors_header">Contributors<span class="pull-right modified-date">Last modified on: <a href="https://github.com/appbaseio/Docs/commit/94f38f1dbf690adcf19a8ed7e7015c819f6eb7cd">Mar 9, 2017</a></span></div><div class="contributor-container"><a class="contributor" href="https://github.com/web-flow" title="web-flow" target="_blank"><img class="contributor_img img-rounded" src="https://avatars0.githubusercontent.com/u/19864447?v=3" alt="web-flow"></a></div><div class="contributors_header nobg"><a class="edit-btn" href="https://github.com/appbaseio/Docs/tree/master/src/scalr/concepts/databrowser.md" target="_blank"><span><i class="fa fa-pencil"></i> Edit this page on Github </span></a></div></div><div class="clearFix"></div><h1 id="data-browser">Data Browser</h1><p>Data Browser is a WYSIWG GUI for adding, modifying and viewing your appbase.io app’s data.</p><p>Data is stored as JSON documents in a <strong>type</strong>. You can read more about the data schema <a href="http://docs.appbase.io/scalr/concepts/datamodel.html#appbase-data-schema">here</a>.</p><h2 id="data-browser-adding-your-first-data">Adding Your First Data</h2><p><img src="https://i.imgur.com/Bh59Ej1.gif" alt=""></p><p>Follow the above gif to add your first data.</p><h2 id="data-browser-operations">Operations</h2><h3 id="data-browser-operations-adding-data">Adding Data</h3><p>The data browser allows adding data as a single JSON object or multiple JSON objects (passed as an array). It is recommended to pass up to 100 objects at a time.</p><h3 id="data-browser-operations-updating-existing-data">Updating Existing Data</h3><p>Existing data records can be updated easily. Select a record from the view and tap the <strong>Update</strong> button.</p><p><img src="https://i.imgur.com/9BTvUDI.png" alt=""></p><h3 id="data-browser-operations-deleting-data">Deleting Data</h3><p>Data records can also be deleted easily. Select a record (or multiple) from the view and tap the <strong>Delete</strong> button.</p><p><img src="https://i.imgur.com/k74fwaQ.png" alt=""></p><h2 id="data-browser-doing-more-with-data">Doing more with data</h2><p>While data browser is great to get started with appbase.io and for visualizing data, the recommended way to add data programatically is via the <a href="http://docs.appbase.io/scalr/rest/intro.html">REST API</a> or one of the <a href="http://docs.appbase.io/scalr/javascript/nodejs-intro.html">Node.JS</a> or <a href="https://godoc.org/github.com/appbaseio/go-appbase">Golang</a> libraries.</p><p>The data browser is still a great place to visualize and debug the existing data records with it’s filters and continuous query functionality.</p></div>
 	<!-- ngIf: !threeColumns && navigationSidebar --><div class="rightSidebar menubar ng-scope" data-ng-if="!threeColumns &amp;&amp; navigationSidebar">
-		<!-- ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><ul class="menu section ng-scope" ng-repeat="folder in map[currentVersion]" data-ng-if="folder.name === currentFolder">
+		<!-- ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><ul class="menu section ng-scope" ng-repeat="folder in map[currentVersion]" data-ng-if="folder.name === currentFolder">
 			<li>
 				<div class="other-pages">Other pages in</div>
 			</li>
 			<li>
-				<a class="level-1 ng-binding" ng-href=./scalr/javascript/index.html ng-bind="folder.name" href=./scalr/javascript/index.html>javascript</a>
+				<a class="level-1 ng-binding" ng-href=./scalr/concepts/index.html ng-bind="folder.name" href=./scalr/concepts/index.html>concepts</a>
 			</li>
 			<!-- ngRepeat: file in folder.files --><!-- ngIf: file.name !== 'index' --><li ng-repeat="file in folder.files" data-ng-if="file.name !== 'index'" class="ng-scope">
-				<a class="level-2 ng-binding" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/javascript/javascript-intro.html ng-bind="file.label" href=./scalr/javascript/javascript-intro.html>JS Quick Start</a>
+				<a class="level-2 ng-binding" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/concepts/intro.html ng-bind="file.label" href=./scalr/concepts/intro.html>Intro</a>
 			</li><!-- end ngIf: file.name !== 'index' --><!-- end ngRepeat: file in folder.files --><!-- ngIf: file.name !== 'index' --><li ng-repeat="file in folder.files" data-ng-if="file.name !== 'index'" class="ng-scope">
-				<a class="level-2 ng-binding" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/javascript/nodejs-intro.html ng-bind="file.label" href=./scalr/javascript/nodejs-intro.html>Node Quick Start</a>
+				<a class="level-2 ng-binding" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/concepts/datamodel.html ng-bind="file.label" href=./scalr/concepts/datamodel.html>Data Model</a>
 			</li><!-- end ngIf: file.name !== 'index' --><!-- end ngRepeat: file in folder.files --><!-- ngIf: file.name !== 'index' --><li ng-repeat="file in folder.files" data-ng-if="file.name !== 'index'" class="ng-scope">
-				<a class="level-2 ng-binding" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/javascript/api-reference.html ng-bind="file.label" href=./scalr/javascript/api-reference.html>API Reference</a>
-			</li><!-- end ngIf: file.name !== 'index' --><!-- end ngRepeat: file in folder.files --><!-- ngIf: file.name !== 'index' --><li ng-repeat="file in folder.files" data-ng-if="file.name !== 'index'" class="ng-scope">
-				<a class="level-2 ng-binding" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/javascript/javascript-webhooks.html ng-bind="file.label" href=./scalr/javascript/javascript-webhooks.html>Webhooks Guide</a>
+				<a class="level-2 ng-binding active" data-ng-class="{'active': file.name === currentFile}" ng-href=./scalr/concepts/databrowser.html ng-bind="file.label" href=./scalr/concepts/databrowser.html>Data Browser</a>
 			</li><!-- end ngIf: file.name !== 'index' --><!-- end ngRepeat: file in folder.files --><!-- ngIf: file.name !== 'index' --><!-- end ngRepeat: file in folder.files -->
-		</ul><!-- end ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] -->
+		</ul><!-- end ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] --><!-- ngIf: folder.name === currentFolder --><!-- end ngRepeat: folder in map[currentVersion] -->
 	</div><!-- end ngIf: !threeColumns && navigationSidebar -->
 	<div class="footer content">
 		<div class="row">
 			<div class="col-xs-12">
-				<span data-ng-class="{disabled: paginationLinks.prev == null}" class="pull-left disabled">
-					<a href="" class="paginationLink pull-left">Previous</a>
+				<span data-ng-class="{disabled: paginationLinks.prev == null}" class="pull-left">
+					<a href=./scalr/concepts/datamodel.html class="paginationLink pull-left">Previous</a>
 				</span>
-				<span data-ng-class="{disabled: paginationLinks.next == null}" class="pull-right disabled">
-					<a href="" class="paginationLink pull-right">Next</a>
+				<span data-ng-class="{disabled: paginationLinks.next == null}" class="pull-right">
+					<a href=./scalr/javascript/javascript-intro.html class="paginationLink pull-right">Next</a>
 				</span>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- ngIf: index --><div class="index-container ng-scope" data-ng-if="index">
-	<div class="container">
-		<div class="row">
-			<h1 class="col-xs-12 ng-binding">
-				javascript (4 files)
-			</h1>
-		</div>
-		<div class="row indexLinkContainer">
-			<ul class="col-xs-12 col-sm-6">
-				<!-- ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><li class="col-xs-12 ng-scope" data-ng-repeat="(key, file) in indexList" data-ng-if="file.name != 'index' &amp;&amp; (key+1) &lt;= indexList.length/2">
-					<a href=./scalr/javascript/javascript-intro.html class="col-xs-12 ng-binding"> javascript-intro</a>
-				</li><!-- end ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><li class="col-xs-12 ng-scope" data-ng-repeat="(key, file) in indexList" data-ng-if="file.name != 'index' &amp;&amp; (key+1) &lt;= indexList.length/2">
-					<a href=./scalr/javascript/nodejs-intro.html class="col-xs-12 ng-binding"> nodejs-intro</a>
-				</li><!-- end ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) <= indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList -->
-			</ul>
-			<ul class="col-xs-12 col-sm-6">
-				<!-- ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><li class="col-xs-12 ng-scope" data-ng-repeat="(key, file) in indexList" data-ng-if="file.name != 'index' &amp;&amp; (key+1) &gt; indexList.length/2">
-					<a href=./scalr/javascript/api-reference.html class="col-xs-12 ng-binding"> api-reference</a>
-				</li><!-- end ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><li class="col-xs-12 ng-scope" data-ng-repeat="(key, file) in indexList" data-ng-if="file.name != 'index' &amp;&amp; (key+1) &gt; indexList.length/2">
-					<a href=./scalr/javascript/javascript-webhooks.html class="col-xs-12 ng-binding"> javascript-webhooks</a>
-				</li><!-- end ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList --><!-- ngIf: file.name != 'index' && (key+1) > indexList.length/2 --><!-- end ngRepeat: (key, file) in indexList -->
-			</ul>
-		</div>
-	</div>
-</div><!-- end ngIf: index -->
+<!-- ngIf: index -->
 </div>
   <script type="text/javascript" src="./docbase-config.js"></script>
   <script type="text/javascript" src="./bower_components/docbase/dist/js/main.unique.js"></script>
