@@ -7,14 +7,14 @@ var docbaseConfig = {
   "file": {
     "path": "src"
   },
-   "github": {
-    "user": "farhan687",
-    "repo": "Docs",
-    "path": "src",
-    "branch": "master",
-    "access_token": "OTAwNDU5MTk4M2NlYzViYzQxNzFlN2E3Yjk1MWQ2ZjhkODRjMTg5Yg=="
+  "github": {
+    "user": "",
+    "repo": "",
+    "path": "",
+    "branch": "",
+    "access_token": ""
   },
-  "indexHtml": "./html/main.html",
+   "indexHtml": "./html/main.html",
   "flatdocHtml": "./bower_components/docbase/html/flatdoc.html",
   "html5mode": false,
   "default_version": "",
