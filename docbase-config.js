@@ -1,18 +1,18 @@
 var docbaseConfig = {
-  "method": "file",
+ "method": "github",
   "generic": {
     "baseurl": "",
-    "path": "src"
+    "path": ""
   },
   "file": {
-    "path": "src"
+    "path": ""
   },
   "github": {
-    "user": "",
-    "repo": "",
-    "path": "",
-    "branch": "",
-    "access_token": ""
+    "user": "farhan687",
+    "repo": "Docs",
+    "path": "src",
+    "branch": "master",
+    "access_token": "OTAwNDU5MTk4M2NlYzViYzQxNzFlN2E3Yjk1MWQ2ZjhkODRjMTg5Yg=="
   },
    "indexHtml": "./html/main.html",
   "flatdocHtml": "./bower_components/docbase/html/flatdoc.html",
